@@ -16,4 +16,8 @@ Gem::Specification.new do |gem|
   gem.name          = "gdal"
   gem.require_paths = ["lib"]
   gem.version       = Gdal::Ruby::VERSION
+
+  gem.add_development_dependency 'rake',          ['>= 0']
+  gem.add_development_dependency 'rake-compiler', ['>= 0']
+  gem.add_development_dependency 'rspec',         ['>= 0']
 end

@@ -1,4 +1,4 @@
-# Gdal::Ruby
+# Gdal::Ruby [![Build Status](https://secure.travis-ci.org/zhm/gdal-ruby.png)](http://travis-ci.org/zhm/gdal-ruby)
 
 Native bindings for GDAL/OGR for ruby. The GDAL repository contains ruby bindings
 in the `swig/ruby` directory, but they aren't compiled or installed with default
