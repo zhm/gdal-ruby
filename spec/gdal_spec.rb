@@ -1,4 +1,4 @@
-require 'gdal'
+require 'gdal/ogr'
 
 describe "Gdal" do
   it "converts WKT to GeoJSON" do

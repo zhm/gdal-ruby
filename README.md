@@ -42,7 +42,7 @@ Or install it yourself as:
 
 To test it out:
 
-    $ ruby -e "require 'gdal'; puts Gdal::Ogr.create_geometry_from_wkt('POINT (30 10)').export_to_json"
+    $ ruby -e "require 'gdal-ruby/ogr'; puts Gdal::Ogr.create_geometry_from_wkt('POINT (30 10)').export_to_json"
 
 The best documentation for right now is the [autotest](http://trac.osgeo.org/gdal/browser/trunk/autotest/ruby/ogr) code in the GDAL source tree. You can see various
 patterns for accessing files and using the OGR API from the autotest sources.
