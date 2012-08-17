@@ -1,4 +1,4 @@
-require 'gdal/ogr'
+require 'gdal-ruby/ogr'
 
 describe "Gdal" do
   it "converts WKT to GeoJSON" do
