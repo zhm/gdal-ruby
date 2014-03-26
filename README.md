@@ -37,6 +37,19 @@ And then execute:
 Or install it yourself as:
 
     $ gem install gdal
+    
+Installing on Mac using The Framework way GDAL :
+    
+- Download and install GDAL Complete dmg from [kyngchaos](http://www.kyngchaos.com/software/frameworks).
+
+- Export path ` export PATH=/Library/Frameworks/GDAL.framework/Programs:$PATH ` in your bash or zsh profile
+
+- Verify the installation ` gdal-config --version `
+
+- Install the gem using:
+    
+    ` $ gem install gdal -- --with-gdal-lib=/Library/Frameworks/GDAL.framework/unix/lib --with-gdal-includes=/Library/Frameworks/GDAL.framework/Versions/Current/Headers/ `
+
 
 ## Usage
 
