@@ -14,4 +14,7 @@ pkg_config 'gdal'
 
 $libs = append_library $libs, 'gdal'
 
+$CFLAGS << ' -Wno-format-security'
+$CXXFLAGS << ' -Wno-format-security'
+
 create_makefile('gdal-ruby/ogr')
