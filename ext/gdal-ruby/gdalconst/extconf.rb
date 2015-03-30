@@ -12,6 +12,9 @@ pkg_config 'gdal'
 
 $libs = append_library $libs, 'gdal'
 
+# earlier versions of ruby do not define $CXXFLAGS
+$CXXFLAGS = CONFIG["CXXFLAGS"] unless defined?($CXXFLAGS)
+
 $CFLAGS << ' -Wno-format-security'
 $CXXFLAGS << ' -Wno-format-security'
 
