@@ -1811,22 +1811,20 @@ int SWIG_Ruby_arity( VALUE proc, int minimal )
 #define SWIGTYPE_p_OGRFeatureDefnShadow swig_types[4]
 #define SWIGTYPE_p_OGRFeatureShadow swig_types[5]
 #define SWIGTYPE_p_OGRFieldDefnShadow swig_types[6]
-#define SWIGTYPE_p_OGRGeomFieldDefnShadow swig_types[7]
-#define SWIGTYPE_p_OGRGeometryShadow swig_types[8]
-#define SWIGTYPE_p_OGRLayerShadow swig_types[9]
-#define SWIGTYPE_p_OGRStyleTableShadow swig_types[10]
-#define SWIGTYPE_p_OSRCoordinateTransformationShadow swig_types[11]
-#define SWIGTYPE_p_OSRSpatialReferenceShadow swig_types[12]
-#define SWIGTYPE_p_char swig_types[13]
-#define SWIGTYPE_p_double swig_types[14]
-#define SWIGTYPE_p_f_double_p_q_const__char_p_void__int swig_types[15]
-#define SWIGTYPE_p_int swig_types[16]
-#define SWIGTYPE_p_p_char swig_types[17]
-#define SWIGTYPE_p_p_double swig_types[18]
-#define SWIGTYPE_p_p_int swig_types[19]
-#define SWIGTYPE_p_p_p_char swig_types[20]
-static swig_type_info *swig_types[22];
-static swig_module_info swig_module = {swig_types, 21, 0, 0, 0, 0};
+#define SWIGTYPE_p_OGRGeometryShadow swig_types[7]
+#define SWIGTYPE_p_OGRLayerShadow swig_types[8]
+#define SWIGTYPE_p_OSRCoordinateTransformationShadow swig_types[9]
+#define SWIGTYPE_p_OSRSpatialReferenceShadow swig_types[10]
+#define SWIGTYPE_p_char swig_types[11]
+#define SWIGTYPE_p_double swig_types[12]
+#define SWIGTYPE_p_f_double_p_q_const__char_p_void__int swig_types[13]
+#define SWIGTYPE_p_int swig_types[14]
+#define SWIGTYPE_p_p_char swig_types[15]
+#define SWIGTYPE_p_p_double swig_types[16]
+#define SWIGTYPE_p_p_int swig_types[17]
+#define SWIGTYPE_p_p_p_char swig_types[18]
+static swig_type_info *swig_types[20];
+static swig_module_info swig_module = {swig_types, 19, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -1887,8 +1885,6 @@ typedef void OGRGeometryShadow;
 typedef void OSRCoordinateTransformationShadow;
 typedef void OGRFieldDefnShadow;
 #endif
-typedef struct OGRStyleTableHS OGRStyleTableShadow;
-typedef struct OGRGeomFieldDefnHS OGRGeomFieldDefnShadow;
 
 
 #include <limits.h>
@@ -2023,9 +2019,6 @@ void DontUseExceptions() {
   CPLSetErrorHandler( CPLDefaultErrorHandler );
 }
 
-SWIGINTERN OGRStyleTableShadow *new_OGRStyleTableShadow(){
-        return (OGRStyleTableShadow*) OGR_STBL_Create();
-   }
 
 SWIGINTERN int
 SWIG_AsCharPtrAndSize(VALUE obj, char** cptr, size_t* psize, int *alloc)
@@ -2063,27 +2056,6 @@ SWIG_AsCharPtrAndSize(VALUE obj, char** cptr, size_t* psize, int *alloc)
 
 
 
-SWIGINTERN int OGRStyleTableShadow_AddStyle(OGRStyleTableShadow *self,char const *pszName,char const *pszStyleString){
-        return OGR_STBL_AddStyle( (OGRStyleTableH) self, pszName, pszStyleString);
-   }
-SWIGINTERN int OGRStyleTableShadow_LoadStyleTable(OGRStyleTableShadow *self,char const *utf8_path){
-        return OGR_STBL_LoadStyleTable( (OGRStyleTableH) self, utf8_path );
-   }
-SWIGINTERN int OGRStyleTableShadow_SaveStyleTable(OGRStyleTableShadow *self,char const *utf8_path){
-        return OGR_STBL_SaveStyleTable( (OGRStyleTableH) self, utf8_path );
-   }
-SWIGINTERN char const *OGRStyleTableShadow_Find(OGRStyleTableShadow *self,char const *pszName){
-        return OGR_STBL_Find( (OGRStyleTableH) self, pszName );
-   }
-SWIGINTERN void OGRStyleTableShadow_ResetStyleStringReading(OGRStyleTableShadow *self){
-        OGR_STBL_ResetStyleStringReading( (OGRStyleTableH) self );
-   }
-SWIGINTERN char const *OGRStyleTableShadow_GetNextStyle(OGRStyleTableShadow *self){
-        return OGR_STBL_GetNextStyle( (OGRStyleTableH) self );
-   }
-SWIGINTERN char const *OGRStyleTableShadow_GetLastStyleName(OGRStyleTableShadow *self){
-        return OGR_STBL_GetLastStyleName( (OGRStyleTableH) self );
-   }
 SWIGINTERN OGRDataSourceShadow *OGRDriverShadow_CreateDataSource(OGRDriverShadow *self,char const *utf8_path,char **options=0){
     OGRDataSourceShadow *ds = (OGRDataSourceShadow*) OGR_Dr_CreateDataSource( self, utf8_path, options);
     return ds;
@@ -2231,13 +2203,6 @@ SWIGINTERN OGRLayerShadow *OGRDataSourceShadow_ExecuteSQL(OGRDataSourceShadow *s
 SWIGINTERN void OGRDataSourceShadow_ReleaseResultSet(OGRDataSourceShadow *self,OGRLayerShadow *layer){
     OGR_DS_ReleaseResultSet(self, layer);
   }
-SWIGINTERN OGRStyleTableShadow *OGRDataSourceShadow_GetStyleTable(OGRDataSourceShadow *self){
-    return (OGRStyleTableShadow*) OGR_DS_GetStyleTable(self);
-  }
-SWIGINTERN void OGRDataSourceShadow_SetStyleTable(OGRDataSourceShadow *self,OGRStyleTableShadow *table){
-    if( table != NULL )
-        OGR_DS_SetStyleTable(self, (OGRStyleTableH) table);
-  }
 SWIGINTERN OGRLayerShadow *OGRDataSourceShadow_GetLayer(OGRDataSourceShadow *self,VALUE whichLayer){
 		// get field index
 		switch (TYPE(whichLayer)) {
@@ -2258,7 +2223,7 @@ SWIGINTERN OGRLayerShadow *OGRDataSourceShadow_GetLayer(OGRDataSourceShadow *sel
 SWIGINTERN int OGRLayerShadow_GetRefCount(OGRLayerShadow *self){
     return OGR_L_GetRefCount(self);
   }
-SWIGINTERN void OGRLayerShadow_SetSpatialFilter__SWIG_0(OGRLayerShadow *self,OGRGeometryShadow *filter){
+SWIGINTERN void OGRLayerShadow_SetSpatialFilter(OGRLayerShadow *self,OGRGeometryShadow *filter){
     OGR_L_SetSpatialFilter (self, filter);
   }
 
@@ -2290,14 +2255,8 @@ SWIG_AsVal_double (VALUE obj, double *val)
   return SWIG_TypeError;
 }
 
-SWIGINTERN void OGRLayerShadow_SetSpatialFilterRect__SWIG_0(OGRLayerShadow *self,double minx,double miny,double maxx,double maxy){
-    OGR_L_SetSpatialFilterRect(self, minx, miny, maxx, maxy);
-  }
-SWIGINTERN void OGRLayerShadow_SetSpatialFilter__SWIG_1(OGRLayerShadow *self,int iGeomField,OGRGeometryShadow *filter){
-    OGR_L_SetSpatialFilterEx (self, iGeomField, filter);
-  }
-SWIGINTERN void OGRLayerShadow_SetSpatialFilterRect__SWIG_1(OGRLayerShadow *self,int iGeomField,double minx,double miny,double maxx,double maxy){
-    OGR_L_SetSpatialFilterRectEx(self, iGeomField, minx, miny, maxx, maxy);
+SWIGINTERN void OGRLayerShadow_SetSpatialFilterRect(OGRLayerShadow *self,double minx,double miny,double maxx,double maxy){
+    OGR_L_SetSpatialFilterRect(self, minx, miny, maxx, maxy);                          
   }
 SWIGINTERN OGRGeometryShadow *OGRLayerShadow_GetSpatialFilter(OGRLayerShadow *self){
     return (OGRGeometryShadow *) OGR_L_GetSpatialFilter(self);
@@ -2378,9 +2337,6 @@ SWIGINTERN OGRErr OGRLayerShadow_ReorderFields(OGRLayerShadow *self,int nList,in
 SWIGINTERN OGRErr OGRLayerShadow_AlterFieldDefn(OGRLayerShadow *self,int iField,OGRFieldDefnShadow *field_def,int nFlags){
     return OGR_L_AlterFieldDefn(self, iField, field_def, nFlags);
   }
-SWIGINTERN OGRErr OGRLayerShadow_CreateGeomField(OGRLayerShadow *self,OGRGeomFieldDefnShadow *field_def,int approx_ok=1){
-    return OGR_L_CreateGeomField(self, field_def, approx_ok);
-  }
 SWIGINTERN OGRErr OGRLayerShadow_StartTransaction(OGRLayerShadow *self){
     return OGR_L_StartTransaction(self);
   }
@@ -2389,9 +2345,6 @@ SWIGINTERN OGRErr OGRLayerShadow_CommitTransaction(OGRLayerShadow *self){
   }
 SWIGINTERN OGRErr OGRLayerShadow_RollbackTransaction(OGRLayerShadow *self){
     return OGR_L_RollbackTransaction(self);
-  }
-SWIGINTERN int OGRLayerShadow_FindFieldIndex(OGRLayerShadow *self,char const *pszFieldName,int bExactMatch){
-    return OGR_L_FindFieldIndex(self, pszFieldName, bExactMatch );
   }
 SWIGINTERN OSRSpatialReferenceShadow *OGRLayerShadow_GetSpatialRef(OGRLayerShadow *self){
     OGRSpatialReferenceH ref =  OGR_L_GetSpatialRef(self);
@@ -2426,13 +2379,6 @@ SWIGINTERN OGRErr OGRLayerShadow_Clip(OGRLayerShadow *self,OGRLayerShadow *metho
 SWIGINTERN OGRErr OGRLayerShadow_Erase(OGRLayerShadow *self,OGRLayerShadow *method_layer,OGRLayerShadow *result_layer,char **options=NULL,GDALProgressFunc callback=NULL,void *callback_data=NULL){
     return OGR_L_Erase( self, method_layer, result_layer, options, callback, callback_data );
   }
-SWIGINTERN OGRStyleTableShadow *OGRLayerShadow_GetStyleTable(OGRLayerShadow *self){
-    return (OGRStyleTableShadow*) OGR_L_GetStyleTable(self);
-  }
-SWIGINTERN void OGRLayerShadow_SetStyleTable(OGRLayerShadow *self,OGRStyleTableShadow *table){
-    if( table != NULL )
-        OGR_L_SetStyleTable(self, (OGRStyleTableH) table);
-  }
 SWIGINTERN void OGRLayerShadow_each(OGRLayerShadow *self){
 		OGRFeatureShadow* feature = NULL;
 
@@ -2461,45 +2407,6 @@ SWIGINTERN OGRErr OGRFeatureShadow_SetGeometryDirectly(OGRFeatureShadow *self,OG
 SWIGINTERN OGRGeometryShadow *OGRFeatureShadow_GetGeometryRef(OGRFeatureShadow *self){
     return (OGRGeometryShadow*) OGR_F_GetGeometryRef(self);
   }
-SWIGINTERN OGRErr OGRFeatureShadow_SetGeomField__SWIG_0(OGRFeatureShadow *self,int iField,OGRGeometryShadow *geom){
-    return OGR_F_SetGeomField(self, iField, geom);
-  }
-SWIGINTERN OGRErr OGRFeatureShadow_SetGeomField__SWIG_1(OGRFeatureShadow *self,char const *name,OGRGeometryShadow *geom){
-      int iField = OGR_F_GetGeomFieldIndex(self, name);
-      if (iField == -1)
-      {
-        CPLError(CE_Failure, 1, "No such field: '%s'", name);
-        return OGRERR_FAILURE;
-      }
-      else
-        return OGR_F_SetGeomField(self, iField, geom);
-  }
-SWIGINTERN OGRErr OGRFeatureShadow_SetGeomFieldDirectly__SWIG_0(OGRFeatureShadow *self,int iField,OGRGeometryShadow *geom){
-    return OGR_F_SetGeomFieldDirectly(self, iField, geom);
-  }
-SWIGINTERN OGRErr OGRFeatureShadow_SetGeomFieldDirectly__SWIG_1(OGRFeatureShadow *self,char const *name,OGRGeometryShadow *geom){
-      int iField = OGR_F_GetGeomFieldIndex(self, name);
-      if (iField == -1)
-      {
-        CPLError(CE_Failure, 1, "No such field: '%s'", name);
-        return OGRERR_FAILURE;
-      }
-      else
-        return OGR_F_SetGeomFieldDirectly(self, iField, geom);
-  }
-SWIGINTERN OGRGeometryShadow *OGRFeatureShadow_GetGeomFieldRef__SWIG_0(OGRFeatureShadow *self,int iField){
-    return (OGRGeometryShadow*) OGR_F_GetGeomFieldRef(self, iField);
-  }
-SWIGINTERN OGRGeometryShadow *OGRFeatureShadow_GetGeomFieldRef__SWIG_1(OGRFeatureShadow *self,char const *name){
-    int i = OGR_F_GetGeomFieldIndex(self, name);
-    if (i == -1)
-    {
-      CPLError(CE_Failure, 1, "No such field: '%s'", name);
-      return NULL;
-    }
-    else
-      return (OGRGeometryShadow*) OGR_F_GetGeomFieldRef(self, i);
-  }
 SWIGINTERN OGRFeatureShadow *OGRFeatureShadow_Clone(OGRFeatureShadow *self){
     return (OGRFeatureShadow*) OGR_F_Clone(self);
   }
@@ -2518,20 +2425,6 @@ SWIGINTERN OGRFieldDefnShadow *OGRFeatureShadow_GetFieldDefnRef__SWIG_1(OGRFeatu
 	  CPLError(CE_Failure, 1, "No such field: '%s'", name);
       else
 	  return (OGRFieldDefnShadow *) OGR_F_GetFieldDefnRef(self, i);
-      return NULL;
-  }
-SWIGINTERN int OGRFeatureShadow_GetGeomFieldCount(OGRFeatureShadow *self){
-    return OGR_F_GetGeomFieldCount(self);
-  }
-SWIGINTERN OGRGeomFieldDefnShadow *OGRFeatureShadow_GetGeomFieldDefnRef__SWIG_0(OGRFeatureShadow *self,int id){
-    return (OGRGeomFieldDefnShadow *) OGR_F_GetGeomFieldDefnRef(self, id);
-  }
-SWIGINTERN OGRGeomFieldDefnShadow *OGRFeatureShadow_GetGeomFieldDefnRef__SWIG_1(OGRFeatureShadow *self,char const *name){
-      int i = OGR_F_GetGeomFieldIndex(self, name);
-      if (i == -1)
-      CPLError(CE_Failure, 1, "No such field: '%s'", name);
-      else
-      return (OGRGeomFieldDefnShadow *) OGR_F_GetGeomFieldDefnRef(self, i);
       return NULL;
   }
 SWIGINTERN char const *OGRFeatureShadow_GetFieldAsString__SWIG_0(OGRFeatureShadow *self,int id){
@@ -2597,9 +2490,6 @@ SWIGINTERN bool OGRFeatureShadow_IsFieldSet__SWIG_1(OGRFeatureShadow *self,char 
   }
 SWIGINTERN int OGRFeatureShadow_GetFieldIndex(OGRFeatureShadow *self,char const *name){
       return OGR_F_GetFieldIndex(self, name);
-  }
-SWIGINTERN int OGRFeatureShadow_GetGeomFieldIndex(OGRFeatureShadow *self,char const *name){
-      return OGR_F_GetGeomFieldIndex(self, name);
   }
 SWIGINTERN int OGRFeatureShadow_GetFID(OGRFeatureShadow *self){
     return OGR_F_GetFID(self);
@@ -2672,24 +2562,6 @@ SWIGINTERN void OGRFeatureShadow_SetFieldDoubleList(OGRFeatureShadow *self,int i
   }
 SWIGINTERN void OGRFeatureShadow_SetFieldStringList(OGRFeatureShadow *self,int id,char **pList){
       OGR_F_SetFieldStringList(self, id, pList);
-  }
-SWIGINTERN void OGRFeatureShadow_SetFieldBinaryFromHexString__SWIG_0(OGRFeatureShadow *self,int id,char const *pszValue){
-     int nBytes;
-     GByte* pabyBuf = CPLHexToBinary(pszValue, &nBytes );
-     OGR_F_SetFieldBinary(self, id, nBytes, pabyBuf);
-     CPLFree(pabyBuf);
-  }
-SWIGINTERN void OGRFeatureShadow_SetFieldBinaryFromHexString__SWIG_1(OGRFeatureShadow *self,char const *name,char const *pszValue){
-      int i = OGR_F_GetFieldIndex(self, name);
-      if (i == -1)
-        CPLError(CE_Failure, 1, "No such field: '%s'", name);
-      else
-      {
-        int nBytes;
-        GByte* pabyBuf = CPLHexToBinary(pszValue, &nBytes );
-        OGR_F_SetFieldBinary(self, i, nBytes, pabyBuf);
-        CPLFree(pabyBuf);
-      }
   }
 SWIGINTERN OGRErr OGRFeatureShadow_SetFrom(OGRFeatureShadow *self,OGRFeatureShadow *other,int forgiving=1){
     return OGR_F_SetFrom(self, other, forgiving);
@@ -2817,35 +2689,6 @@ SWIGINTERN VALUE OGRFeatureShadow_GetField(OGRFeatureShadow *self,VALUE object){
 	
 		return result;		
 	}
-
-    static int ValidateOGRGeometryType(OGRwkbGeometryType field_type)
-    {
-        switch(field_type)
-        {
-            case wkbUnknown:
-            case wkbPoint:
-            case wkbLineString:
-            case wkbPolygon:
-            case wkbMultiPoint:
-            case wkbMultiLineString:
-            case wkbMultiPolygon:
-            case wkbGeometryCollection:
-            case wkbNone:
-            /*case wkbLinearRing:*/
-            case wkbPoint25D:
-            case wkbLineString25D:
-            case wkbPolygon25D:
-            case wkbMultiPoint25D:
-            case wkbMultiLineString25D:
-            case wkbMultiPolygon25D:
-            case wkbGeometryCollection25D:
-                return TRUE;
-            default:
-                CPLError(CE_Failure, CPLE_IllegalArg, "Illegal geometry type value");
-                return FALSE;
-        }
-    }
-
 SWIGINTERN OGRFeatureDefnShadow *new_OGRFeatureDefnShadow(char const *name_null_ok=NULL){
     OGRFeatureDefnH h = OGR_FD_Create(name_null_ok);
     OGR_FD_Reference(h);
@@ -2866,27 +2709,11 @@ SWIGINTERN int OGRFeatureDefnShadow_GetFieldIndex(OGRFeatureDefnShadow *self,cha
 SWIGINTERN void OGRFeatureDefnShadow_AddFieldDefn(OGRFeatureDefnShadow *self,OGRFieldDefnShadow *defn){
     OGR_FD_AddFieldDefn(self, defn);
   }
-SWIGINTERN int OGRFeatureDefnShadow_GetGeomFieldCount(OGRFeatureDefnShadow *self){
-    return OGR_FD_GetGeomFieldCount(self);
-  }
-SWIGINTERN OGRGeomFieldDefnShadow *OGRFeatureDefnShadow_GetGeomFieldDefn(OGRFeatureDefnShadow *self,int i){
-    return (OGRGeomFieldDefnShadow*) OGR_FD_GetGeomFieldDefn(self, i);
-  }
-SWIGINTERN int OGRFeatureDefnShadow_GetGeomFieldIndex(OGRFeatureDefnShadow *self,char const *name){
-      return OGR_FD_GetGeomFieldIndex(self, name);
-  }
-SWIGINTERN void OGRFeatureDefnShadow_AddGeomFieldDefn(OGRFeatureDefnShadow *self,OGRGeomFieldDefnShadow *defn){
-    OGR_FD_AddGeomFieldDefn(self, defn);
-  }
-SWIGINTERN OGRErr OGRFeatureDefnShadow_DeleteGeomFieldDefn(OGRFeatureDefnShadow *self,int idx){
-    return OGR_FD_DeleteGeomFieldDefn(self, idx);
-  }
 SWIGINTERN OGRwkbGeometryType OGRFeatureDefnShadow_GetGeomType(OGRFeatureDefnShadow *self){
     return (OGRwkbGeometryType) OGR_FD_GetGeomType(self);
   }
 SWIGINTERN void OGRFeatureDefnShadow_SetGeomType(OGRFeatureDefnShadow *self,OGRwkbGeometryType geom_type){
-    if( ValidateOGRGeometryType(geom_type) )
-        OGR_FD_SetGeomType(self, geom_type);
+    OGR_FD_SetGeomType(self, geom_type);
   }
 SWIGINTERN int OGRFeatureDefnShadow_GetReferenceCount(OGRFeatureDefnShadow *self){
     return OGR_FD_GetReferenceCount(self);
@@ -2902,9 +2729,6 @@ SWIGINTERN int OGRFeatureDefnShadow_IsStyleIgnored(OGRFeatureDefnShadow *self){
   }
 SWIGINTERN void OGRFeatureDefnShadow_SetStyleIgnored(OGRFeatureDefnShadow *self,int bIgnored){
     return OGR_FD_SetStyleIgnored(self,bIgnored);
-  }
-SWIGINTERN int OGRFeatureDefnShadow_IsSame(OGRFeatureDefnShadow *self,OGRFeatureDefnShadow *other_defn){
-    return OGR_FD_IsSame(self, other_defn);
   }
 
     static int ValidateOGRFieldType(OGRFieldType field_type)
@@ -2979,43 +2803,6 @@ SWIGINTERN int OGRFieldDefnShadow_IsIgnored(OGRFieldDefnShadow *self){
   }
 SWIGINTERN void OGRFieldDefnShadow_SetIgnored(OGRFieldDefnShadow *self,int bIgnored){
     return OGR_Fld_SetIgnored( self, bIgnored );
-  }
-SWIGINTERN OGRGeomFieldDefnShadow *new_OGRGeomFieldDefnShadow(char const *name_null_ok="",OGRwkbGeometryType field_type=wkbUnknown){
-    if( ValidateOGRGeometryType(field_type) )
-        return (OGRGeomFieldDefnShadow*) OGR_GFld_Create(name_null_ok, field_type);
-    else
-        return NULL;
-  }
-SWIGINTERN char const *OGRGeomFieldDefnShadow_GetName(OGRGeomFieldDefnShadow *self){
-    return (const char *) OGR_GFld_GetNameRef(self);
-  }
-SWIGINTERN char const *OGRGeomFieldDefnShadow_GetNameRef(OGRGeomFieldDefnShadow *self){
-    return (const char *) OGR_GFld_GetNameRef(self);
-  }
-SWIGINTERN void OGRGeomFieldDefnShadow_SetName(OGRGeomFieldDefnShadow *self,char const *name){
-    OGR_GFld_SetName(self, name);
-  }
-SWIGINTERN OGRwkbGeometryType OGRGeomFieldDefnShadow_GetType(OGRGeomFieldDefnShadow *self){
-    return OGR_GFld_GetType(self);
-  }
-SWIGINTERN void OGRGeomFieldDefnShadow_SetType(OGRGeomFieldDefnShadow *self,OGRwkbGeometryType type){
-    if( ValidateOGRGeometryType(type) )
-        OGR_GFld_SetType(self, type);
-  }
-SWIGINTERN OSRSpatialReferenceShadow *OGRGeomFieldDefnShadow_GetSpatialRef(OGRGeomFieldDefnShadow *self){
-    OGRSpatialReferenceH ref =  OGR_GFld_GetSpatialRef(self);
-    if( ref )
-        OSRReference(ref);
-    return (OSRSpatialReferenceShadow*) ref;
-  }
-SWIGINTERN void OGRGeomFieldDefnShadow_SetSpatialRef(OGRGeomFieldDefnShadow *self,OSRSpatialReferenceShadow *srs){
-     OGR_GFld_SetSpatialRef( self, (OGRSpatialReferenceH)srs );
-  }
-SWIGINTERN int OGRGeomFieldDefnShadow_IsIgnored(OGRGeomFieldDefnShadow *self){
-    return OGR_GFld_IsIgnored( self );
-  }
-SWIGINTERN void OGRGeomFieldDefnShadow_SetIgnored(OGRGeomFieldDefnShadow *self,int bIgnored){
-    OGR_GFld_SetIgnored( self, bIgnored );
   }
 
   OGRGeometryShadow* CreateGeometryFromWkb( int len, char *bin_string, 
@@ -3484,508 +3271,6 @@ _wrap_dont_use_exceptions(int argc, VALUE *argv, VALUE self) {
   }
   DontUseExceptions();
   return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-class: Gdal::Ogr::StyleTable
-
-  Proxy of C++ Gdal::Ogr::StyleTable class
-
-
-*/
-static swig_class SwigClassStyleTable;
-
-#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-SWIGINTERN VALUE
-_wrap_StyleTable_allocate(VALUE self) {
-#else
-  SWIGINTERN VALUE
-  _wrap_StyleTable_allocate(int argc, VALUE *argv, VALUE self) {
-#endif
-    
-    
-    VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_OGRStyleTableShadow);
-#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
-    rb_obj_call_init(vresult, argc, argv);
-#endif
-    return vresult;
-  }
-  
-
-
-/*
-  Document-method: Gdal::Ogr::StyleTable.new
-
-  call-seq:
-    StyleTable.new
-
-Class constructor.
-
-*/
-SWIGINTERN VALUE
-_wrap_new_StyleTable(int argc, VALUE *argv, VALUE self) {
-  OGRStyleTableShadow *result = 0 ;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  {
-    CPLErrorReset();
-    result = (OGRStyleTableShadow *)new_OGRStyleTableShadow();
-    DATA_PTR(self) = result;
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return self;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN void delete_OGRStyleTableShadow(OGRStyleTableShadow *self){
-        OGR_STBL_Destroy( (OGRStyleTableH) self );
-   }
-SWIGINTERN void
-free_OGRStyleTableShadow(OGRStyleTableShadow *arg1) {
-    delete_OGRStyleTableShadow(arg1);
-}
-
-
-/*
-  Document-method: Gdal::Ogr::StyleTable.add_style
-
-  call-seq:
-    add_style(char const * pszName, char const * pszStyleString) -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_StyleTable_add_style(int argc, VALUE *argv, VALUE self) {
-  OGRStyleTableShadow *arg1 = (OGRStyleTableShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  char *arg3 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int res3 ;
-  char *buf3 = 0 ;
-  int alloc3 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","AddStyle", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRStyleTableShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","AddStyle", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  res3 = SWIG_AsCharPtrAndSize(argv[1], &buf3, NULL, &alloc3);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char const *","AddStyle", 3, argv[1] ));
-  }
-  arg3 = reinterpret_cast< char * >(buf3);
-  {
-    CPLErrorReset();
-    result = (int)OGRStyleTableShadow_AddStyle(arg1,(char const *)arg2,(char const *)arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::StyleTable.load_style_table
-
-  call-seq:
-    load_style_table(char const * utf8_path) -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_StyleTable_load_style_table(int argc, VALUE *argv, VALUE self) {
-  OGRStyleTableShadow *arg1 = (OGRStyleTableShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","LoadStyleTable", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRStyleTableShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","LoadStyleTable", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  {
-    CPLErrorReset();
-    result = (int)OGRStyleTableShadow_LoadStyleTable(arg1,(char const *)arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::StyleTable.save_style_table
-
-  call-seq:
-    save_style_table(char const * utf8_path) -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_StyleTable_save_style_table(int argc, VALUE *argv, VALUE self) {
-  OGRStyleTableShadow *arg1 = (OGRStyleTableShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","SaveStyleTable", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRStyleTableShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","SaveStyleTable", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  {
-    CPLErrorReset();
-    result = (int)OGRStyleTableShadow_SaveStyleTable(arg1,(char const *)arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::StyleTable.find
-
-  call-seq:
-    find(char const * pszName) -> char const *
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_StyleTable_find(int argc, VALUE *argv, VALUE self) {
-  OGRStyleTableShadow *arg1 = (OGRStyleTableShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  char *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","Find", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRStyleTableShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","Find", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  {
-    CPLErrorReset();
-    result = (char *)OGRStyleTableShadow_Find(arg1,(char const *)arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_FromCharPtr((const char *)result);
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::StyleTable.reset_style_string_reading
-
-  call-seq:
-    reset_style_string_reading
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_StyleTable_reset_style_string_reading(int argc, VALUE *argv, VALUE self) {
-  OGRStyleTableShadow *arg1 = (OGRStyleTableShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","ResetStyleStringReading", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRStyleTableShadow * >(argp1);
-  {
-    CPLErrorReset();
-    OGRStyleTableShadow_ResetStyleStringReading(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::StyleTable.get_next_style
-
-  call-seq:
-    get_next_style -> char const *
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_StyleTable_get_next_style(int argc, VALUE *argv, VALUE self) {
-  OGRStyleTableShadow *arg1 = (OGRStyleTableShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  char *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","GetNextStyle", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRStyleTableShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (char *)OGRStyleTableShadow_GetNextStyle(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_FromCharPtr((const char *)result);
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::StyleTable.get_last_style_name
-
-  call-seq:
-    get_last_style_name -> char const *
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_StyleTable_get_last_style_name(int argc, VALUE *argv, VALUE self) {
-  OGRStyleTableShadow *arg1 = (OGRStyleTableShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  char *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","GetLastStyleName", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRStyleTableShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (char *)OGRStyleTableShadow_GetLastStyleName(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_FromCharPtr((const char *)result);
-  return vresult;
 fail:
   return Qnil;
 }
@@ -5525,117 +4810,6 @@ fail:
 
 
 /*
-  Document-method: Gdal::Ogr::DataSource.get_style_table
-
-  call-seq:
-    get_style_table -> StyleTable
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_DataSource_get_style_table(int argc, VALUE *argv, VALUE self) {
-  OGRDataSourceShadow *arg1 = (OGRDataSourceShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  OGRStyleTableShadow *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRDataSourceShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRDataSourceShadow *","GetStyleTable", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRDataSourceShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (OGRStyleTableShadow *)OGRDataSourceShadow_GetStyleTable(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::DataSource.set_style_table
-
-  call-seq:
-    set_style_table(StyleTable table)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_DataSource_set_style_table(int argc, VALUE *argv, VALUE self) {
-  OGRDataSourceShadow *arg1 = (OGRDataSourceShadow *) 0 ;
-  OGRStyleTableShadow *arg2 = (OGRStyleTableShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRDataSourceShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRDataSourceShadow *","SetStyleTable", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRDataSourceShadow * >(argp1);
-  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","SetStyleTable", 2, argv[0] )); 
-  }
-  arg2 = reinterpret_cast< OGRStyleTableShadow * >(argp2);
-  {
-    CPLErrorReset();
-    OGRDataSourceShadow_SetStyleTable(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
   Document-method: Gdal::Ogr::DataSource.get_layer
 
   call-seq:
@@ -5758,13 +4932,12 @@ fail:
 
   call-seq:
     set_spatial_filter(Geometry filter)
-    set_spatial_filter(int iGeomField, Geometry filter)
 
 An instance method.
 
 */
 SWIGINTERN VALUE
-_wrap_Layer_set_spatial_filter__SWIG_0(int argc, VALUE *argv, VALUE self) {
+_wrap_Layer_set_spatial_filter(int argc, VALUE *argv, VALUE self) {
   OGRLayerShadow *arg1 = (OGRLayerShadow *) 0 ;
   OGRGeometryShadow *arg2 = (OGRGeometryShadow *) 0 ;
   void *argp1 = 0 ;
@@ -5787,7 +4960,7 @@ _wrap_Layer_set_spatial_filter__SWIG_0(int argc, VALUE *argv, VALUE self) {
   arg2 = reinterpret_cast< OGRGeometryShadow * >(argp2);
   {
     CPLErrorReset();
-    OGRLayerShadow_SetSpatialFilter__SWIG_0(arg1,arg2);
+    OGRLayerShadow_SetSpatialFilter(arg1,arg2);
     CPLErr eclass = CPLGetLastErrorType();
     if ( eclass == CE_Failure || eclass == CE_Fatal ) {
       SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
@@ -5817,13 +4990,12 @@ fail:
 
   call-seq:
     set_spatial_filter_rect(double minx, double miny, double maxx, double maxy)
-    set_spatial_filter_rect(int iGeomField, double minx, double miny, double maxx, double maxy)
 
 An instance method.
 
 */
 SWIGINTERN VALUE
-_wrap_Layer_set_spatial_filter_rect__SWIG_0(int argc, VALUE *argv, VALUE self) {
+_wrap_Layer_set_spatial_filter_rect(int argc, VALUE *argv, VALUE self) {
   OGRLayerShadow *arg1 = (OGRLayerShadow *) 0 ;
   double arg2 ;
   double arg3 ;
@@ -5870,7 +5042,7 @@ _wrap_Layer_set_spatial_filter_rect__SWIG_0(int argc, VALUE *argv, VALUE self) {
   arg5 = static_cast< double >(val5);
   {
     CPLErrorReset();
-    OGRLayerShadow_SetSpatialFilterRect__SWIG_0(arg1,arg2,arg3,arg4,arg5);
+    OGRLayerShadow_SetSpatialFilterRect(arg1,arg2,arg3,arg4,arg5);
     CPLErr eclass = CPLGetLastErrorType();
     if ( eclass == CE_Failure || eclass == CE_Fatal ) {
       SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
@@ -5890,312 +5062,6 @@ _wrap_Layer_set_spatial_filter_rect__SWIG_0(int argc, VALUE *argv, VALUE self) {
   }
   return Qnil;
 fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Layer.set_spatial_filter
-
-  call-seq:
-    set_spatial_filter(Geometry filter)
-    set_spatial_filter(int iGeomField, Geometry filter)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Layer_set_spatial_filter__SWIG_1(int argc, VALUE *argv, VALUE self) {
-  OGRLayerShadow *arg1 = (OGRLayerShadow *) 0 ;
-  int arg2 ;
-  OGRGeometryShadow *arg3 = (OGRGeometryShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRLayerShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRLayerShadow *","SetSpatialFilter", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRLayerShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","SetSpatialFilter", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_OGRGeometryShadow, 0 |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "OGRGeometryShadow *","SetSpatialFilter", 3, argv[1] )); 
-  }
-  arg3 = reinterpret_cast< OGRGeometryShadow * >(argp3);
-  {
-    CPLErrorReset();
-    OGRLayerShadow_SetSpatialFilter__SWIG_1(arg1,arg2,arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE _wrap_Layer_set_spatial_filter(int nargs, VALUE *args, VALUE self) {
-  int argc;
-  VALUE argv[4];
-  int ii;
-  
-  argc = nargs + 1;
-  argv[0] = self;
-  if (argc > 4) SWIG_fail;
-  for (ii = 1; (ii < argc); ++ii) {
-    argv[ii] = args[ii-1];
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRLayerShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      void *vptr = 0;
-      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_OGRGeometryShadow, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_Layer_set_spatial_filter__SWIG_0(nargs, args, self);
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRLayerShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        void *vptr = 0;
-        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_OGRGeometryShadow, 0);
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_Layer_set_spatial_filter__SWIG_1(nargs, args, self);
-        }
-      }
-    }
-  }
-  
-fail:
-  Ruby_Format_OverloadedError( argc, 4, "set_spatial_filter", 
-    "    void set_spatial_filter(OGRGeometryShadow *filter)\n"
-    "    void set_spatial_filter(int iGeomField, OGRGeometryShadow *filter)\n");
-  
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Layer.set_spatial_filter_rect
-
-  call-seq:
-    set_spatial_filter_rect(double minx, double miny, double maxx, double maxy)
-    set_spatial_filter_rect(int iGeomField, double minx, double miny, double maxx, double maxy)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Layer_set_spatial_filter_rect__SWIG_1(int argc, VALUE *argv, VALUE self) {
-  OGRLayerShadow *arg1 = (OGRLayerShadow *) 0 ;
-  int arg2 ;
-  double arg3 ;
-  double arg4 ;
-  double arg5 ;
-  double arg6 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  double val3 ;
-  int ecode3 = 0 ;
-  double val4 ;
-  int ecode4 = 0 ;
-  double val5 ;
-  int ecode5 = 0 ;
-  double val6 ;
-  int ecode6 = 0 ;
-  
-  if ((argc < 5) || (argc > 5)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 5)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRLayerShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRLayerShadow *","SetSpatialFilterRect", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRLayerShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","SetSpatialFilterRect", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  ecode3 = SWIG_AsVal_double(argv[1], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "double","SetSpatialFilterRect", 3, argv[1] ));
-  } 
-  arg3 = static_cast< double >(val3);
-  ecode4 = SWIG_AsVal_double(argv[2], &val4);
-  if (!SWIG_IsOK(ecode4)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode4), Ruby_Format_TypeError( "", "double","SetSpatialFilterRect", 4, argv[2] ));
-  } 
-  arg4 = static_cast< double >(val4);
-  ecode5 = SWIG_AsVal_double(argv[3], &val5);
-  if (!SWIG_IsOK(ecode5)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode5), Ruby_Format_TypeError( "", "double","SetSpatialFilterRect", 5, argv[3] ));
-  } 
-  arg5 = static_cast< double >(val5);
-  ecode6 = SWIG_AsVal_double(argv[4], &val6);
-  if (!SWIG_IsOK(ecode6)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode6), Ruby_Format_TypeError( "", "double","SetSpatialFilterRect", 6, argv[4] ));
-  } 
-  arg6 = static_cast< double >(val6);
-  {
-    CPLErrorReset();
-    OGRLayerShadow_SetSpatialFilterRect__SWIG_1(arg1,arg2,arg3,arg4,arg5,arg6);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE _wrap_Layer_set_spatial_filter_rect(int nargs, VALUE *args, VALUE self) {
-  int argc;
-  VALUE argv[7];
-  int ii;
-  
-  argc = nargs + 1;
-  argv[0] = self;
-  if (argc > 7) SWIG_fail;
-  for (ii = 1; (ii < argc); ++ii) {
-    argv[ii] = args[ii-1];
-  }
-  if (argc == 5) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRLayerShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_double(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        {
-          int res = SWIG_AsVal_double(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          {
-            int res = SWIG_AsVal_double(argv[3], NULL);
-            _v = SWIG_CheckState(res);
-          }
-          if (_v) {
-            {
-              int res = SWIG_AsVal_double(argv[4], NULL);
-              _v = SWIG_CheckState(res);
-            }
-            if (_v) {
-              return _wrap_Layer_set_spatial_filter_rect__SWIG_0(nargs, args, self);
-            }
-          }
-        }
-      }
-    }
-  }
-  if (argc == 6) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRLayerShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        {
-          int res = SWIG_AsVal_double(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          {
-            int res = SWIG_AsVal_double(argv[3], NULL);
-            _v = SWIG_CheckState(res);
-          }
-          if (_v) {
-            {
-              int res = SWIG_AsVal_double(argv[4], NULL);
-              _v = SWIG_CheckState(res);
-            }
-            if (_v) {
-              {
-                int res = SWIG_AsVal_double(argv[5], NULL);
-                _v = SWIG_CheckState(res);
-              }
-              if (_v) {
-                return _wrap_Layer_set_spatial_filter_rect__SWIG_1(nargs, args, self);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  Ruby_Format_OverloadedError( argc, 7, "set_spatial_filter_rect", 
-    "    void set_spatial_filter_rect(double minx, double miny, double maxx, double maxy)\n"
-    "    void set_spatial_filter_rect(int iGeomField, double minx, double miny, double maxx, double maxy)\n");
-  
   return Qnil;
 }
 
@@ -7772,95 +6638,6 @@ fail:
 
 
 /*
-  Document-method: Gdal::Ogr::Layer.create_geom_field
-
-  call-seq:
-    create_geom_field(GeomFieldDefn field_def, int approx_ok=1) -> OGRErr
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Layer_create_geom_field(int argc, VALUE *argv, VALUE self) {
-  OGRLayerShadow *arg1 = (OGRLayerShadow *) 0 ;
-  OGRGeomFieldDefnShadow *arg2 = (OGRGeomFieldDefnShadow *) 0 ;
-  int arg3 = (int) 1 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
-  const char *kwnames[] = {
-    "self","field_def","approx_ok", NULL 
-  };
-  OGRErr result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRLayerShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRLayerShadow *","CreateGeomField", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRLayerShadow * >(argp1);
-  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","CreateGeomField", 2, argv[0] )); 
-  }
-  arg2 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp2);
-  if (argc > 1) {
-    ecode3 = SWIG_AsVal_int(argv[1], &val3);
-    if (!SWIG_IsOK(ecode3)) {
-      SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "int","CreateGeomField", 3, argv[1] ));
-    } 
-    arg3 = static_cast< int >(val3);
-  }
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (OGRErr)OGRLayerShadow_CreateGeomField(arg1,arg2,arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  {
-    /* %typemap(out) OGRErr */
-    if (result != 0) {
-      rb_raise(rb_eRuntimeError, OGRErrMessages(result));
-    }
-  }
-  {
-    /* %typemap(ret) OGRErr */
-    if (vresult == Qnil) {
-      vresult = INT2NUM(0);
-    }
-  }    return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
   Document-method: Gdal::Ogr::Layer.start_transaction
 
   call-seq:
@@ -8044,78 +6821,6 @@ _wrap_Layer_rollback_transaction(int argc, VALUE *argv, VALUE self) {
     }
   }    return vresult;
 fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Layer.find_field_index
-
-  call-seq:
-    find_field_index(char const * pszFieldName, int bExactMatch) -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Layer_find_field_index(int argc, VALUE *argv, VALUE self) {
-  OGRLayerShadow *arg1 = (OGRLayerShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  int arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int val3 ;
-  int ecode3 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRLayerShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRLayerShadow *","FindFieldIndex", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRLayerShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","FindFieldIndex", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  ecode3 = SWIG_AsVal_int(argv[1], &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), Ruby_Format_TypeError( "", "int","FindFieldIndex", 3, argv[1] ));
-  } 
-  arg3 = static_cast< int >(val3);
-  {
-    CPLErrorReset();
-    result = (int)OGRLayerShadow_FindFieldIndex(arg1,(char const *)arg2,arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return Qnil;
 }
 
@@ -9246,117 +7951,6 @@ fail:
 
 
 /*
-  Document-method: Gdal::Ogr::Layer.get_style_table
-
-  call-seq:
-    get_style_table -> StyleTable
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Layer_get_style_table(int argc, VALUE *argv, VALUE self) {
-  OGRLayerShadow *arg1 = (OGRLayerShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  OGRStyleTableShadow *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRLayerShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRLayerShadow *","GetStyleTable", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRLayerShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (OGRStyleTableShadow *)OGRLayerShadow_GetStyleTable(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Layer.set_style_table
-
-  call-seq:
-    set_style_table(StyleTable table)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Layer_set_style_table(int argc, VALUE *argv, VALUE self) {
-  OGRLayerShadow *arg1 = (OGRLayerShadow *) 0 ;
-  OGRStyleTableShadow *arg2 = (OGRStyleTableShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRLayerShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRLayerShadow *","SetStyleTable", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRLayerShadow * >(argp1);
-  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_OGRStyleTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "OGRStyleTableShadow *","SetStyleTable", 2, argv[0] )); 
-  }
-  arg2 = reinterpret_cast< OGRStyleTableShadow * >(argp2);
-  {
-    CPLErrorReset();
-    OGRLayerShadow_SetStyleTable(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
   Document-method: Gdal::Ogr::Layer.each
 
   call-seq:
@@ -9747,604 +8341,6 @@ fail:
 
 
 /*
-  Document-method: Gdal::Ogr::Feature.set_geom_field
-
-  call-seq:
-    set_geom_field(int iField, Geometry geom) -> OGRErr
-    set_geom_field(char const * name, Geometry geom) -> OGRErr
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Feature_set_geom_field__SWIG_0(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  int arg2 ;
-  OGRGeometryShadow *arg3 = (OGRGeometryShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  OGRErr result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","SetGeomField", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","SetGeomField", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_OGRGeometryShadow, 0 |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "OGRGeometryShadow *","SetGeomField", 3, argv[1] )); 
-  }
-  arg3 = reinterpret_cast< OGRGeometryShadow * >(argp3);
-  {
-    CPLErrorReset();
-    result = (OGRErr)OGRFeatureShadow_SetGeomField__SWIG_0(arg1,arg2,arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  {
-    /* %typemap(out) OGRErr */
-    if (result != 0) {
-      rb_raise(rb_eRuntimeError, OGRErrMessages(result));
-    }
-  }
-  {
-    /* %typemap(ret) OGRErr */
-    if (vresult == Qnil) {
-      vresult = INT2NUM(0);
-    }
-  }    return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_Feature_set_geom_field__SWIG_1(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  OGRGeometryShadow *arg3 = (OGRGeometryShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  OGRErr result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","SetGeomField", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","SetGeomField", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  res3 = SWIG_ConvertPtr(argv[1], &argp3,SWIGTYPE_p_OGRGeometryShadow, 0 |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "OGRGeometryShadow *","SetGeomField", 3, argv[1] )); 
-  }
-  arg3 = reinterpret_cast< OGRGeometryShadow * >(argp3);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (OGRErr)OGRFeatureShadow_SetGeomField__SWIG_1(arg1,(char const *)arg2,arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  {
-    /* %typemap(out) OGRErr */
-    if (result != 0) {
-      rb_raise(rb_eRuntimeError, OGRErrMessages(result));
-    }
-  }
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  {
-    /* %typemap(ret) OGRErr */
-    if (vresult == Qnil) {
-      vresult = INT2NUM(0);
-    }
-  }    return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE _wrap_Feature_set_geom_field(int nargs, VALUE *args, VALUE self) {
-  int argc;
-  VALUE argv[4];
-  int ii;
-  
-  argc = nargs + 1;
-  argv[0] = self;
-  if (argc > 4) SWIG_fail;
-  for (ii = 1; (ii < argc); ++ii) {
-    argv[ii] = args[ii-1];
-  }
-  if (argc == 3) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        void *vptr = 0;
-        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_OGRGeometryShadow, 0);
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_Feature_set_geom_field__SWIG_0(nargs, args, self);
-        }
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        void *vptr = 0;
-        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_OGRGeometryShadow, 0);
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_Feature_set_geom_field__SWIG_1(nargs, args, self);
-        }
-      }
-    }
-  }
-  
-fail:
-  Ruby_Format_OverloadedError( argc, 4, "set_geom_field", 
-    "    OGRErr set_geom_field(int iField, OGRGeometryShadow *geom)\n"
-    "    OGRErr set_geom_field(char const *name, OGRGeometryShadow *geom)\n");
-  
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Feature.set_geom_field_directly
-
-  call-seq:
-    set_geom_field_directly(int iField, Geometry geom) -> OGRErr
-    set_geom_field_directly(char const * name, Geometry geom) -> OGRErr
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Feature_set_geom_field_directly__SWIG_0(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  int arg2 ;
-  OGRGeometryShadow *arg3 = (OGRGeometryShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int res3 = 0 ;
-  OGRErr result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","SetGeomFieldDirectly", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","SetGeomFieldDirectly", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  res3 = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&arg3), SWIGTYPE_p_OGRGeometryShadow, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "OGRGeometryShadow *","SetGeomFieldDirectly", 3, argv[1] ));
-  }
-  {
-    CPLErrorReset();
-    result = (OGRErr)OGRFeatureShadow_SetGeomFieldDirectly__SWIG_0(arg1,arg2,arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  {
-    /* %typemap(out) OGRErr */
-    if (result != 0) {
-      rb_raise(rb_eRuntimeError, OGRErrMessages(result));
-    }
-  }
-  {
-    /* %typemap(ret) OGRErr */
-    if (vresult == Qnil) {
-      vresult = INT2NUM(0);
-    }
-  }    return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_Feature_set_geom_field_directly__SWIG_1(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  OGRGeometryShadow *arg3 = (OGRGeometryShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int res3 = 0 ;
-  OGRErr result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","SetGeomFieldDirectly", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","SetGeomFieldDirectly", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  res3 = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&arg3), SWIGTYPE_p_OGRGeometryShadow, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "OGRGeometryShadow *","SetGeomFieldDirectly", 3, argv[1] ));
-  }
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (OGRErr)OGRFeatureShadow_SetGeomFieldDirectly__SWIG_1(arg1,(char const *)arg2,arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  {
-    /* %typemap(out) OGRErr */
-    if (result != 0) {
-      rb_raise(rb_eRuntimeError, OGRErrMessages(result));
-    }
-  }
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  {
-    /* %typemap(ret) OGRErr */
-    if (vresult == Qnil) {
-      vresult = INT2NUM(0);
-    }
-  }    return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE _wrap_Feature_set_geom_field_directly(int nargs, VALUE *args, VALUE self) {
-  int argc;
-  VALUE argv[4];
-  int ii;
-  
-  argc = nargs + 1;
-  argv[0] = self;
-  if (argc > 4) SWIG_fail;
-  for (ii = 1; (ii < argc); ++ii) {
-    argv[ii] = args[ii-1];
-  }
-  if (argc == 3) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        void *vptr = 0;
-        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_OGRGeometryShadow, 0);
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_Feature_set_geom_field_directly__SWIG_0(nargs, args, self);
-        }
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        void *vptr = 0;
-        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_OGRGeometryShadow, 0);
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_Feature_set_geom_field_directly__SWIG_1(nargs, args, self);
-        }
-      }
-    }
-  }
-  
-fail:
-  Ruby_Format_OverloadedError( argc, 4, "set_geom_field_directly", 
-    "    OGRErr set_geom_field_directly(int iField, OGRGeometryShadow *geom)\n"
-    "    OGRErr set_geom_field_directly(char const *name, OGRGeometryShadow *geom)\n");
-  
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Feature.get_geom_field_ref
-
-  call-seq:
-    get_geom_field_ref(int iField) -> Geometry
-    get_geom_field_ref(char const * name) -> Geometry
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Feature_get_geom_field_ref__SWIG_0(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  OGRGeometryShadow *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","GetGeomFieldRef", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","GetGeomFieldRef", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  {
-    CPLErrorReset();
-    result = (OGRGeometryShadow *)OGRFeatureShadow_GetGeomFieldRef__SWIG_0(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OGRGeometryShadow, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_Feature_get_geom_field_ref__SWIG_1(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  OGRGeometryShadow *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","GetGeomFieldRef", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","GetGeomFieldRef", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (OGRGeometryShadow *)OGRFeatureShadow_GetGeomFieldRef__SWIG_1(arg1,(char const *)arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OGRGeometryShadow, 0 |  0 );
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE _wrap_Feature_get_geom_field_ref(int nargs, VALUE *args, VALUE self) {
-  int argc;
-  VALUE argv[3];
-  int ii;
-  
-  argc = nargs + 1;
-  argv[0] = self;
-  if (argc > 3) SWIG_fail;
-  for (ii = 1; (ii < argc); ++ii) {
-    argv[ii] = args[ii-1];
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_Feature_get_geom_field_ref__SWIG_0(nargs, args, self);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_Feature_get_geom_field_ref__SWIG_1(nargs, args, self);
-      }
-    }
-  }
-  
-fail:
-  Ruby_Format_OverloadedError( argc, 3, "get_geom_field_ref", 
-    "    OGRGeometryShadow * get_geom_field_ref(int iField)\n"
-    "    OGRGeometryShadow * get_geom_field_ref(char const *name)\n");
-  
-  return Qnil;
-}
-
-
-
-/*
   Document-method: Gdal::Ogr::Feature.clone
 
   call-seq:
@@ -10680,229 +8676,6 @@ fail:
   Ruby_Format_OverloadedError( argc, 3, "get_field_defn_ref", 
     "    OGRFieldDefnShadow * get_field_defn_ref(int id)\n"
     "    OGRFieldDefnShadow * get_field_defn_ref(char const *name)\n");
-  
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Feature.get_geom_field_count
-
-  call-seq:
-    get_geom_field_count -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Feature_get_geom_field_count(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","GetGeomFieldCount", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (int)OGRFeatureShadow_GetGeomFieldCount(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Feature.get_geom_field_defn_ref
-
-  call-seq:
-    get_geom_field_defn_ref(int id) -> GeomFieldDefn
-    get_geom_field_defn_ref(char const * name) -> GeomFieldDefn
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Feature_get_geom_field_defn_ref__SWIG_0(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  OGRGeomFieldDefnShadow *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","GetGeomFieldDefnRef", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","GetGeomFieldDefnRef", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  {
-    CPLErrorReset();
-    result = (OGRGeomFieldDefnShadow *)OGRFeatureShadow_GetGeomFieldDefnRef__SWIG_0(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_Feature_get_geom_field_defn_ref__SWIG_1(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  OGRGeomFieldDefnShadow *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","GetGeomFieldDefnRef", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","GetGeomFieldDefnRef", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (OGRGeomFieldDefnShadow *)OGRFeatureShadow_GetGeomFieldDefnRef__SWIG_1(arg1,(char const *)arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE _wrap_Feature_get_geom_field_defn_ref(int nargs, VALUE *args, VALUE self) {
-  int argc;
-  VALUE argv[3];
-  int ii;
-  
-  argc = nargs + 1;
-  argv[0] = self;
-  if (argc > 3) SWIG_fail;
-  for (ii = 1; (ii < argc); ++ii) {
-    argv[ii] = args[ii-1];
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        return _wrap_Feature_get_geom_field_defn_ref__SWIG_0(nargs, args, self);
-      }
-    }
-  }
-  if (argc == 2) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        return _wrap_Feature_get_geom_field_defn_ref__SWIG_1(nargs, args, self);
-      }
-    }
-  }
-  
-fail:
-  Ruby_Format_OverloadedError( argc, 3, "get_geom_field_defn_ref", 
-    "    OGRGeomFieldDefnShadow * get_geom_field_defn_ref(int id)\n"
-    "    OGRGeomFieldDefnShadow * get_geom_field_defn_ref(char const *name)\n");
   
   return Qnil;
 }
@@ -11975,75 +9748,6 @@ _wrap_Feature_get_field_index(int argc, VALUE *argv, VALUE self) {
   {
     CPLErrorReset();
     result = (int)OGRFeatureShadow_GetFieldIndex(arg1,(char const *)arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::Feature.get_geom_field_index
-
-  call-seq:
-    get_geom_field_index(char const * name) -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Feature_get_geom_field_index(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","GetGeomFieldIndex", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","GetGeomFieldIndex", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (int)OGRFeatureShadow_GetGeomFieldIndex(arg1,(char const *)arg2);
     CPLErr eclass = CPLGetLastErrorType();
     if ( eclass == CE_Failure || eclass == CE_Fatal ) {
       SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
@@ -13512,200 +11216,6 @@ fail:
 
 
 /*
-  Document-method: Gdal::Ogr::Feature.set_field_binary_from_hex_string
-
-  call-seq:
-    set_field_binary_from_hex_string(int id, char const * pszValue)
-    set_field_binary_from_hex_string(char const * name, char const * pszValue)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_Feature_set_field_binary_from_hex_string__SWIG_0(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  int arg2 ;
-  char *arg3 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  int res3 ;
-  char *buf3 = 0 ;
-  int alloc3 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","SetFieldBinaryFromHexString", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","SetFieldBinaryFromHexString", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  res3 = SWIG_AsCharPtrAndSize(argv[1], &buf3, NULL, &alloc3);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char const *","SetFieldBinaryFromHexString", 3, argv[1] ));
-  }
-  arg3 = reinterpret_cast< char * >(buf3);
-  {
-    CPLErrorReset();
-    OGRFeatureShadow_SetFieldBinaryFromHexString__SWIG_0(arg1,arg2,(char const *)arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  return Qnil;
-fail:
-  if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_Feature_set_field_binary_from_hex_string__SWIG_1(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureShadow *arg1 = (OGRFeatureShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  char *arg3 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int res3 ;
-  char *buf3 = 0 ;
-  int alloc3 = 0 ;
-  
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureShadow *","SetFieldBinaryFromHexString", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","SetFieldBinaryFromHexString", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  res3 = SWIG_AsCharPtrAndSize(argv[1], &buf3, NULL, &alloc3);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char const *","SetFieldBinaryFromHexString", 3, argv[1] ));
-  }
-  arg3 = reinterpret_cast< char * >(buf3);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    OGRFeatureShadow_SetFieldBinaryFromHexString__SWIG_1(arg1,(char const *)arg2,(char const *)arg3);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  return Qnil;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE _wrap_Feature_set_field_binary_from_hex_string(int nargs, VALUE *args, VALUE self) {
-  int argc;
-  VALUE argv[4];
-  int ii;
-  
-  argc = nargs + 1;
-  argv[0] = self;
-  if (argc > 4) SWIG_fail;
-  for (ii = 1; (ii < argc); ++ii) {
-    argv[ii] = args[ii-1];
-  }
-  if (argc == 3) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_int(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        int res = SWIG_AsCharPtrAndSize(argv[2], 0, NULL, 0);
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_Feature_set_field_binary_from_hex_string__SWIG_0(nargs, args, self);
-        }
-      }
-    }
-  }
-  if (argc == 3) {
-    int _v;
-    void *vptr = 0;
-    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_OGRFeatureShadow, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      int res = SWIG_AsCharPtrAndSize(argv[1], 0, NULL, 0);
-      _v = SWIG_CheckState(res);
-      if (_v) {
-        int res = SWIG_AsCharPtrAndSize(argv[2], 0, NULL, 0);
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_Feature_set_field_binary_from_hex_string__SWIG_1(nargs, args, self);
-        }
-      }
-    }
-  }
-  
-fail:
-  Ruby_Format_OverloadedError( argc, 4, "set_field_binary_from_hex_string", 
-    "    void set_field_binary_from_hex_string(int id, char const *pszValue)\n"
-    "    void set_field_binary_from_hex_string(char const *name, char const *pszValue)\n");
-  
-  return Qnil;
-}
-
-
-
-/*
   Document-method: Gdal::Ogr::Feature.set_from
 
   call-seq:
@@ -14646,323 +12156,6 @@ fail:
 
 
 /*
-  Document-method: Gdal::Ogr::FeatureDefn.get_geom_field_count
-
-  call-seq:
-    get_geom_field_count -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_FeatureDefn_get_geom_field_count(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureDefnShadow *arg1 = (OGRFeatureDefnShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureDefnShadow *","GetGeomFieldCount", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureDefnShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (int)OGRFeatureDefnShadow_GetGeomFieldCount(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::FeatureDefn.get_geom_field_defn
-
-  call-seq:
-    get_geom_field_defn(int i) -> GeomFieldDefn
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_FeatureDefn_get_geom_field_defn(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureDefnShadow *arg1 = (OGRFeatureDefnShadow *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  OGRGeomFieldDefnShadow *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureDefnShadow *","GetGeomFieldDefn", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureDefnShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","GetGeomFieldDefn", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  {
-    CPLErrorReset();
-    result = (OGRGeomFieldDefnShadow *)OGRFeatureDefnShadow_GetGeomFieldDefn(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::FeatureDefn.get_geom_field_index
-
-  call-seq:
-    get_geom_field_index(char const * name) -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_FeatureDefn_get_geom_field_index(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureDefnShadow *arg1 = (OGRFeatureDefnShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureDefnShadow *","GetGeomFieldIndex", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureDefnShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","GetGeomFieldIndex", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (int)OGRFeatureDefnShadow_GetGeomFieldIndex(arg1,(char const *)arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return vresult;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::FeatureDefn.add_geom_field_defn
-
-  call-seq:
-    add_geom_field_defn(GeomFieldDefn defn)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_FeatureDefn_add_geom_field_defn(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureDefnShadow *arg1 = (OGRFeatureDefnShadow *) 0 ;
-  OGRGeomFieldDefnShadow *arg2 = (OGRGeomFieldDefnShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureDefnShadow *","AddGeomFieldDefn", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureDefnShadow * >(argp1);
-  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","AddGeomFieldDefn", 2, argv[0] )); 
-  }
-  arg2 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp2);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    OGRFeatureDefnShadow_AddGeomFieldDefn(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::FeatureDefn.delete_geom_field_defn
-
-  call-seq:
-    delete_geom_field_defn(int idx) -> OGRErr
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_FeatureDefn_delete_geom_field_defn(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureDefnShadow *arg1 = (OGRFeatureDefnShadow *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  OGRErr result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureDefnShadow *","DeleteGeomFieldDefn", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureDefnShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","DeleteGeomFieldDefn", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  {
-    CPLErrorReset();
-    result = (OGRErr)OGRFeatureDefnShadow_DeleteGeomFieldDefn(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  {
-    /* %typemap(out) OGRErr */
-    if (result != 0) {
-      rb_raise(rb_eRuntimeError, OGRErrMessages(result));
-    }
-  }
-  {
-    /* %typemap(ret) OGRErr */
-    if (vresult == Qnil) {
-      vresult = INT2NUM(0);
-    }
-  }    return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
   Document-method: Gdal::Ogr::FeatureDefn.get_geom_type
 
   call-seq:
@@ -15339,72 +12532,6 @@ _wrap_FeatureDefn_set_style_ignored(int argc, VALUE *argv, VALUE self) {
     
   }
   return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::FeatureDefn.is_same
-
-  call-seq:
-    is_same(FeatureDefn other_defn) -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_FeatureDefn_is_same(int argc, VALUE *argv, VALUE self) {
-  OGRFeatureDefnShadow *arg1 = (OGRFeatureDefnShadow *) 0 ;
-  OGRFeatureDefnShadow *arg2 = (OGRFeatureDefnShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRFeatureDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRFeatureDefnShadow *","IsSame", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRFeatureDefnShadow * >(argp1);
-  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_OGRFeatureDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "OGRFeatureDefnShadow *","IsSame", 2, argv[0] )); 
-  }
-  arg2 = reinterpret_cast< OGRFeatureDefnShadow * >(argp2);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (int)OGRFeatureDefnShadow_IsSame(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  return vresult;
 fail:
   return Qnil;
 }
@@ -16321,610 +13448,6 @@ _wrap_FieldDefn_set_ignored(int argc, VALUE *argv, VALUE self) {
   {
     CPLErrorReset();
     OGRFieldDefnShadow_SetIgnored(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-class: Gdal::Ogr::GeomFieldDefn
-
-  Proxy of C++ Gdal::Ogr::GeomFieldDefn class
-
-
-*/
-static swig_class SwigClassGeomFieldDefn;
-
-SWIGINTERN void delete_OGRGeomFieldDefnShadow(OGRGeomFieldDefnShadow *self){
-    OGR_GFld_Destroy(self);
-  }
-SWIGINTERN void
-free_OGRGeomFieldDefnShadow(OGRGeomFieldDefnShadow *arg1) {
-    delete_OGRGeomFieldDefnShadow(arg1);
-}
-
-#ifdef HAVE_RB_DEFINE_ALLOC_FUNC
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_allocate(VALUE self) {
-#else
-  SWIGINTERN VALUE
-  _wrap_GeomFieldDefn_allocate(int argc, VALUE *argv, VALUE self) {
-#endif
-    
-    
-    VALUE vresult = SWIG_NewClassInstance(self, SWIGTYPE_p_OGRGeomFieldDefnShadow);
-#ifndef HAVE_RB_DEFINE_ALLOC_FUNC
-    rb_obj_call_init(vresult, argc, argv);
-#endif
-    return vresult;
-  }
-  
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.new
-
-  call-seq:
-    GeomFieldDefn.new(char const * name_null_ok="", OGRwkbGeometryType field_type=WKBUNKNOWN)
-
-Class constructor.
-
-*/
-SWIGINTERN VALUE
-_wrap_new_GeomFieldDefn(int argc, VALUE *argv, VALUE self) {
-  char *arg1 = (char *) "" ;
-  OGRwkbGeometryType arg2 = (OGRwkbGeometryType) wkbUnknown ;
-  int res1 ;
-  char *buf1 = 0 ;
-  int alloc1 = 0 ;
-  const char *kwnames[] = {
-    "name_null_ok","field_type", NULL 
-  };
-  OGRGeomFieldDefnShadow *result = 0 ;
-  
-  if ((argc < 0) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  if (argc > 0) {
-    res1 = SWIG_AsCharPtrAndSize(argv[0], &buf1, NULL, &alloc1);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "char const *","OGRGeomFieldDefnShadow", 1, argv[0] ));
-    }
-    arg1 = reinterpret_cast< char * >(buf1);
-  }
-  if (argc > 1) {
-    {
-      /* %typemap(in) CPLErr */
-      arg2 = (OGRwkbGeometryType) NUM2INT(argv[1]);
-    }
-  }
-  {
-    CPLErrorReset();
-    result = (OGRGeomFieldDefnShadow *)new_OGRGeomFieldDefnShadow((char const *)arg1,arg2);
-    DATA_PTR(self) = result;
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-  return self;
-fail:
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.get_name
-
-  call-seq:
-    get_name -> char const *
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_get_name(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  char *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","GetName", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (char *)OGRGeomFieldDefnShadow_GetName(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_FromCharPtr((const char *)result);
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.get_name_ref
-
-  call-seq:
-    get_name_ref -> char const *
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_get_name_ref(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  char *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","GetNameRef", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (char *)OGRGeomFieldDefnShadow_GetNameRef(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_FromCharPtr((const char *)result);
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.set_name
-
-  call-seq:
-    set_name(char const * name)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_set_name(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  char *arg2 = (char *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","SetName", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  res2 = SWIG_AsCharPtrAndSize(argv[0], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","SetName", 2, argv[0] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
-    CPLErrorReset();
-    OGRGeomFieldDefnShadow_SetName(arg1,(char const *)arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-fail:
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.get_type
-
-  call-seq:
-    get_type -> OGRwkbGeometryType
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_get_type(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  OGRwkbGeometryType result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","GetType", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (OGRwkbGeometryType)OGRGeomFieldDefnShadow_GetType(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.set_type
-
-  call-seq:
-    set_type(OGRwkbGeometryType type)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_set_type(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  OGRwkbGeometryType arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","SetType", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  {
-    /* %typemap(in) CPLErr */
-    arg2 = (OGRwkbGeometryType) NUM2INT(argv[0]);
-  }
-  {
-    CPLErrorReset();
-    OGRGeomFieldDefnShadow_SetType(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.get_spatial_ref
-
-  call-seq:
-    get_spatial_ref -> SpatialReference
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_get_spatial_ref(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  OSRSpatialReferenceShadow *result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","GetSpatialRef", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (OSRSpatialReferenceShadow *)OGRGeomFieldDefnShadow_GetSpatialRef(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_OSRSpatialReferenceShadow, SWIG_POINTER_OWN |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.set_spatial_ref
-
-  call-seq:
-    set_spatial_ref(SpatialReference srs)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_set_spatial_ref(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  OSRSpatialReferenceShadow *arg2 = (OSRSpatialReferenceShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","SetSpatialRef", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  res2 = SWIG_ConvertPtr(argv[0], &argp2,SWIGTYPE_p_OSRSpatialReferenceShadow, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "OSRSpatialReferenceShadow *","SetSpatialRef", 2, argv[0] )); 
-  }
-  arg2 = reinterpret_cast< OSRSpatialReferenceShadow * >(argp2);
-  {
-    CPLErrorReset();
-    OGRGeomFieldDefnShadow_SetSpatialRef(arg1,arg2);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  return Qnil;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.is_ignored
-
-  call-seq:
-    is_ignored -> int
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_is_ignored(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","IsIgnored", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (int)OGRGeomFieldDefnShadow_IsIgnored(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-
-/*
-  Document-method: Gdal::Ogr::GeomFieldDefn.set_ignored
-
-  call-seq:
-    set_ignored(int bIgnored)
-
-An instance method.
-
-*/
-SWIGINTERN VALUE
-_wrap_GeomFieldDefn_set_ignored(int argc, VALUE *argv, VALUE self) {
-  OGRGeomFieldDefnShadow *arg1 = (OGRGeomFieldDefnShadow *) 0 ;
-  int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
-  int ecode2 = 0 ;
-  
-  if ((argc < 1) || (argc > 1)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 1)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OGRGeomFieldDefnShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OGRGeomFieldDefnShadow *","SetIgnored", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OGRGeomFieldDefnShadow * >(argp1);
-  ecode2 = SWIG_AsVal_int(argv[0], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), Ruby_Format_TypeError( "", "int","SetIgnored", 2, argv[0] ));
-  } 
-  arg2 = static_cast< int >(val2);
-  {
-    CPLErrorReset();
-    OGRGeomFieldDefnShadow_SetIgnored(arg1,arg2);
     CPLErr eclass = CPLGetLastErrorType();
     if ( eclass == CE_Failure || eclass == CE_Fatal ) {
       SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
@@ -22852,10 +19375,8 @@ static swig_type_info _swigt__p_OGRDriverShadow = {"_p_OGRDriverShadow", "OGRDri
 static swig_type_info _swigt__p_OGRFeatureDefnShadow = {"_p_OGRFeatureDefnShadow", "OGRFeatureDefnShadow *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_OGRFeatureShadow = {"_p_OGRFeatureShadow", "OGRFeatureShadow *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_OGRFieldDefnShadow = {"_p_OGRFieldDefnShadow", "OGRFieldDefnShadow *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_OGRGeomFieldDefnShadow = {"_p_OGRGeomFieldDefnShadow", "OGRGeomFieldDefnShadow *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_OGRGeometryShadow = {"_p_OGRGeometryShadow", "OGRGeometryShadow *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_OGRLayerShadow = {"_p_OGRLayerShadow", "OGRLayerShadow *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_OGRStyleTableShadow = {"_p_OGRStyleTableShadow", "OGRStyleTableShadow *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_OSRCoordinateTransformationShadow = {"_p_OSRCoordinateTransformationShadow", "OSRCoordinateTransformationShadow *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_OSRSpatialReferenceShadow = {"_p_OSRSpatialReferenceShadow", "OSRSpatialReferenceShadow *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *|retStringAndCPLFree *", 0, 0, (void*)0, 0};
@@ -22875,10 +19396,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_OGRFeatureDefnShadow,
   &_swigt__p_OGRFeatureShadow,
   &_swigt__p_OGRFieldDefnShadow,
-  &_swigt__p_OGRGeomFieldDefnShadow,
   &_swigt__p_OGRGeometryShadow,
   &_swigt__p_OGRLayerShadow,
-  &_swigt__p_OGRStyleTableShadow,
   &_swigt__p_OSRCoordinateTransformationShadow,
   &_swigt__p_OSRSpatialReferenceShadow,
   &_swigt__p_char,
@@ -22898,10 +19417,8 @@ static swig_cast_info _swigc__p_OGRDriverShadow[] = {  {&_swigt__p_OGRDriverShad
 static swig_cast_info _swigc__p_OGRFeatureDefnShadow[] = {  {&_swigt__p_OGRFeatureDefnShadow, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_OGRFeatureShadow[] = {  {&_swigt__p_OGRFeatureShadow, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_OGRFieldDefnShadow[] = {  {&_swigt__p_OGRFieldDefnShadow, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_OGRGeomFieldDefnShadow[] = {  {&_swigt__p_OGRGeomFieldDefnShadow, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_OGRGeometryShadow[] = {  {&_swigt__p_OGRGeometryShadow, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_OGRLayerShadow[] = {  {&_swigt__p_OGRLayerShadow, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_OGRStyleTableShadow[] = {  {&_swigt__p_OGRStyleTableShadow, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_OSRCoordinateTransformationShadow[] = {  {&_swigt__p_OSRCoordinateTransformationShadow, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_OSRSpatialReferenceShadow[] = {  {&_swigt__p_OSRSpatialReferenceShadow, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
@@ -22921,10 +19438,8 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_OGRFeatureDefnShadow,
   _swigc__p_OGRFeatureShadow,
   _swigc__p_OGRFieldDefnShadow,
-  _swigc__p_OGRGeomFieldDefnShadow,
   _swigc__p_OGRGeometryShadow,
   _swigc__p_OGRLayerShadow,
-  _swigc__p_OGRStyleTableShadow,
   _swigc__p_OSRCoordinateTransformationShadow,
   _swigc__p_OSRSpatialReferenceShadow,
   _swigc__p_char,
@@ -23246,10 +19761,8 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_const(mOgr, "OLCFASTSETNEXTBYINDEX", SWIG_FromCharPtr("FastSetNextByIndex"));
   rb_define_const(mOgr, "OLCSTRINGSASUTF8", SWIG_FromCharPtr("StringsAsUTF8"));
   rb_define_const(mOgr, "OLCIGNOREFIELDS", SWIG_FromCharPtr("IgnoreFields"));
-  rb_define_const(mOgr, "OLCCREATEGEOMFIELD", SWIG_FromCharPtr("CreateGeomField"));
   rb_define_const(mOgr, "ODSCCREATELAYER", SWIG_FromCharPtr("CreateLayer"));
   rb_define_const(mOgr, "ODSCDELETELAYER", SWIG_FromCharPtr("DeleteLayer"));
-  rb_define_const(mOgr, "ODSCCREATEGEOMFIELDAFTERCREATELAYER", SWIG_FromCharPtr("CreateGeomFieldAfterCreateLayer"));
   rb_define_const(mOgr, "ODRCCREATEDATASOURCE", SWIG_FromCharPtr("CreateDataSource"));
   rb_define_const(mOgr, "ODRCDELETEDATASOURCE", SWIG_FromCharPtr("DeleteDataSource"));
   rb_define_module_function(mOgr, "use_exceptions", VALUEFUNC(_wrap_use_exceptions), -1);
@@ -23263,22 +19776,7 @@ SWIGEXPORT void Init_ogr(void) {
   /* Setup exception handling */
   UseExceptions();
   
-  rb_require("gdal-ruby/osr");
-  
-  SwigClassStyleTable.klass = rb_define_class_under(mOgr, "StyleTable", rb_cObject);
-  SWIG_TypeClientData(SWIGTYPE_p_OGRStyleTableShadow, (void *) &SwigClassStyleTable);
-  rb_define_alloc_func(SwigClassStyleTable.klass, _wrap_StyleTable_allocate);
-  rb_define_method(SwigClassStyleTable.klass, "initialize", VALUEFUNC(_wrap_new_StyleTable), -1);
-  rb_define_method(SwigClassStyleTable.klass, "add_style", VALUEFUNC(_wrap_StyleTable_add_style), -1);
-  rb_define_method(SwigClassStyleTable.klass, "load_style_table", VALUEFUNC(_wrap_StyleTable_load_style_table), -1);
-  rb_define_method(SwigClassStyleTable.klass, "save_style_table", VALUEFUNC(_wrap_StyleTable_save_style_table), -1);
-  rb_define_method(SwigClassStyleTable.klass, "find", VALUEFUNC(_wrap_StyleTable_find), -1);
-  rb_define_method(SwigClassStyleTable.klass, "reset_style_string_reading", VALUEFUNC(_wrap_StyleTable_reset_style_string_reading), -1);
-  rb_define_method(SwigClassStyleTable.klass, "get_next_style", VALUEFUNC(_wrap_StyleTable_get_next_style), -1);
-  rb_define_method(SwigClassStyleTable.klass, "get_last_style_name", VALUEFUNC(_wrap_StyleTable_get_last_style_name), -1);
-  SwigClassStyleTable.mark = 0;
-  SwigClassStyleTable.destroy = (void (*)(void *)) free_OGRStyleTableShadow;
-  SwigClassStyleTable.trackObjects = 0;
+  rb_require("gdal/osr");
   
   SwigClassDriver.klass = rb_define_class_under(mOgr, "Driver", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_OGRDriverShadow, (void *) &SwigClassDriver);
@@ -23311,8 +19809,6 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_method(SwigClassDataSource.klass, "test_capability", VALUEFUNC(_wrap_DataSource_test_capability), -1);
   rb_define_method(SwigClassDataSource.klass, "execute_sql", VALUEFUNC(_wrap_DataSource_execute_sql), -1);
   rb_define_method(SwigClassDataSource.klass, "release_result_set", VALUEFUNC(_wrap_DataSource_release_result_set), -1);
-  rb_define_method(SwigClassDataSource.klass, "get_style_table", VALUEFUNC(_wrap_DataSource_get_style_table), -1);
-  rb_define_method(SwigClassDataSource.klass, "set_style_table", VALUEFUNC(_wrap_DataSource_set_style_table), -1);
   rb_define_method(SwigClassDataSource.klass, "get_layer", VALUEFUNC(_wrap_DataSource_get_layer), -1);
   SwigClassDataSource.mark = 0;
   SwigClassDataSource.destroy = (void (*)(void *)) free_OGRDataSourceShadow;
@@ -23348,11 +19844,9 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_method(SwigClassLayer.klass, "reorder_field", VALUEFUNC(_wrap_Layer_reorder_field), -1);
   rb_define_method(SwigClassLayer.klass, "reorder_fields", VALUEFUNC(_wrap_Layer_reorder_fields), -1);
   rb_define_method(SwigClassLayer.klass, "alter_field_defn", VALUEFUNC(_wrap_Layer_alter_field_defn), -1);
-  rb_define_method(SwigClassLayer.klass, "create_geom_field", VALUEFUNC(_wrap_Layer_create_geom_field), -1);
   rb_define_method(SwigClassLayer.klass, "start_transaction", VALUEFUNC(_wrap_Layer_start_transaction), -1);
   rb_define_method(SwigClassLayer.klass, "commit_transaction", VALUEFUNC(_wrap_Layer_commit_transaction), -1);
   rb_define_method(SwigClassLayer.klass, "rollback_transaction", VALUEFUNC(_wrap_Layer_rollback_transaction), -1);
-  rb_define_method(SwigClassLayer.klass, "find_field_index", VALUEFUNC(_wrap_Layer_find_field_index), -1);
   rb_define_method(SwigClassLayer.klass, "get_spatial_ref", VALUEFUNC(_wrap_Layer_get_spatial_ref), -1);
   rb_define_method(SwigClassLayer.klass, "get_features_read", VALUEFUNC(_wrap_Layer_get_features_read), -1);
   rb_define_method(SwigClassLayer.klass, "set_ignored_fields", VALUEFUNC(_wrap_Layer_set_ignored_fields), -1);
@@ -23363,8 +19857,6 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_method(SwigClassLayer.klass, "update", VALUEFUNC(_wrap_Layer_update), -1);
   rb_define_method(SwigClassLayer.klass, "clip", VALUEFUNC(_wrap_Layer_clip), -1);
   rb_define_method(SwigClassLayer.klass, "erase", VALUEFUNC(_wrap_Layer_erase), -1);
-  rb_define_method(SwigClassLayer.klass, "get_style_table", VALUEFUNC(_wrap_Layer_get_style_table), -1);
-  rb_define_method(SwigClassLayer.klass, "set_style_table", VALUEFUNC(_wrap_Layer_set_style_table), -1);
   rb_define_method(SwigClassLayer.klass, "each", VALUEFUNC(_wrap_Layer_each), -1);
   SwigClassLayer.mark = 0;
   SwigClassLayer.trackObjects = 0;
@@ -23377,15 +19869,10 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_method(SwigClassFeature.klass, "set_geometry", VALUEFUNC(_wrap_Feature_set_geometry), -1);
   rb_define_method(SwigClassFeature.klass, "set_geometry_directly", VALUEFUNC(_wrap_Feature_set_geometry_directly), -1);
   rb_define_method(SwigClassFeature.klass, "get_geometry_ref", VALUEFUNC(_wrap_Feature_get_geometry_ref), -1);
-  rb_define_method(SwigClassFeature.klass, "set_geom_field", VALUEFUNC(_wrap_Feature_set_geom_field), -1);
-  rb_define_method(SwigClassFeature.klass, "set_geom_field_directly", VALUEFUNC(_wrap_Feature_set_geom_field_directly), -1);
-  rb_define_method(SwigClassFeature.klass, "get_geom_field_ref", VALUEFUNC(_wrap_Feature_get_geom_field_ref), -1);
   rb_define_method(SwigClassFeature.klass, "clone", VALUEFUNC(_wrap_Feature_clone), -1);
   rb_define_method(SwigClassFeature.klass, "equal", VALUEFUNC(_wrap_Feature_equal), -1);
   rb_define_method(SwigClassFeature.klass, "get_field_count", VALUEFUNC(_wrap_Feature_get_field_count), -1);
   rb_define_method(SwigClassFeature.klass, "get_field_defn_ref", VALUEFUNC(_wrap_Feature_get_field_defn_ref), -1);
-  rb_define_method(SwigClassFeature.klass, "get_geom_field_count", VALUEFUNC(_wrap_Feature_get_geom_field_count), -1);
-  rb_define_method(SwigClassFeature.klass, "get_geom_field_defn_ref", VALUEFUNC(_wrap_Feature_get_geom_field_defn_ref), -1);
   rb_define_method(SwigClassFeature.klass, "get_field_as_string", VALUEFUNC(_wrap_Feature_get_field_as_string), -1);
   rb_define_method(SwigClassFeature.klass, "get_field_as_integer", VALUEFUNC(_wrap_Feature_get_field_as_integer), -1);
   rb_define_method(SwigClassFeature.klass, "get_field_as_double", VALUEFUNC(_wrap_Feature_get_field_as_double), -1);
@@ -23395,7 +19882,6 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_method(SwigClassFeature.klass, "get_field_as_string_list", VALUEFUNC(_wrap_Feature_get_field_as_string_list), -1);
   rb_define_method(SwigClassFeature.klass, "is_field_set", VALUEFUNC(_wrap_Feature_is_field_set), -1);
   rb_define_method(SwigClassFeature.klass, "get_field_index", VALUEFUNC(_wrap_Feature_get_field_index), -1);
-  rb_define_method(SwigClassFeature.klass, "get_geom_field_index", VALUEFUNC(_wrap_Feature_get_geom_field_index), -1);
   rb_define_method(SwigClassFeature.klass, "get_fid", VALUEFUNC(_wrap_Feature_get_fid), -1);
   rb_define_method(SwigClassFeature.klass, "set_fid", VALUEFUNC(_wrap_Feature_set_fid), -1);
   rb_define_method(SwigClassFeature.klass, "dump_readable", VALUEFUNC(_wrap_Feature_dump_readable), -1);
@@ -23404,7 +19890,6 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_method(SwigClassFeature.klass, "set_field_integer_list", VALUEFUNC(_wrap_Feature_set_field_integer_list), -1);
   rb_define_method(SwigClassFeature.klass, "set_field_double_list", VALUEFUNC(_wrap_Feature_set_field_double_list), -1);
   rb_define_method(SwigClassFeature.klass, "set_field_string_list", VALUEFUNC(_wrap_Feature_set_field_string_list), -1);
-  rb_define_method(SwigClassFeature.klass, "set_field_binary_from_hex_string", VALUEFUNC(_wrap_Feature_set_field_binary_from_hex_string), -1);
   rb_define_method(SwigClassFeature.klass, "set_from", VALUEFUNC(_wrap_Feature_set_from), -1);
   rb_define_method(SwigClassFeature.klass, "set_from_with_map", VALUEFUNC(_wrap_Feature_set_from_with_map), -1);
   rb_define_method(SwigClassFeature.klass, "get_style_string", VALUEFUNC(_wrap_Feature_get_style_string), -1);
@@ -23424,11 +19909,6 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_method(SwigClassFeatureDefn.klass, "get_field_defn", VALUEFUNC(_wrap_FeatureDefn_get_field_defn), -1);
   rb_define_method(SwigClassFeatureDefn.klass, "get_field_index", VALUEFUNC(_wrap_FeatureDefn_get_field_index), -1);
   rb_define_method(SwigClassFeatureDefn.klass, "add_field_defn", VALUEFUNC(_wrap_FeatureDefn_add_field_defn), -1);
-  rb_define_method(SwigClassFeatureDefn.klass, "get_geom_field_count", VALUEFUNC(_wrap_FeatureDefn_get_geom_field_count), -1);
-  rb_define_method(SwigClassFeatureDefn.klass, "get_geom_field_defn", VALUEFUNC(_wrap_FeatureDefn_get_geom_field_defn), -1);
-  rb_define_method(SwigClassFeatureDefn.klass, "get_geom_field_index", VALUEFUNC(_wrap_FeatureDefn_get_geom_field_index), -1);
-  rb_define_method(SwigClassFeatureDefn.klass, "add_geom_field_defn", VALUEFUNC(_wrap_FeatureDefn_add_geom_field_defn), -1);
-  rb_define_method(SwigClassFeatureDefn.klass, "delete_geom_field_defn", VALUEFUNC(_wrap_FeatureDefn_delete_geom_field_defn), -1);
   rb_define_method(SwigClassFeatureDefn.klass, "get_geom_type", VALUEFUNC(_wrap_FeatureDefn_get_geom_type), -1);
   rb_define_method(SwigClassFeatureDefn.klass, "set_geom_type", VALUEFUNC(_wrap_FeatureDefn_set_geom_type), -1);
   rb_define_method(SwigClassFeatureDefn.klass, "get_reference_count", VALUEFUNC(_wrap_FeatureDefn_get_reference_count), -1);
@@ -23436,7 +19916,6 @@ SWIGEXPORT void Init_ogr(void) {
   rb_define_method(SwigClassFeatureDefn.klass, "set_geometry_ignored", VALUEFUNC(_wrap_FeatureDefn_set_geometry_ignored), -1);
   rb_define_method(SwigClassFeatureDefn.klass, "is_style_ignored", VALUEFUNC(_wrap_FeatureDefn_is_style_ignored), -1);
   rb_define_method(SwigClassFeatureDefn.klass, "set_style_ignored", VALUEFUNC(_wrap_FeatureDefn_set_style_ignored), -1);
-  rb_define_method(SwigClassFeatureDefn.klass, "is_same", VALUEFUNC(_wrap_FeatureDefn_is_same), -1);
   SwigClassFeatureDefn.mark = 0;
   SwigClassFeatureDefn.destroy = (void (*)(void *)) free_OGRFeatureDefnShadow;
   SwigClassFeatureDefn.trackObjects = 0;
@@ -23463,23 +19942,6 @@ SWIGEXPORT void Init_ogr(void) {
   SwigClassFieldDefn.mark = 0;
   SwigClassFieldDefn.destroy = (void (*)(void *)) free_OGRFieldDefnShadow;
   SwigClassFieldDefn.trackObjects = 0;
-  
-  SwigClassGeomFieldDefn.klass = rb_define_class_under(mOgr, "GeomFieldDefn", rb_cObject);
-  SWIG_TypeClientData(SWIGTYPE_p_OGRGeomFieldDefnShadow, (void *) &SwigClassGeomFieldDefn);
-  rb_define_alloc_func(SwigClassGeomFieldDefn.klass, _wrap_GeomFieldDefn_allocate);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "initialize", VALUEFUNC(_wrap_new_GeomFieldDefn), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "get_name", VALUEFUNC(_wrap_GeomFieldDefn_get_name), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "get_name_ref", VALUEFUNC(_wrap_GeomFieldDefn_get_name_ref), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "set_name", VALUEFUNC(_wrap_GeomFieldDefn_set_name), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "get_type", VALUEFUNC(_wrap_GeomFieldDefn_get_type), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "set_type", VALUEFUNC(_wrap_GeomFieldDefn_set_type), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "get_spatial_ref", VALUEFUNC(_wrap_GeomFieldDefn_get_spatial_ref), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "set_spatial_ref", VALUEFUNC(_wrap_GeomFieldDefn_set_spatial_ref), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "is_ignored", VALUEFUNC(_wrap_GeomFieldDefn_is_ignored), -1);
-  rb_define_method(SwigClassGeomFieldDefn.klass, "set_ignored", VALUEFUNC(_wrap_GeomFieldDefn_set_ignored), -1);
-  SwigClassGeomFieldDefn.mark = 0;
-  SwigClassGeomFieldDefn.destroy = (void (*)(void *)) free_OGRGeomFieldDefnShadow;
-  SwigClassGeomFieldDefn.trackObjects = 0;
   rb_define_module_function(mOgr, "create_geometry_from_wkb", VALUEFUNC(_wrap_create_geometry_from_wkb), -1);
   rb_define_module_function(mOgr, "create_geometry_from_wkt", VALUEFUNC(_wrap_create_geometry_from_wkt), -1);
   rb_define_module_function(mOgr, "create_geometry_from_gml", VALUEFUNC(_wrap_create_geometry_from_gml), -1);

@@ -2074,9 +2074,6 @@ SWIGINTERN int OSRSpatialReferenceShadow_IsVertical(OSRSpatialReferenceShadow *s
 SWIGINTERN int OSRSpatialReferenceShadow_EPSGTreatsAsLatLong(OSRSpatialReferenceShadow *self){
     return OSREPSGTreatsAsLatLong(self);
   }
-SWIGINTERN int OSRSpatialReferenceShadow_EPSGTreatsAsNorthingEasting(OSRSpatialReferenceShadow *self){
-    return OSREPSGTreatsAsNorthingEasting(self);
-  }
 
 SWIGINTERN VALUE
 SWIG_ruby_failed(void)
@@ -3162,30 +3159,6 @@ _wrap_SpatialReference_epsgtreats_as_lat_long(int argc, VALUE *argv, VALUE self)
   }
   arg1 = reinterpret_cast< OSRSpatialReferenceShadow * >(argp1);
   result = (int)OSRSpatialReferenceShadow_EPSGTreatsAsLatLong(arg1);
-  vresult = SWIG_From_int(static_cast< int >(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_SpatialReference_epsgtreats_as_northing_easting(int argc, VALUE *argv, VALUE self) {
-  OSRSpatialReferenceShadow *arg1 = (OSRSpatialReferenceShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_OSRSpatialReferenceShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "OSRSpatialReferenceShadow *","EPSGTreatsAsNorthingEasting", 1, self )); 
-  }
-  arg1 = reinterpret_cast< OSRSpatialReferenceShadow * >(argp1);
-  result = (int)OSRSpatialReferenceShadow_EPSGTreatsAsNorthingEasting(arg1);
   vresult = SWIG_From_int(static_cast< int >(result));
   return vresult;
 fail:
@@ -10137,44 +10110,6 @@ SWIGEXPORT void Init_osr(void) {
   rb_define_const(mOsr, "SRS_UL_ROD_CONV", SWIG_FromCharPtr("5.02921005842012"));
   rb_define_const(mOsr, "SRS_UL_LINK_CLARKE", SWIG_FromCharPtr("Link_Clarke"));
   rb_define_const(mOsr, "SRS_UL_LINK_CLARKE_CONV", SWIG_FromCharPtr("0.2011661949"));
-  rb_define_const(mOsr, "SRS_UL_KILOMETER", SWIG_FromCharPtr("Kilometer"));
-  rb_define_const(mOsr, "SRS_UL_KILOMETER_CONV", SWIG_FromCharPtr("1000."));
-  rb_define_const(mOsr, "SRS_UL_DECIMETER", SWIG_FromCharPtr("Decimeter"));
-  rb_define_const(mOsr, "SRS_UL_DECIMETER_CONV", SWIG_FromCharPtr("0.1"));
-  rb_define_const(mOsr, "SRS_UL_CENTIMETER", SWIG_FromCharPtr("Centimeter"));
-  rb_define_const(mOsr, "SRS_UL_CENTIMETER_CONV", SWIG_FromCharPtr("0.01"));
-  rb_define_const(mOsr, "SRS_UL_MILLIMETER", SWIG_FromCharPtr("Millimeter"));
-  rb_define_const(mOsr, "SRS_UL_MILLIMETER_CONV", SWIG_FromCharPtr("0.001"));
-  rb_define_const(mOsr, "SRS_UL_INTL_NAUT_MILE", SWIG_FromCharPtr("Nautical_Mile_International"));
-  rb_define_const(mOsr, "SRS_UL_INTL_NAUT_MILE_CONV", SWIG_FromCharPtr("1852.0"));
-  rb_define_const(mOsr, "SRS_UL_INTL_INCH", SWIG_FromCharPtr("Inch_International"));
-  rb_define_const(mOsr, "SRS_UL_INTL_INCH_CONV", SWIG_FromCharPtr("0.0254"));
-  rb_define_const(mOsr, "SRS_UL_INTL_FOOT", SWIG_FromCharPtr("Foot_International"));
-  rb_define_const(mOsr, "SRS_UL_INTL_FOOT_CONV", SWIG_FromCharPtr("0.3048"));
-  rb_define_const(mOsr, "SRS_UL_INTL_YARD", SWIG_FromCharPtr("Yard_International"));
-  rb_define_const(mOsr, "SRS_UL_INTL_YARD_CONV", SWIG_FromCharPtr("0.9144"));
-  rb_define_const(mOsr, "SRS_UL_INTL_STAT_MILE", SWIG_FromCharPtr("Statute_Mile_International"));
-  rb_define_const(mOsr, "SRS_UL_INTL_STAT_MILE_CONV", SWIG_FromCharPtr("1609.344"));
-  rb_define_const(mOsr, "SRS_UL_INTL_FATHOM", SWIG_FromCharPtr("Fathom_International"));
-  rb_define_const(mOsr, "SRS_UL_INTL_FATHOM_CONV", SWIG_FromCharPtr("1.8288"));
-  rb_define_const(mOsr, "SRS_UL_INTL_CHAIN", SWIG_FromCharPtr("Chain_International"));
-  rb_define_const(mOsr, "SRS_UL_INTL_CHAIN_CONV", SWIG_FromCharPtr("20.1168"));
-  rb_define_const(mOsr, "SRS_UL_INTL_LINK", SWIG_FromCharPtr("Link_International"));
-  rb_define_const(mOsr, "SRS_UL_INTL_LINK_CONV", SWIG_FromCharPtr("0.201168"));
-  rb_define_const(mOsr, "SRS_UL_US_INCH", SWIG_FromCharPtr("Inch_US_Surveyor"));
-  rb_define_const(mOsr, "SRS_UL_US_INCH_CONV", SWIG_FromCharPtr("0.025400050800101603"));
-  rb_define_const(mOsr, "SRS_UL_US_YARD", SWIG_FromCharPtr("Yard_US_Surveyor"));
-  rb_define_const(mOsr, "SRS_UL_US_YARD_CONV", SWIG_FromCharPtr("0.914401828803658"));
-  rb_define_const(mOsr, "SRS_UL_US_CHAIN", SWIG_FromCharPtr("Chain_US_Surveyor"));
-  rb_define_const(mOsr, "SRS_UL_US_CHAIN_CONV", SWIG_FromCharPtr("20.11684023368047"));
-  rb_define_const(mOsr, "SRS_UL_US_STAT_MILE", SWIG_FromCharPtr("Statute_Mile_US_Surveyor"));
-  rb_define_const(mOsr, "SRS_UL_US_STAT_MILE_CONV", SWIG_FromCharPtr("1609.347218694437"));
-  rb_define_const(mOsr, "SRS_UL_INDIAN_YARD", SWIG_FromCharPtr("Yard_Indian"));
-  rb_define_const(mOsr, "SRS_UL_INDIAN_YARD_CONV", SWIG_FromCharPtr("0.91439523"));
-  rb_define_const(mOsr, "SRS_UL_INDIAN_FOOT", SWIG_FromCharPtr("Foot_Indian"));
-  rb_define_const(mOsr, "SRS_UL_INDIAN_FOOT_CONV", SWIG_FromCharPtr("0.30479841"));
-  rb_define_const(mOsr, "SRS_UL_INDIAN_CHAIN", SWIG_FromCharPtr("Chain_Indian"));
-  rb_define_const(mOsr, "SRS_UL_INDIAN_CHAIN_CONV", SWIG_FromCharPtr("20.11669506"));
   rb_define_const(mOsr, "SRS_UA_DEGREE", SWIG_FromCharPtr("degree"));
   rb_define_const(mOsr, "SRS_UA_DEGREE_CONV", SWIG_FromCharPtr("0.0174532925199433"));
   rb_define_const(mOsr, "SRS_UA_RADIAN", SWIG_FromCharPtr("radian"));
@@ -10206,7 +10141,6 @@ SWIGEXPORT void Init_osr(void) {
   rb_define_method(SwigClassSpatialReference.klass, "is_local", VALUEFUNC(_wrap_SpatialReference_is_local), -1);
   rb_define_method(SwigClassSpatialReference.klass, "is_vertical", VALUEFUNC(_wrap_SpatialReference_is_vertical), -1);
   rb_define_method(SwigClassSpatialReference.klass, "epsgtreats_as_lat_long", VALUEFUNC(_wrap_SpatialReference_epsgtreats_as_lat_long), -1);
-  rb_define_method(SwigClassSpatialReference.klass, "epsgtreats_as_northing_easting", VALUEFUNC(_wrap_SpatialReference_epsgtreats_as_northing_easting), -1);
   rb_define_method(SwigClassSpatialReference.klass, "set_authority", VALUEFUNC(_wrap_SpatialReference_set_authority), -1);
   rb_define_method(SwigClassSpatialReference.klass, "get_attr_value", VALUEFUNC(_wrap_SpatialReference_get_attr_value), -1);
   rb_define_method(SwigClassSpatialReference.klass, "set_attr_value", VALUEFUNC(_wrap_SpatialReference_set_attr_value), -1);

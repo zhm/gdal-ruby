@@ -2168,9 +2168,6 @@ SWIGINTERN char const *GDALMajorObjectShadow_GetDescription(GDALMajorObjectShado
 SWIGINTERN void GDALMajorObjectShadow_SetDescription(GDALMajorObjectShadow *self,char const *pszNewDesc){
     GDALSetDescription( self, pszNewDesc );
   }
-SWIGINTERN char **GDALMajorObjectShadow_GetMetadataDomainList(GDALMajorObjectShadow *self){
-    return GDALGetMetadataDomainList( self );
-  }
 SWIGINTERN char **GDALMajorObjectShadow_GetMetadata_Dict(GDALMajorObjectShadow *self,char const *pszDomain=""){
     return GDALGetMetadata( self, pszDomain );
   }
@@ -2563,13 +2560,11 @@ static GDALAsyncReaderH AsyncReaderWrapperGetReader(GDALAsyncReaderWrapperH hWra
     return psWrapper->hAsyncReader;
 }
 
-#if defined(SWIGPYTHON)
 static void* AsyncReaderWrapperGetPyObject(GDALAsyncReaderWrapperH hWrapper)
 {
     GDALAsyncReaderWrapper* psWrapper = (GDALAsyncReaderWrapper*)hWrapper;
     return psWrapper->pyObject;
 }
-#endif
 
 static void DeleteAsyncReaderWrapper(GDALAsyncReaderWrapperH hWrapper)
 {
@@ -3169,9 +3164,6 @@ SWIGINTERN int GDALRasterAttributeTableShadow_SetLinearBinning(GDALRasterAttribu
     }
 SWIGINTERN int GDALRasterAttributeTableShadow_GetRowOfValue(GDALRasterAttributeTableShadow *self,double dfValue){
         return GDALRATGetRowOfValue( self, dfValue );
-    }
-SWIGINTERN int GDALRasterAttributeTableShadow_ChangesAreWrittenToFile(GDALRasterAttributeTableShadow *self){
-        return GDALRATChangesAreWrittenToFile( self );
     }
 
 #include "gdalgrid.h"
@@ -4296,11 +4288,6 @@ _wrap_push_finder_location(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = reinterpret_cast< char * >(buf1);
   {
-    if (!arg1) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
     CPLErrorReset();
     CPLPushFinderLocation((char const *)arg1);
     CPLErr eclass = CPLGetLastErrorType();
@@ -4417,11 +4404,6 @@ _wrap_find_file(int argc, VALUE *argv, VALUE self) {
   }
   arg2 = reinterpret_cast< char * >(buf2);
   {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
     CPLErrorReset();
     result = (char *)CPLFindFile((char const *)arg1,(char const *)arg2);
     CPLErr eclass = CPLGetLastErrorType();
@@ -4470,11 +4452,6 @@ _wrap_read_dir(int argc, VALUE *argv, VALUE self) {
   }
   arg1 = reinterpret_cast< char * >(buf1);
   {
-    if (!arg1) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
     CPLErrorReset();
     result = (char **)VSIReadDir((char const *)arg1);
     CPLErr eclass = CPLGetLastErrorType();
@@ -4520,11 +4497,6 @@ _wrap_read_dir_recursive(int argc, VALUE *argv, VALUE self) {
     SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "char const *","VSIReadDirRecursive", 1, argv[0] ));
   }
   arg1 = reinterpret_cast< char * >(buf1);
-  {
-    if (!arg1) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
   {
     CPLErrorReset();
     result = (char **)VSIReadDirRecursive((char const *)arg1);
@@ -4892,49 +4864,6 @@ _wrap_MajorObject_set_description(int argc, VALUE *argv, VALUE self) {
   return Qnil;
 fail:
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
-_wrap_MajorObject_get_metadata_domain_list(int argc, VALUE *argv, VALUE self) {
-  GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  char **result = 0 ;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_GDALMajorObjectShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "GDALMajorObjectShadow *","GetMetadataDomainList", 1, self )); 
-  }
-  arg1 = reinterpret_cast< GDALMajorObjectShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (char **)GDALMajorObjectShadow_GetMetadataDomainList(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_p_char, 0 |  0 );
-  return vresult;
-fail:
   return Qnil;
 }
 
@@ -5710,11 +5639,6 @@ _wrap_Driver_create(int argc, VALUE *argv, VALUE self) {
     }
   }
   {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
     CPLErrorReset();
     result = (GDALDatasetShadow *)GDALDriverShadow_Create(arg1,(char const *)arg2,arg3,arg4,arg5,arg6,arg7);
     CPLErr eclass = CPLGetLastErrorType();
@@ -5840,11 +5764,6 @@ _wrap_Driver_create_copy(int argc, VALUE *argv, VALUE self) {
     }
   }
   {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
     if (!arg3) {
       SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
     }
@@ -5913,11 +5832,6 @@ _wrap_Driver_delete(int argc, VALUE *argv, VALUE self) {
     SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char const *","Delete", 2, argv[0] ));
   }
   arg2 = reinterpret_cast< char * >(buf2);
-  {
-    if (!arg2) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
   {
     CPLErrorReset();
     result = (int)GDALDriverShadow_Delete(arg1,(char const *)arg2);
@@ -14993,49 +14907,6 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_changes_are_written_to_file(int argc, VALUE *argv, VALUE self) {
-  GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int result;
-  VALUE vresult = Qnil;
-  
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  res1 = SWIG_ConvertPtr(self, &argp1,SWIGTYPE_p_GDALRasterAttributeTableShadow, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "GDALRasterAttributeTableShadow *","ChangesAreWrittenToFile", 1, self )); 
-  }
-  arg1 = reinterpret_cast< GDALRasterAttributeTableShadow * >(argp1);
-  {
-    CPLErrorReset();
-    result = (int)GDALRasterAttributeTableShadow_ChangesAreWrittenToFile(arg1);
-    CPLErr eclass = CPLGetLastErrorType();
-    if ( eclass == CE_Failure || eclass == CE_Fatal ) {
-      SWIG_exception( SWIG_RuntimeError, CPLGetLastErrorMsg() );
-      
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  }
-  vresult = SWIG_From_int(static_cast< int >(result));
-  return vresult;
-fail:
-  return Qnil;
-}
-
-
-SWIGINTERN VALUE
 _wrap_TermProgress_nocb(int argc, VALUE *argv, VALUE self) {
   double arg1 ;
   char *arg2 = (char *) NULL ;
@@ -18275,11 +18146,6 @@ _wrap_open(int argc, VALUE *argv, VALUE self) {
     }
   }
   {
-    if (!arg1) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
-    }
-  }
-  {
     CPLErrorReset();
     result = (GDALDatasetShadow *)Open((char const *)arg1,arg2);
     CPLErr eclass = CPLGetLastErrorType();
@@ -18330,11 +18196,6 @@ _wrap_open_shared(int argc, VALUE *argv, VALUE self) {
     {
       /* %typemap(in) CPLErr */
       arg2 = (GDALAccess) NUM2INT(argv[1]);
-    }
-  }
-  {
-    if (!arg1) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
     }
   }
   {
@@ -18397,11 +18258,6 @@ _wrap_identify_driver(int argc, VALUE *argv, VALUE self) {
         char *pszItem = StringValuePtr(item);
         arg2 = CSLAddString( arg2, pszItem );
       }
-    }
-  }
-  {
-    if (!arg1) {
-      SWIG_exception(SWIG_ValueError,"Received a NULL pointer.");
     }
   }
   {
@@ -18557,7 +18413,7 @@ static swig_type_info _swigt__p_OGRLayerShadow = {"_p_OGRLayerShadow", "OGRLayer
 static swig_type_info _swigt__p_char = {"_p_char", "char *|retStringAndCPLFree *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_double = {"_p_double", "double *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_f_double_p_q_const__char_p_void__int = {"_p_f_double_p_q_const__char_p_void__int", "int (*)(double,char const *,void *)", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_int = {"_p_int", "CPLErr *|GDALRATFieldType *|int *|GDALColorInterp *|GDALAccess *|GDALPaletteInterp *|GDALDataType *|GDALAsyncStatusType *|GDALRWFlag *|GDALTileOrganization *|GDALRATFieldUsage *|GDALResampleAlg *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_int = {"_p_int", "CPLErr *|GDALRATFieldType *|int *|GDALColorInterp *|GDALAccess *|GDALPaletteInterp *|GDALDataType *|GDALAsyncStatusType *|GDALRATFieldUsage *|GDALResampleAlg *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_GDALRasterBandShadow = {"_p_p_GDALRasterBandShadow", "GDALRasterBandShadow **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_GDAL_GCP = {"_p_p_GDAL_GCP", "GDAL_GCP **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
@@ -18929,7 +18785,6 @@ SWIGEXPORT void Init_gdal(void) {
   rb_undef_alloc_func(SwigClassMajorObject.klass);
   rb_define_method(SwigClassMajorObject.klass, "get_description", VALUEFUNC(_wrap_MajorObject_get_description), -1);
   rb_define_method(SwigClassMajorObject.klass, "set_description", VALUEFUNC(_wrap_MajorObject_set_description), -1);
-  rb_define_method(SwigClassMajorObject.klass, "get_metadata_domain_list", VALUEFUNC(_wrap_MajorObject_get_metadata_domain_list), -1);
   rb_define_method(SwigClassMajorObject.klass, "get_metadata_dict", VALUEFUNC(_wrap_MajorObject_get_metadata_dict), -1);
   rb_define_method(SwigClassMajorObject.klass, "get_metadata_list", VALUEFUNC(_wrap_MajorObject_get_metadata_list), -1);
   rb_define_method(SwigClassMajorObject.klass, "set_metadata", VALUEFUNC(_wrap_MajorObject_set_metadata), -1);
@@ -19150,7 +19005,6 @@ SWIGEXPORT void Init_gdal(void) {
   rb_define_method(SwigClassRasterAttributeTable.klass, "get_linear_binning", VALUEFUNC(_wrap_RasterAttributeTable_get_linear_binning), -1);
   rb_define_method(SwigClassRasterAttributeTable.klass, "set_linear_binning", VALUEFUNC(_wrap_RasterAttributeTable_set_linear_binning), -1);
   rb_define_method(SwigClassRasterAttributeTable.klass, "get_row_of_value", VALUEFUNC(_wrap_RasterAttributeTable_get_row_of_value), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "changes_are_written_to_file", VALUEFUNC(_wrap_RasterAttributeTable_changes_are_written_to_file), -1);
   SwigClassRasterAttributeTable.mark = 0;
   SwigClassRasterAttributeTable.destroy = (void (*)(void *)) free_GDALRasterAttributeTableShadow;
   SwigClassRasterAttributeTable.trackObjects = 0;

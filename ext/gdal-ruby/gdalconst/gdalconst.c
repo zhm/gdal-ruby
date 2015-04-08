@@ -2242,8 +2242,5 @@ SWIGEXPORT void Init_gdalconst(void) {
   rb_define_const(mGdalconst, "GARIO_UPDATE", SWIG_From_int((int)(GARIO_UPDATE)));
   rb_define_const(mGdalconst, "GARIO_ERROR", SWIG_From_int((int)(GARIO_ERROR)));
   rb_define_const(mGdalconst, "GARIO_COMPLETE", SWIG_From_int((int)(GARIO_COMPLETE)));
-  rb_define_const(mGdalconst, "GTO_TIP", SWIG_From_int((int)(GTO_TIP)));
-  rb_define_const(mGdalconst, "GTO_BIT", SWIG_From_int((int)(GTO_BIT)));
-  rb_define_const(mGdalconst, "GTO_BSQ", SWIG_From_int((int)(GTO_BSQ)));
 }
 
