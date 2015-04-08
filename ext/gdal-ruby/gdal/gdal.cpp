@@ -3555,7 +3555,7 @@ GDALDriverShadow *IdentifyDriver( const char *utf8_path,
   }
 
 SWIGINTERN VALUE
-_wrap_use_exceptions(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_use_exceptions(int argc, VALUE *argv, VALUE self) {
   if ((argc < 0) || (argc > 0)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
@@ -3567,7 +3567,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_dont_use_exceptions(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_dont_use_exceptions(int argc, VALUE *argv, VALUE self) {
   if ((argc < 0) || (argc > 0)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
@@ -3579,7 +3579,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_debug(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_debug(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   int res1 ;
@@ -3633,7 +3633,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_set_error_handler(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_set_error_handler(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) NULL ;
   int res1 ;
   char *buf1 = 0 ;
@@ -3684,7 +3684,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_push_error_handler__SWIG_0(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_push_error_handler__SWIG_0(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) NULL ;
   int res1 ;
   char *buf1 = 0 ;
@@ -3735,7 +3735,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_error(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_error(int argc, VALUE *argv, VALUE self) {
   CPLErr arg1 = (CPLErr) CE_Failure ;
   int arg2 = (int) 0 ;
   char *arg3 = (char *) "error" ;
@@ -3797,7 +3797,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_goa_2get_authorization_url(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_goa_2get_authorization_url(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
@@ -3843,7 +3843,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_goa_2get_refresh_token(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_goa_2get_refresh_token(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   int res1 ;
@@ -3900,7 +3900,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_goa_2get_access_token(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_goa_2get_access_token(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   int res1 ;
@@ -3957,7 +3957,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_push_error_handler__SWIG_1(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_push_error_handler__SWIG_1(int argc, VALUE *argv, VALUE self) {
   CPLErrorHandler arg1 ;
   void *argp1 ;
   int res1 = 0 ;
@@ -4002,7 +4002,7 @@ fail:
 }
 
 
-SWIGINTERN VALUE _wrap_push_error_handler(int nargs, VALUE *args, VALUE self) {
+SWIGINTERN VALUE _gdal_wrap_push_error_handler(int nargs, VALUE *args, VALUE self) {
   int argc;
   VALUE argv[1];
   int ii;
@@ -4015,12 +4015,12 @@ SWIGINTERN VALUE _wrap_push_error_handler(int nargs, VALUE *args, VALUE self) {
   if ((argc >= 0) && (argc <= 1)) {
     int _v;
     if (argc <= 0) {
-      return _wrap_push_error_handler__SWIG_0(nargs, args, self);
+      return _gdal_wrap_push_error_handler__SWIG_0(nargs, args, self);
     }
     int res = SWIG_AsCharPtrAndSize(argv[0], 0, NULL, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      return _wrap_push_error_handler__SWIG_0(nargs, args, self);
+      return _gdal_wrap_push_error_handler__SWIG_0(nargs, args, self);
     }
   }
   if (argc == 1) {
@@ -4029,7 +4029,7 @@ SWIGINTERN VALUE _wrap_push_error_handler(int nargs, VALUE *args, VALUE self) {
     int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_CPLErrorHandler, 0);
     _v = SWIG_CheckState(res);
     if (_v) {
-      return _wrap_push_error_handler__SWIG_1(nargs, args, self);
+      return _gdal_wrap_push_error_handler__SWIG_1(nargs, args, self);
     }
   }
   
@@ -4043,7 +4043,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pop_error_handler(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_pop_error_handler(int argc, VALUE *argv, VALUE self) {
   if ((argc < 0) || (argc > 0)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
@@ -4074,7 +4074,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_error_reset(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_error_reset(int argc, VALUE *argv, VALUE self) {
   if ((argc < 0) || (argc > 0)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
@@ -4105,7 +4105,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_escape_string(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_escape_string(int argc, VALUE *argv, VALUE self) {
   int arg1 ;
   char *arg2 = (char *) 0 ;
   int arg3 = (int) CPLES_SQL ;
@@ -4165,7 +4165,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_last_error_no(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_last_error_no(int argc, VALUE *argv, VALUE self) {
   int result;
   VALUE vresult = Qnil;
   
@@ -4200,7 +4200,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_last_error_type(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_last_error_type(int argc, VALUE *argv, VALUE self) {
   CPLErr result;
   VALUE vresult = Qnil;
   
@@ -4238,7 +4238,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_last_error_msg(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_last_error_msg(int argc, VALUE *argv, VALUE self) {
   char *result = 0 ;
   VALUE vresult = Qnil;
   
@@ -4273,7 +4273,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_push_finder_location(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_push_finder_location(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
@@ -4316,7 +4316,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_pop_finder_location(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_pop_finder_location(int argc, VALUE *argv, VALUE self) {
   if ((argc < 0) || (argc > 0)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
@@ -4347,7 +4347,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_finder_clean(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_finder_clean(int argc, VALUE *argv, VALUE self) {
   if ((argc < 0) || (argc > 0)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
@@ -4378,7 +4378,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_find_file(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_find_file(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   int res1 ;
@@ -4435,7 +4435,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_read_dir(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_read_dir(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
@@ -4481,7 +4481,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_read_dir_recursive(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_read_dir_recursive(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
@@ -4527,7 +4527,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_set_config_option(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_set_config_option(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   int res1 ;
@@ -4586,7 +4586,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_config_option(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_config_option(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) NULL ;
   int res1 ;
@@ -4650,7 +4650,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_binary_to_hex(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_binary_to_hex(int argc, VALUE *argv, VALUE self) {
   int arg1 ;
   GByte *arg2 = (GByte *) 0 ;
   int res1 ;
@@ -4709,7 +4709,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_hex_to_binary(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_hex_to_binary(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   int *arg2 = (int *) 0 ;
   int res1 ;
@@ -4770,7 +4770,7 @@ fail:
 static swig_class SwigClassMajorObject;
 
 SWIGINTERN VALUE
-_wrap_MajorObject_get_description(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_MajorObject_get_description(int argc, VALUE *argv, VALUE self) {
   GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -4813,7 +4813,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_MajorObject_set_description(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_MajorObject_set_description(int argc, VALUE *argv, VALUE self) {
   GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -4869,7 +4869,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_MajorObject_get_metadata_dict(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_MajorObject_get_metadata_dict(int argc, VALUE *argv, VALUE self) {
   GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
   char *arg2 = (char *) "" ;
   void *argp1 = 0 ;
@@ -4951,7 +4951,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_MajorObject_get_metadata_list(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_MajorObject_get_metadata_list(int argc, VALUE *argv, VALUE self) {
   GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
   char *arg2 = (char *) "" ;
   void *argp1 = 0 ;
@@ -5022,7 +5022,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_MajorObject_set_metadata__SWIG_0(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_MajorObject_set_metadata__SWIG_0(int argc, VALUE *argv, VALUE self) {
   GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
   char **arg2 = (char **) 0 ;
   char *arg3 = (char *) "" ;
@@ -5140,7 +5140,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_MajorObject_set_metadata__SWIG_1(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_MajorObject_set_metadata__SWIG_1(int argc, VALUE *argv, VALUE self) {
   GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) "" ;
@@ -5209,7 +5209,7 @@ fail:
 }
 
 
-SWIGINTERN VALUE _wrap_MajorObject_set_metadata(int nargs, VALUE *args, VALUE self) {
+SWIGINTERN VALUE _gdal_wrap_MajorObject_set_metadata(int nargs, VALUE *args, VALUE self) {
   int argc;
   VALUE argv[4];
   int ii;
@@ -5232,12 +5232,12 @@ SWIGINTERN VALUE _wrap_MajorObject_set_metadata(int nargs, VALUE *args, VALUE se
       }
       if (_v) {
         if (argc <= 2) {
-          return _wrap_MajorObject_set_metadata__SWIG_0(nargs, args, self);
+          return _gdal_wrap_MajorObject_set_metadata__SWIG_0(nargs, args, self);
         }
         int res = SWIG_AsCharPtrAndSize(argv[2], 0, NULL, 0);
         _v = SWIG_CheckState(res);
         if (_v) {
-          return _wrap_MajorObject_set_metadata__SWIG_0(nargs, args, self);
+          return _gdal_wrap_MajorObject_set_metadata__SWIG_0(nargs, args, self);
         }
       }
     }
@@ -5252,12 +5252,12 @@ SWIGINTERN VALUE _wrap_MajorObject_set_metadata(int nargs, VALUE *args, VALUE se
       _v = SWIG_CheckState(res);
       if (_v) {
         if (argc <= 2) {
-          return _wrap_MajorObject_set_metadata__SWIG_1(nargs, args, self);
+          return _gdal_wrap_MajorObject_set_metadata__SWIG_1(nargs, args, self);
         }
         int res = SWIG_AsCharPtrAndSize(argv[2], 0, NULL, 0);
         _v = SWIG_CheckState(res);
         if (_v) {
-          return _wrap_MajorObject_set_metadata__SWIG_1(nargs, args, self);
+          return _gdal_wrap_MajorObject_set_metadata__SWIG_1(nargs, args, self);
         }
       }
     }
@@ -5273,7 +5273,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_MajorObject_get_metadata_item(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_MajorObject_get_metadata_item(int argc, VALUE *argv, VALUE self) {
   GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) "" ;
@@ -5345,7 +5345,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_MajorObject_set_metadata_item(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_MajorObject_set_metadata_item(int argc, VALUE *argv, VALUE self) {
   GDALMajorObjectShadow *arg1 = (GDALMajorObjectShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -5433,7 +5433,7 @@ fail:
 static swig_class SwigClassDriver;
 
 SWIGINTERN VALUE
-_wrap_Driver_ShortName_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_ShortName_get(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -5476,7 +5476,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_LongName_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_LongName_get(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -5519,7 +5519,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_HelpTopic_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_HelpTopic_get(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -5562,7 +5562,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_create(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_create(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   int arg3 ;
@@ -5678,7 +5678,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_create_copy(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_create_copy(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   GDALDatasetShadow *arg3 = (GDALDatasetShadow *) 0 ;
@@ -5808,7 +5808,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_delete(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_delete(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -5862,7 +5862,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_rename(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_rename(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -5937,7 +5937,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_copy_files(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_copy_files(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -6012,7 +6012,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_register(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_register(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6055,7 +6055,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Driver_deregister(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Driver_deregister(int argc, VALUE *argv, VALUE self) {
   GDALDriverShadow *arg1 = (GDALDriverShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6097,7 +6097,7 @@ fail:
 static swig_class SwigClassColorEntry;
 
 SWIGINTERN VALUE
-_wrap_ColorEntry_c1_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorEntry_c1_set(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *arg1 = (GDALColorEntry *) 0 ;
   short arg2 ;
   void *argp1 = 0 ;
@@ -6126,7 +6126,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorEntry_c1_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorEntry_c1_get(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *arg1 = (GDALColorEntry *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6150,7 +6150,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorEntry_c2_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorEntry_c2_set(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *arg1 = (GDALColorEntry *) 0 ;
   short arg2 ;
   void *argp1 = 0 ;
@@ -6179,7 +6179,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorEntry_c2_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorEntry_c2_get(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *arg1 = (GDALColorEntry *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6203,7 +6203,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorEntry_c3_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorEntry_c3_set(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *arg1 = (GDALColorEntry *) 0 ;
   short arg2 ;
   void *argp1 = 0 ;
@@ -6232,7 +6232,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorEntry_c3_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorEntry_c3_get(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *arg1 = (GDALColorEntry *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6256,7 +6256,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorEntry_c4_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorEntry_c4_set(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *arg1 = (GDALColorEntry *) 0 ;
   short arg2 ;
   void *argp1 = 0 ;
@@ -6285,7 +6285,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorEntry_c4_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorEntry_c4_get(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *arg1 = (GDALColorEntry *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6310,10 +6310,10 @@ fail:
 
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
 SWIGINTERN VALUE
-_wrap_ColorEntry_allocate(VALUE self) {
+_gdal_wrap_ColorEntry_allocate(VALUE self) {
 #else
   SWIGINTERN VALUE
-  _wrap_ColorEntry_allocate(int argc, VALUE *argv, VALUE self) {
+  _gdal_wrap_ColorEntry_allocate(int argc, VALUE *argv, VALUE self) {
 #endif
     
     
@@ -6326,7 +6326,7 @@ _wrap_ColorEntry_allocate(VALUE self) {
   
 
 SWIGINTERN VALUE
-_wrap_new_ColorEntry(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_new_ColorEntry(int argc, VALUE *argv, VALUE self) {
   GDALColorEntry *result = 0 ;
   
   if ((argc < 0) || (argc > 0)) {
@@ -6367,7 +6367,7 @@ free_GDALColorEntry(GDALColorEntry *arg1) {
 static swig_class SwigClassGCP;
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPX_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPX_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -6415,7 +6415,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPX_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPX_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6458,7 +6458,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPY_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPY_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -6506,7 +6506,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPY_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPY_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6549,7 +6549,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPZ_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPZ_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -6597,7 +6597,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPZ_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPZ_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6640,7 +6640,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPPixel_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPPixel_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -6688,7 +6688,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPPixel_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPPixel_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6731,7 +6731,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPLine_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPLine_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -6779,7 +6779,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_GCPLine_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_GCPLine_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6822,7 +6822,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_Info_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_Info_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -6873,7 +6873,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_Info_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_Info_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6916,7 +6916,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_Id_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_Id_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -6967,7 +6967,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_GCP_Id_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_GCP_Id_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7011,10 +7011,10 @@ fail:
 
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
 SWIGINTERN VALUE
-_wrap_GCP_allocate(VALUE self) {
+_gdal_wrap_GCP_allocate(VALUE self) {
 #else
   SWIGINTERN VALUE
-  _wrap_GCP_allocate(int argc, VALUE *argv, VALUE self) {
+  _gdal_wrap_GCP_allocate(int argc, VALUE *argv, VALUE self) {
 #endif
     
     
@@ -7027,7 +7027,7 @@ _wrap_GCP_allocate(VALUE self) {
   
 
 SWIGINTERN VALUE
-_wrap_new_GCP(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_new_GCP(int argc, VALUE *argv, VALUE self) {
   double arg1 = (double) 0.0 ;
   double arg2 = (double) 0.0 ;
   double arg3 = (double) 0.0 ;
@@ -7149,7 +7149,7 @@ free_GDAL_GCP(GDAL_GCP *arg1) {
 }
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcpx_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcpx_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7197,7 +7197,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcpx_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcpx_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -7250,7 +7250,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcpy_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcpy_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7298,7 +7298,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcpy_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcpy_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -7351,7 +7351,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcpz_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcpz_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7399,7 +7399,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcpz_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcpz_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -7452,7 +7452,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcppixel_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcppixel_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7500,7 +7500,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcppixel_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcppixel_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -7553,7 +7553,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcpline_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcpline_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7601,7 +7601,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_gcpline_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_gcpline_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -7654,7 +7654,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_info_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_info_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7702,7 +7702,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_info_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_info_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -7758,7 +7758,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_id_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_id_get(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7806,7 +7806,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_id_set(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_id_set(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -7862,7 +7862,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_get_gcpx(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_get_gcpx(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -7910,7 +7910,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_set_gcpx(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_set_gcpx(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -7963,7 +7963,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_get_gcpy(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_get_gcpy(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8011,7 +8011,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_set_gcpy(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_set_gcpy(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -8064,7 +8064,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_get_gcpz(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_get_gcpz(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8112,7 +8112,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_set_gcpz(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_set_gcpz(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -8165,7 +8165,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_get_gcppixel(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_get_gcppixel(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8213,7 +8213,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_set_gcppixel(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_set_gcppixel(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -8266,7 +8266,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_get_gcpline(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_get_gcpline(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8314,7 +8314,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_set_gcpline(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_set_gcpline(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -8367,7 +8367,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_get_info(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_get_info(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8415,7 +8415,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_set_info(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_set_info(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -8471,7 +8471,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_get_id(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_get_id(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8519,7 +8519,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdal_gcp_set_id(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdal_gcp_set_id(int argc, VALUE *argv, VALUE self) {
   GDAL_GCP *arg1 = (GDAL_GCP *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -8575,7 +8575,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gcps_to_geo_transform(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gcps_to_geo_transform(int argc, VALUE *argv, VALUE self) {
   int arg1 ;
   GDAL_GCP *arg2 = (GDAL_GCP *) 0 ;
   double *arg3 ;
@@ -8693,7 +8693,7 @@ free_GDALAsyncReaderShadow(GDALAsyncReaderShadow *arg1) {
 }
 
 SWIGINTERN VALUE
-_wrap_AsyncReader_get_next_updated_region(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_AsyncReader_get_next_updated_region(int argc, VALUE *argv, VALUE self) {
   GDALAsyncReaderShadow *arg1 = (GDALAsyncReaderShadow *) 0 ;
   double arg2 ;
   int *arg3 = (int *) 0 ;
@@ -8784,7 +8784,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_AsyncReader_lock_buffer(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_AsyncReader_lock_buffer(int argc, VALUE *argv, VALUE self) {
   GDALAsyncReaderShadow *arg1 = (GDALAsyncReaderShadow *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -8835,7 +8835,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_AsyncReader_unlock_buffer(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_AsyncReader_unlock_buffer(int argc, VALUE *argv, VALUE self) {
   GDALAsyncReaderShadow *arg1 = (GDALAsyncReaderShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8877,7 +8877,7 @@ fail:
 static swig_class SwigClassDataset;
 
 SWIGINTERN VALUE
-_wrap_Dataset_RasterXSize_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_RasterXSize_get(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8920,7 +8920,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_RasterYSize_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_RasterYSize_get(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -8963,7 +8963,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_RasterCount_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_RasterCount_get(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -9016,7 +9016,7 @@ free_GDALDatasetShadow(GDALDatasetShadow *arg1) {
 }
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_driver(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_driver(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -9059,7 +9059,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_raster_band(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_raster_band(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -9110,7 +9110,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_projection(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_projection(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -9153,7 +9153,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_projection_ref(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_projection_ref(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -9196,7 +9196,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_set_projection(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_set_projection(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -9258,7 +9258,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_geo_transform(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_geo_transform(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   double *arg2 ;
   void *argp1 = 0 ;
@@ -9318,7 +9318,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_set_geo_transform(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_set_geo_transform(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   double *arg2 ;
   void *argp1 = 0 ;
@@ -9389,7 +9389,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_build_overviews(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_build_overviews(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   char *arg2 = (char *) "NEAREST" ;
   int arg3 = (int) 0 ;
@@ -9507,7 +9507,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_gcpcount(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_gcpcount(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -9550,7 +9550,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_gcpprojection(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_gcpprojection(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -9593,7 +9593,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_gcps(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_gcps(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   int *arg2 = (int *) 0 ;
   GDAL_GCP **arg3 = (GDAL_GCP **) 0 ;
@@ -9661,7 +9661,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_set_gcps(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_set_gcps(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   int arg2 ;
   GDAL_GCP *arg3 = (GDAL_GCP *) 0 ;
@@ -9757,7 +9757,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_flush_cache(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_flush_cache(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -9797,7 +9797,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_add_band(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_add_band(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   GDALDataType arg2 = (GDALDataType) GDT_Byte ;
   char **arg3 = (char **) 0 ;
@@ -9879,7 +9879,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_create_mask_band(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_create_mask_band(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -9933,7 +9933,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_get_file_list(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_get_file_list(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -9976,7 +9976,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_write_raster(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_write_raster(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -10164,7 +10164,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Dataset_read_raster(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Dataset_read_raster(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -10367,7 +10367,7 @@ fail:
 static swig_class SwigClassBand;
 
 SWIGINTERN VALUE
-_wrap_Band_XSize_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_XSize_get(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10410,7 +10410,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_YSize_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_YSize_get(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10453,7 +10453,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_DataType_get(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_DataType_get(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10496,7 +10496,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_band(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_band(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10539,7 +10539,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_block_size(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_block_size(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   int *arg2 = (int *) 0 ;
   int *arg3 = (int *) 0 ;
@@ -10601,7 +10601,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_color_interpretation(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_color_interpretation(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10644,7 +10644,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_raster_color_interpretation(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_raster_color_interpretation(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10687,7 +10687,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_color_interpretation(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_color_interpretation(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALColorInterp arg2 ;
   void *argp1 = 0 ;
@@ -10738,7 +10738,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_raster_color_interpretation(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_raster_color_interpretation(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALColorInterp arg2 ;
   void *argp1 = 0 ;
@@ -10789,7 +10789,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_no_data_value(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_no_data_value(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double *arg2 = (double *) 0 ;
   int *arg3 = (int *) 0 ;
@@ -10852,7 +10852,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_no_data_value(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_no_data_value(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -10906,7 +10906,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_unit_type(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_unit_type(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -10949,7 +10949,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_unit_type(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_unit_type(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   void *argp1 = 0 ;
@@ -11006,7 +11006,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_raster_category_names(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_raster_category_names(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -11064,7 +11064,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_raster_category_names(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_raster_category_names(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   char **arg2 = (char **) 0 ;
   void *argp1 = 0 ;
@@ -11134,7 +11134,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_minimum(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_minimum(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double *arg2 = (double *) 0 ;
   int *arg3 = (int *) 0 ;
@@ -11197,7 +11197,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_maximum(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_maximum(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double *arg2 = (double *) 0 ;
   int *arg3 = (int *) 0 ;
@@ -11260,7 +11260,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_offset(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_offset(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double *arg2 = (double *) 0 ;
   int *arg3 = (int *) 0 ;
@@ -11323,7 +11323,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_scale(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_scale(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double *arg2 = (double *) 0 ;
   int *arg3 = (int *) 0 ;
@@ -11386,7 +11386,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_offset(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_offset(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -11440,7 +11440,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_scale(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_scale(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -11494,7 +11494,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_statistics(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_statistics(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -11596,7 +11596,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_compute_statistics(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_compute_statistics(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   bool arg2 ;
   double *arg3 = (double *) NULL ;
@@ -11711,7 +11711,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_statistics(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_statistics(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double arg2 ;
   double arg3 ;
@@ -11786,7 +11786,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_overview_count(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_overview_count(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -11829,7 +11829,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_overview(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_overview(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -11880,7 +11880,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_checksum(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_checksum(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   int arg2 = (int) 0 ;
   int arg3 = (int) 0 ;
@@ -11966,7 +11966,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_compute_raster_min_max(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_compute_raster_min_max(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double *arg2 ;
   int arg3 = (int) 0 ;
@@ -12036,7 +12036,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_compute_band_stats(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_compute_band_stats(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double *arg2 ;
   int arg3 = (int) 1 ;
@@ -12106,7 +12106,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_fill(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_fill(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double arg2 ;
   double arg3 = (double) 0.0 ;
@@ -12167,7 +12167,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_read_raster(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_read_raster(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -12320,7 +12320,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_write_raster(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_write_raster(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -12460,7 +12460,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_flush_cache(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_flush_cache(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -12500,7 +12500,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_raster_color_table(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_raster_color_table(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -12543,7 +12543,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_color_table(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_color_table(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -12586,7 +12586,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_raster_color_table(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_raster_color_table(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALColorTableShadow *arg2 = (GDALColorTableShadow *) 0 ;
   void *argp1 = 0 ;
@@ -12637,7 +12637,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_color_table(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_color_table(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALColorTableShadow *arg2 = (GDALColorTableShadow *) 0 ;
   void *argp1 = 0 ;
@@ -12688,7 +12688,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_default_rat(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_default_rat(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -12731,7 +12731,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_default_rat(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_default_rat(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALRasterAttributeTableShadow *arg2 = (GDALRasterAttributeTableShadow *) 0 ;
   void *argp1 = 0 ;
@@ -12782,7 +12782,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_mask_band(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_mask_band(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -12825,7 +12825,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_mask_flags(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_mask_flags(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -12868,7 +12868,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_create_mask_band(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_create_mask_band(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -12919,7 +12919,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_histogram(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_histogram(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double arg2 = (double) -0.5 ;
   double arg3 = (double) 255.5 ;
@@ -13049,7 +13049,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_default_histogram(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_default_histogram(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double *arg2 = (double *) NULL ;
   double *arg3 = (double *) NULL ;
@@ -13169,7 +13169,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_default_histogram(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_default_histogram(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double arg2 ;
   double arg3 ;
@@ -13244,7 +13244,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_has_arbitrary_overviews(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_has_arbitrary_overviews(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13287,7 +13287,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_get_category_names(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_get_category_names(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13345,7 +13345,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Band_set_category_names(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Band_set_category_names(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   char **arg2 = (char **) 0 ;
   void *argp1 = 0 ;
@@ -13415,10 +13415,10 @@ static swig_class SwigClassColorTable;
 
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
 SWIGINTERN VALUE
-_wrap_ColorTable_allocate(VALUE self) {
+_gdal_wrap_ColorTable_allocate(VALUE self) {
 #else
   SWIGINTERN VALUE
-  _wrap_ColorTable_allocate(int argc, VALUE *argv, VALUE self) {
+  _gdal_wrap_ColorTable_allocate(int argc, VALUE *argv, VALUE self) {
 #endif
     
     
@@ -13431,7 +13431,7 @@ _wrap_ColorTable_allocate(VALUE self) {
   
 
 SWIGINTERN VALUE
-_wrap_new_ColorTable(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_new_ColorTable(int argc, VALUE *argv, VALUE self) {
   GDALPaletteInterp arg1 = (GDALPaletteInterp) GPI_RGB ;
   const char *kwnames[] = {
     "palette", NULL 
@@ -13483,7 +13483,7 @@ free_GDALColorTableShadow(GDALColorTableShadow *arg1) {
 }
 
 SWIGINTERN VALUE
-_wrap_ColorTable_clone(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorTable_clone(int argc, VALUE *argv, VALUE self) {
   GDALColorTableShadow *arg1 = (GDALColorTableShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13526,7 +13526,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorTable_get_palette_interpretation(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorTable_get_palette_interpretation(int argc, VALUE *argv, VALUE self) {
   GDALColorTableShadow *arg1 = (GDALColorTableShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13569,7 +13569,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorTable_get_count(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorTable_get_count(int argc, VALUE *argv, VALUE self) {
   GDALColorTableShadow *arg1 = (GDALColorTableShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13612,7 +13612,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorTable_get_color_entry(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorTable_get_color_entry(int argc, VALUE *argv, VALUE self) {
   GDALColorTableShadow *arg1 = (GDALColorTableShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -13663,7 +13663,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorTable_get_color_entry_as_rgb(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorTable_get_color_entry_as_rgb(int argc, VALUE *argv, VALUE self) {
   GDALColorTableShadow *arg1 = (GDALColorTableShadow *) 0 ;
   int arg2 ;
   GDALColorEntry *arg3 = (GDALColorEntry *) 0 ;
@@ -13722,7 +13722,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorTable_set_color_entry(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorTable_set_color_entry(int argc, VALUE *argv, VALUE self) {
   GDALColorTableShadow *arg1 = (GDALColorTableShadow *) 0 ;
   int arg2 ;
   GDALColorEntry *arg3 = (GDALColorEntry *) 0 ;
@@ -13778,7 +13778,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_ColorTable_create_color_ramp(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_ColorTable_create_color_ramp(int argc, VALUE *argv, VALUE self) {
   GDALColorTableShadow *arg1 = (GDALColorTableShadow *) 0 ;
   int arg2 ;
   GDALColorEntry *arg3 = (GDALColorEntry *) 0 ;
@@ -13853,10 +13853,10 @@ static swig_class SwigClassRasterAttributeTable;
 
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_allocate(VALUE self) {
+_gdal_wrap_RasterAttributeTable_allocate(VALUE self) {
 #else
   SWIGINTERN VALUE
-  _wrap_RasterAttributeTable_allocate(int argc, VALUE *argv, VALUE self) {
+  _gdal_wrap_RasterAttributeTable_allocate(int argc, VALUE *argv, VALUE self) {
 #endif
     
     
@@ -13869,7 +13869,7 @@ _wrap_RasterAttributeTable_allocate(VALUE self) {
   
 
 SWIGINTERN VALUE
-_wrap_new_RasterAttributeTable(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_new_RasterAttributeTable(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *result = 0 ;
   
   if ((argc < 0) || (argc > 0)) {
@@ -13911,7 +13911,7 @@ free_GDALRasterAttributeTableShadow(GDALRasterAttributeTableShadow *arg1) {
 }
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_clone(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_clone(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13954,7 +13954,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_column_count(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_column_count(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -13997,7 +13997,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_name_of_col(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_name_of_col(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -14048,7 +14048,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_usage_of_col(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_usage_of_col(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -14099,7 +14099,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_type_of_col(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_type_of_col(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -14150,7 +14150,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_col_of_usage(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_col_of_usage(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   GDALRATFieldUsage arg2 ;
   void *argp1 = 0 ;
@@ -14201,7 +14201,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_row_count(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_row_count(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -14244,7 +14244,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_value_as_string(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_value_as_string(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -14303,7 +14303,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_value_as_int(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_value_as_int(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -14362,7 +14362,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_value_as_double(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_value_as_double(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -14421,7 +14421,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_set_value_as_string(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_set_value_as_string(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -14488,7 +14488,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_set_value_as_int(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_set_value_as_int(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -14552,7 +14552,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_set_value_as_double(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_set_value_as_double(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -14616,7 +14616,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_set_row_count(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_set_row_count(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   int arg2 ;
   void *argp1 = 0 ;
@@ -14664,7 +14664,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_create_column(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_create_column(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   GDALRATFieldType arg3 ;
@@ -14734,7 +14734,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_linear_binning(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_linear_binning(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   double *arg2 = (double *) 0 ;
   double *arg3 = (double *) 0 ;
@@ -14797,7 +14797,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_set_linear_binning(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_set_linear_binning(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   double arg2 ;
   double arg3 ;
@@ -14856,7 +14856,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_RasterAttributeTable_get_row_of_value(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_RasterAttributeTable_get_row_of_value(int argc, VALUE *argv, VALUE self) {
   GDALRasterAttributeTableShadow *arg1 = (GDALRasterAttributeTableShadow *) 0 ;
   double arg2 ;
   void *argp1 = 0 ;
@@ -14907,7 +14907,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_TermProgress_nocb(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_TermProgress_nocb(int argc, VALUE *argv, VALUE self) {
   double arg1 ;
   char *arg2 = (char *) NULL ;
   void *arg3 = (void *) NULL ;
@@ -14974,7 +14974,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_compute_median_cut_pct(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_compute_median_cut_pct(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg2 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg3 = (GDALRasterBandShadow *) 0 ;
@@ -15096,7 +15096,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_dither_rgb_2pct(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_dither_rgb_2pct(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg2 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg3 = (GDALRasterBandShadow *) 0 ;
@@ -15223,7 +15223,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_reproject_image(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_reproject_image(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   GDALDatasetShadow *arg2 = (GDALDatasetShadow *) 0 ;
   char *arg3 = (char *) NULL ;
@@ -15361,7 +15361,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_compute_proximity(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_compute_proximity(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg2 = (GDALRasterBandShadow *) 0 ;
   char **arg3 = (char **) NULL ;
@@ -15475,7 +15475,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_rasterize_layer(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_rasterize_layer(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   int arg2 ;
   int *arg3 = (int *) 0 ;
@@ -15658,7 +15658,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_polygonize(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_polygonize(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg2 = (GDALRasterBandShadow *) 0 ;
   OGRLayerShadow *arg3 = (OGRLayerShadow *) 0 ;
@@ -15788,7 +15788,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_fill_nodata(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_fill_nodata(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg2 = (GDALRasterBandShadow *) 0 ;
   double arg3 ;
@@ -15913,7 +15913,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_sieve_filter(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_sieve_filter(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg2 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg3 = (GDALRasterBandShadow *) 0 ;
@@ -16053,7 +16053,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_regenerate_overviews(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_regenerate_overviews(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   int arg2 ;
   GDALRasterBandShadow **arg3 = (GDALRasterBandShadow **) 0 ;
@@ -16157,7 +16157,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_regenerate_overview(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_regenerate_overview(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg2 = (GDALRasterBandShadow *) 0 ;
   char *arg3 = (char *) "average" ;
@@ -16258,7 +16258,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_contour_generate(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_contour_generate(int argc, VALUE *argv, VALUE self) {
   GDALRasterBandShadow *arg1 = (GDALRasterBandShadow *) 0 ;
   double arg2 ;
   double arg3 ;
@@ -16410,7 +16410,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_auto_create_warped_vrt(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_auto_create_warped_vrt(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   char *arg2 = (char *) 0 ;
   char *arg3 = (char *) 0 ;
@@ -16504,10 +16504,10 @@ static swig_class SwigClassTransformer;
 
 #ifdef HAVE_RB_DEFINE_ALLOC_FUNC
 SWIGINTERN VALUE
-_wrap_Transformer_allocate(VALUE self) {
+_gdal_wrap_Transformer_allocate(VALUE self) {
 #else
   SWIGINTERN VALUE
-  _wrap_Transformer_allocate(int argc, VALUE *argv, VALUE self) {
+  _gdal_wrap_Transformer_allocate(int argc, VALUE *argv, VALUE self) {
 #endif
     
     
@@ -16520,7 +16520,7 @@ _wrap_Transformer_allocate(VALUE self) {
   
 
 SWIGINTERN VALUE
-_wrap_new_Transformer(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_new_Transformer(int argc, VALUE *argv, VALUE self) {
   GDALDatasetShadow *arg1 = (GDALDatasetShadow *) 0 ;
   GDALDatasetShadow *arg2 = (GDALDatasetShadow *) 0 ;
   char **arg3 = (char **) 0 ;
@@ -16602,7 +16602,7 @@ free_GDALTransformerInfoShadow(GDALTransformerInfoShadow *arg1) {
 }
 
 SWIGINTERN VALUE
-_wrap_Transformer_transform_point__SWIG_0(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Transformer_transform_point__SWIG_0(int argc, VALUE *argv, VALUE self) {
   GDALTransformerInfoShadow *arg1 = (GDALTransformerInfoShadow *) 0 ;
   int arg2 ;
   double *arg3 ;
@@ -16691,7 +16691,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Transformer_transform_point__SWIG_1(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Transformer_transform_point__SWIG_1(int argc, VALUE *argv, VALUE self) {
   GDALTransformerInfoShadow *arg1 = (GDALTransformerInfoShadow *) 0 ;
   double *arg2 ;
   int arg3 ;
@@ -16786,7 +16786,7 @@ fail:
 }
 
 
-SWIGINTERN VALUE _wrap_Transformer_transform_point(int nargs, VALUE *args, VALUE self) {
+SWIGINTERN VALUE _gdal_wrap_Transformer_transform_point(int nargs, VALUE *args, VALUE self) {
   int argc;
   VALUE argv[6];
   int ii;
@@ -16812,7 +16812,7 @@ SWIGINTERN VALUE _wrap_Transformer_transform_point(int nargs, VALUE *args, VALUE
         int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_double, 0);
         _v = SWIG_CheckState(res);
         if (_v) {
-          return _wrap_Transformer_transform_point__SWIG_0(nargs, args, self);
+          return _gdal_wrap_Transformer_transform_point__SWIG_0(nargs, args, self);
         }
       }
     }
@@ -16839,14 +16839,14 @@ SWIGINTERN VALUE _wrap_Transformer_transform_point(int nargs, VALUE *args, VALUE
           }
           if (_v) {
             if (argc <= 4) {
-              return _wrap_Transformer_transform_point__SWIG_1(nargs, args, self);
+              return _gdal_wrap_Transformer_transform_point__SWIG_1(nargs, args, self);
             }
             {
               int res = SWIG_AsVal_double(argv[4], NULL);
               _v = SWIG_CheckState(res);
             }
             if (_v) {
-              return _wrap_Transformer_transform_point__SWIG_1(nargs, args, self);
+              return _gdal_wrap_Transformer_transform_point__SWIG_1(nargs, args, self);
             }
           }
         }
@@ -16864,7 +16864,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Transformer_transform_points(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Transformer_transform_points(int argc, VALUE *argv, VALUE self) {
   GDALTransformerInfoShadow *arg1 = (GDALTransformerInfoShadow *) 0 ;
   int arg2 ;
   int arg3 ;
@@ -16955,7 +16955,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_Transformer_transform_geolocations(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_Transformer_transform_geolocations(int argc, VALUE *argv, VALUE self) {
   GDALTransformerInfoShadow *arg1 = (GDALTransformerInfoShadow *) 0 ;
   GDALRasterBandShadow *arg2 = (GDALRasterBandShadow *) 0 ;
   GDALRasterBandShadow *arg3 = (GDALRasterBandShadow *) 0 ;
@@ -17090,7 +17090,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdalapply_geo_transform(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdalapply_geo_transform(int argc, VALUE *argv, VALUE self) {
   double *arg1 ;
   double arg2 ;
   double arg3 ;
@@ -17185,7 +17185,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdalinv_geo_transform(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdalinv_geo_transform(int argc, VALUE *argv, VALUE self) {
   double *arg1 ;
   double *arg2 ;
   double temp1[6] ;
@@ -17264,7 +17264,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdalversion_info(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdalversion_info(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) "VERSION_NUM" ;
   int res1 ;
   char *buf1 = 0 ;
@@ -17312,7 +17312,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_all_register(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_all_register(int argc, VALUE *argv, VALUE self) {
   if ((argc < 0) || (argc > 0)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
@@ -17343,7 +17343,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_gdaldestroy_driver_manager(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_gdaldestroy_driver_manager(int argc, VALUE *argv, VALUE self) {
   if ((argc < 0) || (argc > 0)) {
     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
   }
@@ -17374,7 +17374,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_cache_max(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_cache_max(int argc, VALUE *argv, VALUE self) {
   int result;
   VALUE vresult = Qnil;
   
@@ -17409,7 +17409,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_cache_used(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_cache_used(int argc, VALUE *argv, VALUE self) {
   int result;
   VALUE vresult = Qnil;
   
@@ -17444,7 +17444,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_set_cache_max(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_set_cache_max(int argc, VALUE *argv, VALUE self) {
   int arg1 ;
   int val1 ;
   int ecode1 = 0 ;
@@ -17484,7 +17484,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_data_type_size(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_data_type_size(int argc, VALUE *argv, VALUE self) {
   GDALDataType arg1 ;
   int result;
   VALUE vresult = Qnil;
@@ -17524,7 +17524,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_data_type_is_complex(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_data_type_is_complex(int argc, VALUE *argv, VALUE self) {
   GDALDataType arg1 ;
   int result;
   VALUE vresult = Qnil;
@@ -17564,7 +17564,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_data_type_name(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_data_type_name(int argc, VALUE *argv, VALUE self) {
   GDALDataType arg1 ;
   char *result = 0 ;
   VALUE vresult = Qnil;
@@ -17604,7 +17604,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_data_type_by_name(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_data_type_by_name(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
@@ -17650,7 +17650,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_color_interpretation_name(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_color_interpretation_name(int argc, VALUE *argv, VALUE self) {
   GDALColorInterp arg1 ;
   char *result = 0 ;
   VALUE vresult = Qnil;
@@ -17690,7 +17690,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_palette_interpretation_name(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_palette_interpretation_name(int argc, VALUE *argv, VALUE self) {
   GDALPaletteInterp arg1 ;
   char *result = 0 ;
   VALUE vresult = Qnil;
@@ -17730,7 +17730,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_dec_to_dms(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_dec_to_dms(int argc, VALUE *argv, VALUE self) {
   double arg1 ;
   char *arg2 = (char *) 0 ;
   int arg3 = (int) 2 ;
@@ -17794,7 +17794,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_packed_dms_to_dec(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_packed_dms_to_dec(int argc, VALUE *argv, VALUE self) {
   double arg1 ;
   double val1 ;
   int ecode1 = 0 ;
@@ -17837,7 +17837,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_dec_to_packed_dms(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_dec_to_packed_dms(int argc, VALUE *argv, VALUE self) {
   double arg1 ;
   double val1 ;
   int ecode1 = 0 ;
@@ -17880,7 +17880,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_parse_xml_string(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_parse_xml_string(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
@@ -17935,7 +17935,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_serialize_xml_tree(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_serialize_xml_tree(int argc, VALUE *argv, VALUE self) {
   CPLXMLNode *arg1 = (CPLXMLNode *) 0 ;
   char *result = 0 ;
   VALUE vresult = Qnil;
@@ -17993,7 +17993,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_driver_count(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_driver_count(int argc, VALUE *argv, VALUE self) {
   int result;
   VALUE vresult = Qnil;
   
@@ -18028,7 +18028,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_driver_by_name(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_driver_by_name(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   int res1 ;
   char *buf1 = 0 ;
@@ -18079,7 +18079,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_get_driver(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_get_driver(int argc, VALUE *argv, VALUE self) {
   int arg1 ;
   int val1 ;
   int ecode1 = 0 ;
@@ -18122,7 +18122,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_open(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_open(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   GDALAccess arg2 = (GDALAccess) GA_ReadOnly ;
   int res1 ;
@@ -18175,7 +18175,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_open_shared(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_open_shared(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   GDALAccess arg2 = (GDALAccess) GA_ReadOnly ;
   int res1 ;
@@ -18228,7 +18228,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_identify_driver(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_identify_driver(int argc, VALUE *argv, VALUE self) {
   char *arg1 = (char *) 0 ;
   char **arg2 = (char **) NULL ;
   int res1 ;
@@ -18300,7 +18300,7 @@ fail:
 
 
 SWIGINTERN VALUE
-_wrap_general_cmd_line_processor(int argc, VALUE *argv, VALUE self) {
+_gdal_wrap_general_cmd_line_processor(int argc, VALUE *argv, VALUE self) {
   char **arg1 = (char **) 0 ;
   int arg2 = (int) 0 ;
   int val2 ;
@@ -18754,134 +18754,134 @@ SWIGEXPORT void Init_gdal(void) {
     GDALAllRegister();
   }
   
-  rb_define_module_function(mGdal, "use_exceptions", VALUEFUNC(_wrap_use_exceptions), -1);
-  rb_define_module_function(mGdal, "dont_use_exceptions", VALUEFUNC(_wrap_dont_use_exceptions), -1);
-  rb_define_module_function(mGdal, "debug", VALUEFUNC(_wrap_debug), -1);
-  rb_define_module_function(mGdal, "set_error_handler", VALUEFUNC(_wrap_set_error_handler), -1);
-  rb_define_module_function(mGdal, "error", VALUEFUNC(_wrap_error), -1);
-  rb_define_module_function(mGdal, "goa_2get_authorization_url", VALUEFUNC(_wrap_goa_2get_authorization_url), -1);
-  rb_define_module_function(mGdal, "goa_2get_refresh_token", VALUEFUNC(_wrap_goa_2get_refresh_token), -1);
-  rb_define_module_function(mGdal, "goa_2get_access_token", VALUEFUNC(_wrap_goa_2get_access_token), -1);
-  rb_define_module_function(mGdal, "push_error_handler", VALUEFUNC(_wrap_push_error_handler), -1);
-  rb_define_module_function(mGdal, "pop_error_handler", VALUEFUNC(_wrap_pop_error_handler), -1);
-  rb_define_module_function(mGdal, "error_reset", VALUEFUNC(_wrap_error_reset), -1);
-  rb_define_module_function(mGdal, "escape_string", VALUEFUNC(_wrap_escape_string), -1);
-  rb_define_module_function(mGdal, "get_last_error_no", VALUEFUNC(_wrap_get_last_error_no), -1);
-  rb_define_module_function(mGdal, "get_last_error_type", VALUEFUNC(_wrap_get_last_error_type), -1);
-  rb_define_module_function(mGdal, "get_last_error_msg", VALUEFUNC(_wrap_get_last_error_msg), -1);
-  rb_define_module_function(mGdal, "push_finder_location", VALUEFUNC(_wrap_push_finder_location), -1);
-  rb_define_module_function(mGdal, "pop_finder_location", VALUEFUNC(_wrap_pop_finder_location), -1);
-  rb_define_module_function(mGdal, "finder_clean", VALUEFUNC(_wrap_finder_clean), -1);
-  rb_define_module_function(mGdal, "find_file", VALUEFUNC(_wrap_find_file), -1);
-  rb_define_module_function(mGdal, "read_dir", VALUEFUNC(_wrap_read_dir), -1);
-  rb_define_module_function(mGdal, "read_dir_recursive", VALUEFUNC(_wrap_read_dir_recursive), -1);
-  rb_define_module_function(mGdal, "set_config_option", VALUEFUNC(_wrap_set_config_option), -1);
-  rb_define_module_function(mGdal, "get_config_option", VALUEFUNC(_wrap_get_config_option), -1);
-  rb_define_module_function(mGdal, "binary_to_hex", VALUEFUNC(_wrap_binary_to_hex), -1);
-  rb_define_module_function(mGdal, "hex_to_binary", VALUEFUNC(_wrap_hex_to_binary), -1);
+  rb_define_module_function(mGdal, "use_exceptions", VALUEFUNC(_gdal_wrap_use_exceptions), -1);
+  rb_define_module_function(mGdal, "dont_use_exceptions", VALUEFUNC(_gdal_wrap_dont_use_exceptions), -1);
+  rb_define_module_function(mGdal, "debug", VALUEFUNC(_gdal_wrap_debug), -1);
+  rb_define_module_function(mGdal, "set_error_handler", VALUEFUNC(_gdal_wrap_set_error_handler), -1);
+  rb_define_module_function(mGdal, "error", VALUEFUNC(_gdal_wrap_error), -1);
+  rb_define_module_function(mGdal, "goa_2get_authorization_url", VALUEFUNC(_gdal_wrap_goa_2get_authorization_url), -1);
+  rb_define_module_function(mGdal, "goa_2get_refresh_token", VALUEFUNC(_gdal_wrap_goa_2get_refresh_token), -1);
+  rb_define_module_function(mGdal, "goa_2get_access_token", VALUEFUNC(_gdal_wrap_goa_2get_access_token), -1);
+  rb_define_module_function(mGdal, "push_error_handler", VALUEFUNC(_gdal_wrap_push_error_handler), -1);
+  rb_define_module_function(mGdal, "pop_error_handler", VALUEFUNC(_gdal_wrap_pop_error_handler), -1);
+  rb_define_module_function(mGdal, "error_reset", VALUEFUNC(_gdal_wrap_error_reset), -1);
+  rb_define_module_function(mGdal, "escape_string", VALUEFUNC(_gdal_wrap_escape_string), -1);
+  rb_define_module_function(mGdal, "get_last_error_no", VALUEFUNC(_gdal_wrap_get_last_error_no), -1);
+  rb_define_module_function(mGdal, "get_last_error_type", VALUEFUNC(_gdal_wrap_get_last_error_type), -1);
+  rb_define_module_function(mGdal, "get_last_error_msg", VALUEFUNC(_gdal_wrap_get_last_error_msg), -1);
+  rb_define_module_function(mGdal, "push_finder_location", VALUEFUNC(_gdal_wrap_push_finder_location), -1);
+  rb_define_module_function(mGdal, "pop_finder_location", VALUEFUNC(_gdal_wrap_pop_finder_location), -1);
+  rb_define_module_function(mGdal, "finder_clean", VALUEFUNC(_gdal_wrap_finder_clean), -1);
+  rb_define_module_function(mGdal, "find_file", VALUEFUNC(_gdal_wrap_find_file), -1);
+  rb_define_module_function(mGdal, "read_dir", VALUEFUNC(_gdal_wrap_read_dir), -1);
+  rb_define_module_function(mGdal, "read_dir_recursive", VALUEFUNC(_gdal_wrap_read_dir_recursive), -1);
+  rb_define_module_function(mGdal, "set_config_option", VALUEFUNC(_gdal_wrap_set_config_option), -1);
+  rb_define_module_function(mGdal, "get_config_option", VALUEFUNC(_gdal_wrap_get_config_option), -1);
+  rb_define_module_function(mGdal, "binary_to_hex", VALUEFUNC(_gdal_wrap_binary_to_hex), -1);
+  rb_define_module_function(mGdal, "hex_to_binary", VALUEFUNC(_gdal_wrap_hex_to_binary), -1);
   
   SwigClassMajorObject.klass = rb_define_class_under(mGdal, "MajorObject", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_GDALMajorObjectShadow, (void *) &SwigClassMajorObject);
   rb_undef_alloc_func(SwigClassMajorObject.klass);
-  rb_define_method(SwigClassMajorObject.klass, "get_description", VALUEFUNC(_wrap_MajorObject_get_description), -1);
-  rb_define_method(SwigClassMajorObject.klass, "set_description", VALUEFUNC(_wrap_MajorObject_set_description), -1);
-  rb_define_method(SwigClassMajorObject.klass, "get_metadata_dict", VALUEFUNC(_wrap_MajorObject_get_metadata_dict), -1);
-  rb_define_method(SwigClassMajorObject.klass, "get_metadata_list", VALUEFUNC(_wrap_MajorObject_get_metadata_list), -1);
-  rb_define_method(SwigClassMajorObject.klass, "set_metadata", VALUEFUNC(_wrap_MajorObject_set_metadata), -1);
-  rb_define_method(SwigClassMajorObject.klass, "get_metadata_item", VALUEFUNC(_wrap_MajorObject_get_metadata_item), -1);
-  rb_define_method(SwigClassMajorObject.klass, "set_metadata_item", VALUEFUNC(_wrap_MajorObject_set_metadata_item), -1);
+  rb_define_method(SwigClassMajorObject.klass, "get_description", VALUEFUNC(_gdal_wrap_MajorObject_get_description), -1);
+  rb_define_method(SwigClassMajorObject.klass, "set_description", VALUEFUNC(_gdal_wrap_MajorObject_set_description), -1);
+  rb_define_method(SwigClassMajorObject.klass, "get_metadata_dict", VALUEFUNC(_gdal_wrap_MajorObject_get_metadata_dict), -1);
+  rb_define_method(SwigClassMajorObject.klass, "get_metadata_list", VALUEFUNC(_gdal_wrap_MajorObject_get_metadata_list), -1);
+  rb_define_method(SwigClassMajorObject.klass, "set_metadata", VALUEFUNC(_gdal_wrap_MajorObject_set_metadata), -1);
+  rb_define_method(SwigClassMajorObject.klass, "get_metadata_item", VALUEFUNC(_gdal_wrap_MajorObject_get_metadata_item), -1);
+  rb_define_method(SwigClassMajorObject.klass, "set_metadata_item", VALUEFUNC(_gdal_wrap_MajorObject_set_metadata_item), -1);
   SwigClassMajorObject.mark = 0;
   SwigClassMajorObject.trackObjects = 0;
   
   SwigClassDriver.klass = rb_define_class_under(mGdal, "Driver", ((swig_class *) SWIGTYPE_p_GDALMajorObjectShadow->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_GDALDriverShadow, (void *) &SwigClassDriver);
   rb_undef_alloc_func(SwigClassDriver.klass);
-  rb_define_method(SwigClassDriver.klass, "ShortName", VALUEFUNC(_wrap_Driver_ShortName_get), -1);
-  rb_define_method(SwigClassDriver.klass, "LongName", VALUEFUNC(_wrap_Driver_LongName_get), -1);
-  rb_define_method(SwigClassDriver.klass, "HelpTopic", VALUEFUNC(_wrap_Driver_HelpTopic_get), -1);
-  rb_define_method(SwigClassDriver.klass, "create", VALUEFUNC(_wrap_Driver_create), -1);
-  rb_define_method(SwigClassDriver.klass, "create_copy", VALUEFUNC(_wrap_Driver_create_copy), -1);
-  rb_define_method(SwigClassDriver.klass, "delete", VALUEFUNC(_wrap_Driver_delete), -1);
-  rb_define_method(SwigClassDriver.klass, "rename", VALUEFUNC(_wrap_Driver_rename), -1);
-  rb_define_method(SwigClassDriver.klass, "copy_files", VALUEFUNC(_wrap_Driver_copy_files), -1);
-  rb_define_method(SwigClassDriver.klass, "register", VALUEFUNC(_wrap_Driver_register), -1);
-  rb_define_method(SwigClassDriver.klass, "deregister", VALUEFUNC(_wrap_Driver_deregister), -1);
+  rb_define_method(SwigClassDriver.klass, "ShortName", VALUEFUNC(_gdal_wrap_Driver_ShortName_get), -1);
+  rb_define_method(SwigClassDriver.klass, "LongName", VALUEFUNC(_gdal_wrap_Driver_LongName_get), -1);
+  rb_define_method(SwigClassDriver.klass, "HelpTopic", VALUEFUNC(_gdal_wrap_Driver_HelpTopic_get), -1);
+  rb_define_method(SwigClassDriver.klass, "create", VALUEFUNC(_gdal_wrap_Driver_create), -1);
+  rb_define_method(SwigClassDriver.klass, "create_copy", VALUEFUNC(_gdal_wrap_Driver_create_copy), -1);
+  rb_define_method(SwigClassDriver.klass, "delete", VALUEFUNC(_gdal_wrap_Driver_delete), -1);
+  rb_define_method(SwigClassDriver.klass, "rename", VALUEFUNC(_gdal_wrap_Driver_rename), -1);
+  rb_define_method(SwigClassDriver.klass, "copy_files", VALUEFUNC(_gdal_wrap_Driver_copy_files), -1);
+  rb_define_method(SwigClassDriver.klass, "register", VALUEFUNC(_gdal_wrap_Driver_register), -1);
+  rb_define_method(SwigClassDriver.klass, "deregister", VALUEFUNC(_gdal_wrap_Driver_deregister), -1);
   SwigClassDriver.mark = 0;
   SwigClassDriver.trackObjects = 0;
   
   SwigClassColorEntry.klass = rb_define_class_under(mGdal, "ColorEntry", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_GDALColorEntry, (void *) &SwigClassColorEntry);
-  rb_define_alloc_func(SwigClassColorEntry.klass, _wrap_ColorEntry_allocate);
-  rb_define_method(SwigClassColorEntry.klass, "initialize", VALUEFUNC(_wrap_new_ColorEntry), -1);
-  rb_define_method(SwigClassColorEntry.klass, "c1=", VALUEFUNC(_wrap_ColorEntry_c1_set), -1);
-  rb_define_method(SwigClassColorEntry.klass, "c1", VALUEFUNC(_wrap_ColorEntry_c1_get), -1);
-  rb_define_method(SwigClassColorEntry.klass, "c2=", VALUEFUNC(_wrap_ColorEntry_c2_set), -1);
-  rb_define_method(SwigClassColorEntry.klass, "c2", VALUEFUNC(_wrap_ColorEntry_c2_get), -1);
-  rb_define_method(SwigClassColorEntry.klass, "c3=", VALUEFUNC(_wrap_ColorEntry_c3_set), -1);
-  rb_define_method(SwigClassColorEntry.klass, "c3", VALUEFUNC(_wrap_ColorEntry_c3_get), -1);
-  rb_define_method(SwigClassColorEntry.klass, "c4=", VALUEFUNC(_wrap_ColorEntry_c4_set), -1);
-  rb_define_method(SwigClassColorEntry.klass, "c4", VALUEFUNC(_wrap_ColorEntry_c4_get), -1);
+  rb_define_alloc_func(SwigClassColorEntry.klass, _gdal_wrap_ColorEntry_allocate);
+  rb_define_method(SwigClassColorEntry.klass, "initialize", VALUEFUNC(_gdal_wrap_new_ColorEntry), -1);
+  rb_define_method(SwigClassColorEntry.klass, "c1=", VALUEFUNC(_gdal_wrap_ColorEntry_c1_set), -1);
+  rb_define_method(SwigClassColorEntry.klass, "c1", VALUEFUNC(_gdal_wrap_ColorEntry_c1_get), -1);
+  rb_define_method(SwigClassColorEntry.klass, "c2=", VALUEFUNC(_gdal_wrap_ColorEntry_c2_set), -1);
+  rb_define_method(SwigClassColorEntry.klass, "c2", VALUEFUNC(_gdal_wrap_ColorEntry_c2_get), -1);
+  rb_define_method(SwigClassColorEntry.klass, "c3=", VALUEFUNC(_gdal_wrap_ColorEntry_c3_set), -1);
+  rb_define_method(SwigClassColorEntry.klass, "c3", VALUEFUNC(_gdal_wrap_ColorEntry_c3_get), -1);
+  rb_define_method(SwigClassColorEntry.klass, "c4=", VALUEFUNC(_gdal_wrap_ColorEntry_c4_set), -1);
+  rb_define_method(SwigClassColorEntry.klass, "c4", VALUEFUNC(_gdal_wrap_ColorEntry_c4_get), -1);
   SwigClassColorEntry.mark = 0;
   SwigClassColorEntry.destroy = (void (*)(void *)) free_GDALColorEntry;
   SwigClassColorEntry.trackObjects = 0;
   
   SwigClassGCP.klass = rb_define_class_under(mGdal, "GCP", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_GDAL_GCP, (void *) &SwigClassGCP);
-  rb_define_alloc_func(SwigClassGCP.klass, _wrap_GCP_allocate);
-  rb_define_method(SwigClassGCP.klass, "initialize", VALUEFUNC(_wrap_new_GCP), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPX=", VALUEFUNC(_wrap_GCP_GCPX_set), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPX", VALUEFUNC(_wrap_GCP_GCPX_get), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPY=", VALUEFUNC(_wrap_GCP_GCPY_set), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPY", VALUEFUNC(_wrap_GCP_GCPY_get), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPZ=", VALUEFUNC(_wrap_GCP_GCPZ_set), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPZ", VALUEFUNC(_wrap_GCP_GCPZ_get), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPPixel=", VALUEFUNC(_wrap_GCP_GCPPixel_set), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPPixel", VALUEFUNC(_wrap_GCP_GCPPixel_get), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPLine=", VALUEFUNC(_wrap_GCP_GCPLine_set), -1);
-  rb_define_method(SwigClassGCP.klass, "GCPLine", VALUEFUNC(_wrap_GCP_GCPLine_get), -1);
-  rb_define_method(SwigClassGCP.klass, "Info=", VALUEFUNC(_wrap_GCP_Info_set), -1);
-  rb_define_method(SwigClassGCP.klass, "Info", VALUEFUNC(_wrap_GCP_Info_get), -1);
-  rb_define_method(SwigClassGCP.klass, "Id=", VALUEFUNC(_wrap_GCP_Id_set), -1);
-  rb_define_method(SwigClassGCP.klass, "Id", VALUEFUNC(_wrap_GCP_Id_get), -1);
+  rb_define_alloc_func(SwigClassGCP.klass, _gdal_wrap_GCP_allocate);
+  rb_define_method(SwigClassGCP.klass, "initialize", VALUEFUNC(_gdal_wrap_new_GCP), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPX=", VALUEFUNC(_gdal_wrap_GCP_GCPX_set), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPX", VALUEFUNC(_gdal_wrap_GCP_GCPX_get), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPY=", VALUEFUNC(_gdal_wrap_GCP_GCPY_set), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPY", VALUEFUNC(_gdal_wrap_GCP_GCPY_get), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPZ=", VALUEFUNC(_gdal_wrap_GCP_GCPZ_set), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPZ", VALUEFUNC(_gdal_wrap_GCP_GCPZ_get), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPPixel=", VALUEFUNC(_gdal_wrap_GCP_GCPPixel_set), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPPixel", VALUEFUNC(_gdal_wrap_GCP_GCPPixel_get), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPLine=", VALUEFUNC(_gdal_wrap_GCP_GCPLine_set), -1);
+  rb_define_method(SwigClassGCP.klass, "GCPLine", VALUEFUNC(_gdal_wrap_GCP_GCPLine_get), -1);
+  rb_define_method(SwigClassGCP.klass, "Info=", VALUEFUNC(_gdal_wrap_GCP_Info_set), -1);
+  rb_define_method(SwigClassGCP.klass, "Info", VALUEFUNC(_gdal_wrap_GCP_Info_get), -1);
+  rb_define_method(SwigClassGCP.klass, "Id=", VALUEFUNC(_gdal_wrap_GCP_Id_set), -1);
+  rb_define_method(SwigClassGCP.klass, "Id", VALUEFUNC(_gdal_wrap_GCP_Id_get), -1);
   SwigClassGCP.mark = 0;
   SwigClassGCP.destroy = (void (*)(void *)) free_GDAL_GCP;
   SwigClassGCP.trackObjects = 0;
-  rb_define_module_function(mGdal, "gdal_gcp_gcpx_get", VALUEFUNC(_wrap_gdal_gcp_gcpx_get), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcpx_set", VALUEFUNC(_wrap_gdal_gcp_gcpx_set), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcpy_get", VALUEFUNC(_wrap_gdal_gcp_gcpy_get), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcpy_set", VALUEFUNC(_wrap_gdal_gcp_gcpy_set), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcpz_get", VALUEFUNC(_wrap_gdal_gcp_gcpz_get), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcpz_set", VALUEFUNC(_wrap_gdal_gcp_gcpz_set), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcppixel_get", VALUEFUNC(_wrap_gdal_gcp_gcppixel_get), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcppixel_set", VALUEFUNC(_wrap_gdal_gcp_gcppixel_set), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcpline_get", VALUEFUNC(_wrap_gdal_gcp_gcpline_get), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_gcpline_set", VALUEFUNC(_wrap_gdal_gcp_gcpline_set), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_info_get", VALUEFUNC(_wrap_gdal_gcp_info_get), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_info_set", VALUEFUNC(_wrap_gdal_gcp_info_set), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_id_get", VALUEFUNC(_wrap_gdal_gcp_id_get), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_id_set", VALUEFUNC(_wrap_gdal_gcp_id_set), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_get_gcpx", VALUEFUNC(_wrap_gdal_gcp_get_gcpx), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_set_gcpx", VALUEFUNC(_wrap_gdal_gcp_set_gcpx), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_get_gcpy", VALUEFUNC(_wrap_gdal_gcp_get_gcpy), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_set_gcpy", VALUEFUNC(_wrap_gdal_gcp_set_gcpy), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_get_gcpz", VALUEFUNC(_wrap_gdal_gcp_get_gcpz), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_set_gcpz", VALUEFUNC(_wrap_gdal_gcp_set_gcpz), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_get_gcppixel", VALUEFUNC(_wrap_gdal_gcp_get_gcppixel), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_set_gcppixel", VALUEFUNC(_wrap_gdal_gcp_set_gcppixel), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_get_gcpline", VALUEFUNC(_wrap_gdal_gcp_get_gcpline), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_set_gcpline", VALUEFUNC(_wrap_gdal_gcp_set_gcpline), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_get_info", VALUEFUNC(_wrap_gdal_gcp_get_info), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_set_info", VALUEFUNC(_wrap_gdal_gcp_set_info), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_get_id", VALUEFUNC(_wrap_gdal_gcp_get_id), -1);
-  rb_define_module_function(mGdal, "gdal_gcp_set_id", VALUEFUNC(_wrap_gdal_gcp_set_id), -1);
-  rb_define_module_function(mGdal, "gcps_to_geo_transform", VALUEFUNC(_wrap_gcps_to_geo_transform), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcpx_get", VALUEFUNC(_gdal_wrap_gdal_gcp_gcpx_get), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcpx_set", VALUEFUNC(_gdal_wrap_gdal_gcp_gcpx_set), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcpy_get", VALUEFUNC(_gdal_wrap_gdal_gcp_gcpy_get), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcpy_set", VALUEFUNC(_gdal_wrap_gdal_gcp_gcpy_set), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcpz_get", VALUEFUNC(_gdal_wrap_gdal_gcp_gcpz_get), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcpz_set", VALUEFUNC(_gdal_wrap_gdal_gcp_gcpz_set), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcppixel_get", VALUEFUNC(_gdal_wrap_gdal_gcp_gcppixel_get), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcppixel_set", VALUEFUNC(_gdal_wrap_gdal_gcp_gcppixel_set), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcpline_get", VALUEFUNC(_gdal_wrap_gdal_gcp_gcpline_get), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_gcpline_set", VALUEFUNC(_gdal_wrap_gdal_gcp_gcpline_set), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_info_get", VALUEFUNC(_gdal_wrap_gdal_gcp_info_get), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_info_set", VALUEFUNC(_gdal_wrap_gdal_gcp_info_set), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_id_get", VALUEFUNC(_gdal_wrap_gdal_gcp_id_get), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_id_set", VALUEFUNC(_gdal_wrap_gdal_gcp_id_set), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_get_gcpx", VALUEFUNC(_gdal_wrap_gdal_gcp_get_gcpx), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_set_gcpx", VALUEFUNC(_gdal_wrap_gdal_gcp_set_gcpx), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_get_gcpy", VALUEFUNC(_gdal_wrap_gdal_gcp_get_gcpy), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_set_gcpy", VALUEFUNC(_gdal_wrap_gdal_gcp_set_gcpy), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_get_gcpz", VALUEFUNC(_gdal_wrap_gdal_gcp_get_gcpz), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_set_gcpz", VALUEFUNC(_gdal_wrap_gdal_gcp_set_gcpz), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_get_gcppixel", VALUEFUNC(_gdal_wrap_gdal_gcp_get_gcppixel), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_set_gcppixel", VALUEFUNC(_gdal_wrap_gdal_gcp_set_gcppixel), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_get_gcpline", VALUEFUNC(_gdal_wrap_gdal_gcp_get_gcpline), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_set_gcpline", VALUEFUNC(_gdal_wrap_gdal_gcp_set_gcpline), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_get_info", VALUEFUNC(_gdal_wrap_gdal_gcp_get_info), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_set_info", VALUEFUNC(_gdal_wrap_gdal_gcp_set_info), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_get_id", VALUEFUNC(_gdal_wrap_gdal_gcp_get_id), -1);
+  rb_define_module_function(mGdal, "gdal_gcp_set_id", VALUEFUNC(_gdal_wrap_gdal_gcp_set_id), -1);
+  rb_define_module_function(mGdal, "gcps_to_geo_transform", VALUEFUNC(_gdal_wrap_gcps_to_geo_transform), -1);
   
   SwigClassAsyncReader.klass = rb_define_class_under(mGdal, "AsyncReader", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_GDALAsyncReaderShadow, (void *) &SwigClassAsyncReader);
   rb_undef_alloc_func(SwigClassAsyncReader.klass);
-  rb_define_method(SwigClassAsyncReader.klass, "get_next_updated_region", VALUEFUNC(_wrap_AsyncReader_get_next_updated_region), -1);
-  rb_define_method(SwigClassAsyncReader.klass, "lock_buffer", VALUEFUNC(_wrap_AsyncReader_lock_buffer), -1);
-  rb_define_method(SwigClassAsyncReader.klass, "unlock_buffer", VALUEFUNC(_wrap_AsyncReader_unlock_buffer), -1);
+  rb_define_method(SwigClassAsyncReader.klass, "get_next_updated_region", VALUEFUNC(_gdal_wrap_AsyncReader_get_next_updated_region), -1);
+  rb_define_method(SwigClassAsyncReader.klass, "lock_buffer", VALUEFUNC(_gdal_wrap_AsyncReader_lock_buffer), -1);
+  rb_define_method(SwigClassAsyncReader.klass, "unlock_buffer", VALUEFUNC(_gdal_wrap_AsyncReader_unlock_buffer), -1);
   SwigClassAsyncReader.mark = 0;
   SwigClassAsyncReader.destroy = (void (*)(void *)) free_GDALAsyncReaderShadow;
   SwigClassAsyncReader.trackObjects = 0;
@@ -18889,27 +18889,27 @@ SWIGEXPORT void Init_gdal(void) {
   SwigClassDataset.klass = rb_define_class_under(mGdal, "Dataset", ((swig_class *) SWIGTYPE_p_GDALMajorObjectShadow->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_GDALDatasetShadow, (void *) &SwigClassDataset);
   rb_undef_alloc_func(SwigClassDataset.klass);
-  rb_define_method(SwigClassDataset.klass, "RasterXSize", VALUEFUNC(_wrap_Dataset_RasterXSize_get), -1);
-  rb_define_method(SwigClassDataset.klass, "RasterYSize", VALUEFUNC(_wrap_Dataset_RasterYSize_get), -1);
-  rb_define_method(SwigClassDataset.klass, "RasterCount", VALUEFUNC(_wrap_Dataset_RasterCount_get), -1);
-  rb_define_method(SwigClassDataset.klass, "get_driver", VALUEFUNC(_wrap_Dataset_get_driver), -1);
-  rb_define_method(SwigClassDataset.klass, "get_raster_band", VALUEFUNC(_wrap_Dataset_get_raster_band), -1);
-  rb_define_method(SwigClassDataset.klass, "get_projection", VALUEFUNC(_wrap_Dataset_get_projection), -1);
-  rb_define_method(SwigClassDataset.klass, "get_projection_ref", VALUEFUNC(_wrap_Dataset_get_projection_ref), -1);
-  rb_define_method(SwigClassDataset.klass, "set_projection", VALUEFUNC(_wrap_Dataset_set_projection), -1);
-  rb_define_method(SwigClassDataset.klass, "get_geo_transform", VALUEFUNC(_wrap_Dataset_get_geo_transform), -1);
-  rb_define_method(SwigClassDataset.klass, "set_geo_transform", VALUEFUNC(_wrap_Dataset_set_geo_transform), -1);
-  rb_define_method(SwigClassDataset.klass, "build_overviews", VALUEFUNC(_wrap_Dataset_build_overviews), -1);
-  rb_define_method(SwigClassDataset.klass, "get_gcpcount", VALUEFUNC(_wrap_Dataset_get_gcpcount), -1);
-  rb_define_method(SwigClassDataset.klass, "get_gcpprojection", VALUEFUNC(_wrap_Dataset_get_gcpprojection), -1);
-  rb_define_method(SwigClassDataset.klass, "get_gcps", VALUEFUNC(_wrap_Dataset_get_gcps), -1);
-  rb_define_method(SwigClassDataset.klass, "set_gcps", VALUEFUNC(_wrap_Dataset_set_gcps), -1);
-  rb_define_method(SwigClassDataset.klass, "flush_cache", VALUEFUNC(_wrap_Dataset_flush_cache), -1);
-  rb_define_method(SwigClassDataset.klass, "add_band", VALUEFUNC(_wrap_Dataset_add_band), -1);
-  rb_define_method(SwigClassDataset.klass, "create_mask_band", VALUEFUNC(_wrap_Dataset_create_mask_band), -1);
-  rb_define_method(SwigClassDataset.klass, "get_file_list", VALUEFUNC(_wrap_Dataset_get_file_list), -1);
-  rb_define_method(SwigClassDataset.klass, "write_raster", VALUEFUNC(_wrap_Dataset_write_raster), -1);
-  rb_define_method(SwigClassDataset.klass, "read_raster", VALUEFUNC(_wrap_Dataset_read_raster), -1);
+  rb_define_method(SwigClassDataset.klass, "RasterXSize", VALUEFUNC(_gdal_wrap_Dataset_RasterXSize_get), -1);
+  rb_define_method(SwigClassDataset.klass, "RasterYSize", VALUEFUNC(_gdal_wrap_Dataset_RasterYSize_get), -1);
+  rb_define_method(SwigClassDataset.klass, "RasterCount", VALUEFUNC(_gdal_wrap_Dataset_RasterCount_get), -1);
+  rb_define_method(SwigClassDataset.klass, "get_driver", VALUEFUNC(_gdal_wrap_Dataset_get_driver), -1);
+  rb_define_method(SwigClassDataset.klass, "get_raster_band", VALUEFUNC(_gdal_wrap_Dataset_get_raster_band), -1);
+  rb_define_method(SwigClassDataset.klass, "get_projection", VALUEFUNC(_gdal_wrap_Dataset_get_projection), -1);
+  rb_define_method(SwigClassDataset.klass, "get_projection_ref", VALUEFUNC(_gdal_wrap_Dataset_get_projection_ref), -1);
+  rb_define_method(SwigClassDataset.klass, "set_projection", VALUEFUNC(_gdal_wrap_Dataset_set_projection), -1);
+  rb_define_method(SwigClassDataset.klass, "get_geo_transform", VALUEFUNC(_gdal_wrap_Dataset_get_geo_transform), -1);
+  rb_define_method(SwigClassDataset.klass, "set_geo_transform", VALUEFUNC(_gdal_wrap_Dataset_set_geo_transform), -1);
+  rb_define_method(SwigClassDataset.klass, "build_overviews", VALUEFUNC(_gdal_wrap_Dataset_build_overviews), -1);
+  rb_define_method(SwigClassDataset.klass, "get_gcpcount", VALUEFUNC(_gdal_wrap_Dataset_get_gcpcount), -1);
+  rb_define_method(SwigClassDataset.klass, "get_gcpprojection", VALUEFUNC(_gdal_wrap_Dataset_get_gcpprojection), -1);
+  rb_define_method(SwigClassDataset.klass, "get_gcps", VALUEFUNC(_gdal_wrap_Dataset_get_gcps), -1);
+  rb_define_method(SwigClassDataset.klass, "set_gcps", VALUEFUNC(_gdal_wrap_Dataset_set_gcps), -1);
+  rb_define_method(SwigClassDataset.klass, "flush_cache", VALUEFUNC(_gdal_wrap_Dataset_flush_cache), -1);
+  rb_define_method(SwigClassDataset.klass, "add_band", VALUEFUNC(_gdal_wrap_Dataset_add_band), -1);
+  rb_define_method(SwigClassDataset.klass, "create_mask_band", VALUEFUNC(_gdal_wrap_Dataset_create_mask_band), -1);
+  rb_define_method(SwigClassDataset.klass, "get_file_list", VALUEFUNC(_gdal_wrap_Dataset_get_file_list), -1);
+  rb_define_method(SwigClassDataset.klass, "write_raster", VALUEFUNC(_gdal_wrap_Dataset_write_raster), -1);
+  rb_define_method(SwigClassDataset.klass, "read_raster", VALUEFUNC(_gdal_wrap_Dataset_read_raster), -1);
   SwigClassDataset.mark = 0;
   SwigClassDataset.destroy = (void (*)(void *)) free_GDALDatasetShadow;
   SwigClassDataset.trackObjects = 0;
@@ -18917,147 +18917,147 @@ SWIGEXPORT void Init_gdal(void) {
   SwigClassBand.klass = rb_define_class_under(mGdal, "Band", ((swig_class *) SWIGTYPE_p_GDALMajorObjectShadow->clientdata)->klass);
   SWIG_TypeClientData(SWIGTYPE_p_GDALRasterBandShadow, (void *) &SwigClassBand);
   rb_undef_alloc_func(SwigClassBand.klass);
-  rb_define_method(SwigClassBand.klass, "XSize", VALUEFUNC(_wrap_Band_XSize_get), -1);
-  rb_define_method(SwigClassBand.klass, "YSize", VALUEFUNC(_wrap_Band_YSize_get), -1);
-  rb_define_method(SwigClassBand.klass, "DataType", VALUEFUNC(_wrap_Band_DataType_get), -1);
-  rb_define_method(SwigClassBand.klass, "get_band", VALUEFUNC(_wrap_Band_get_band), -1);
-  rb_define_method(SwigClassBand.klass, "get_block_size", VALUEFUNC(_wrap_Band_get_block_size), -1);
-  rb_define_method(SwigClassBand.klass, "get_color_interpretation", VALUEFUNC(_wrap_Band_get_color_interpretation), -1);
-  rb_define_method(SwigClassBand.klass, "get_raster_color_interpretation", VALUEFUNC(_wrap_Band_get_raster_color_interpretation), -1);
-  rb_define_method(SwigClassBand.klass, "set_color_interpretation", VALUEFUNC(_wrap_Band_set_color_interpretation), -1);
-  rb_define_method(SwigClassBand.klass, "set_raster_color_interpretation", VALUEFUNC(_wrap_Band_set_raster_color_interpretation), -1);
-  rb_define_method(SwigClassBand.klass, "get_no_data_value", VALUEFUNC(_wrap_Band_get_no_data_value), -1);
-  rb_define_method(SwigClassBand.klass, "set_no_data_value", VALUEFUNC(_wrap_Band_set_no_data_value), -1);
-  rb_define_method(SwigClassBand.klass, "get_unit_type", VALUEFUNC(_wrap_Band_get_unit_type), -1);
-  rb_define_method(SwigClassBand.klass, "set_unit_type", VALUEFUNC(_wrap_Band_set_unit_type), -1);
-  rb_define_method(SwigClassBand.klass, "get_raster_category_names", VALUEFUNC(_wrap_Band_get_raster_category_names), -1);
-  rb_define_method(SwigClassBand.klass, "set_raster_category_names", VALUEFUNC(_wrap_Band_set_raster_category_names), -1);
-  rb_define_method(SwigClassBand.klass, "get_minimum", VALUEFUNC(_wrap_Band_get_minimum), -1);
-  rb_define_method(SwigClassBand.klass, "get_maximum", VALUEFUNC(_wrap_Band_get_maximum), -1);
-  rb_define_method(SwigClassBand.klass, "get_offset", VALUEFUNC(_wrap_Band_get_offset), -1);
-  rb_define_method(SwigClassBand.klass, "get_scale", VALUEFUNC(_wrap_Band_get_scale), -1);
-  rb_define_method(SwigClassBand.klass, "set_offset", VALUEFUNC(_wrap_Band_set_offset), -1);
-  rb_define_method(SwigClassBand.klass, "set_scale", VALUEFUNC(_wrap_Band_set_scale), -1);
-  rb_define_method(SwigClassBand.klass, "get_statistics", VALUEFUNC(_wrap_Band_get_statistics), -1);
-  rb_define_method(SwigClassBand.klass, "compute_statistics", VALUEFUNC(_wrap_Band_compute_statistics), -1);
-  rb_define_method(SwigClassBand.klass, "set_statistics", VALUEFUNC(_wrap_Band_set_statistics), -1);
-  rb_define_method(SwigClassBand.klass, "get_overview_count", VALUEFUNC(_wrap_Band_get_overview_count), -1);
-  rb_define_method(SwigClassBand.klass, "get_overview", VALUEFUNC(_wrap_Band_get_overview), -1);
-  rb_define_method(SwigClassBand.klass, "checksum", VALUEFUNC(_wrap_Band_checksum), -1);
-  rb_define_method(SwigClassBand.klass, "compute_raster_min_max", VALUEFUNC(_wrap_Band_compute_raster_min_max), -1);
-  rb_define_method(SwigClassBand.klass, "compute_band_stats", VALUEFUNC(_wrap_Band_compute_band_stats), -1);
-  rb_define_method(SwigClassBand.klass, "fill", VALUEFUNC(_wrap_Band_fill), -1);
-  rb_define_method(SwigClassBand.klass, "read_raster", VALUEFUNC(_wrap_Band_read_raster), -1);
-  rb_define_method(SwigClassBand.klass, "write_raster", VALUEFUNC(_wrap_Band_write_raster), -1);
-  rb_define_method(SwigClassBand.klass, "flush_cache", VALUEFUNC(_wrap_Band_flush_cache), -1);
-  rb_define_method(SwigClassBand.klass, "get_raster_color_table", VALUEFUNC(_wrap_Band_get_raster_color_table), -1);
-  rb_define_method(SwigClassBand.klass, "get_color_table", VALUEFUNC(_wrap_Band_get_color_table), -1);
-  rb_define_method(SwigClassBand.klass, "set_raster_color_table", VALUEFUNC(_wrap_Band_set_raster_color_table), -1);
-  rb_define_method(SwigClassBand.klass, "set_color_table", VALUEFUNC(_wrap_Band_set_color_table), -1);
-  rb_define_method(SwigClassBand.klass, "get_default_rat", VALUEFUNC(_wrap_Band_get_default_rat), -1);
-  rb_define_method(SwigClassBand.klass, "set_default_rat", VALUEFUNC(_wrap_Band_set_default_rat), -1);
-  rb_define_method(SwigClassBand.klass, "get_mask_band", VALUEFUNC(_wrap_Band_get_mask_band), -1);
-  rb_define_method(SwigClassBand.klass, "get_mask_flags", VALUEFUNC(_wrap_Band_get_mask_flags), -1);
-  rb_define_method(SwigClassBand.klass, "create_mask_band", VALUEFUNC(_wrap_Band_create_mask_band), -1);
-  rb_define_method(SwigClassBand.klass, "get_histogram", VALUEFUNC(_wrap_Band_get_histogram), -1);
-  rb_define_method(SwigClassBand.klass, "get_default_histogram", VALUEFUNC(_wrap_Band_get_default_histogram), -1);
-  rb_define_method(SwigClassBand.klass, "set_default_histogram", VALUEFUNC(_wrap_Band_set_default_histogram), -1);
-  rb_define_method(SwigClassBand.klass, "has_arbitrary_overviews", VALUEFUNC(_wrap_Band_has_arbitrary_overviews), -1);
-  rb_define_method(SwigClassBand.klass, "get_category_names", VALUEFUNC(_wrap_Band_get_category_names), -1);
-  rb_define_method(SwigClassBand.klass, "set_category_names", VALUEFUNC(_wrap_Band_set_category_names), -1);
+  rb_define_method(SwigClassBand.klass, "XSize", VALUEFUNC(_gdal_wrap_Band_XSize_get), -1);
+  rb_define_method(SwigClassBand.klass, "YSize", VALUEFUNC(_gdal_wrap_Band_YSize_get), -1);
+  rb_define_method(SwigClassBand.klass, "DataType", VALUEFUNC(_gdal_wrap_Band_DataType_get), -1);
+  rb_define_method(SwigClassBand.klass, "get_band", VALUEFUNC(_gdal_wrap_Band_get_band), -1);
+  rb_define_method(SwigClassBand.klass, "get_block_size", VALUEFUNC(_gdal_wrap_Band_get_block_size), -1);
+  rb_define_method(SwigClassBand.klass, "get_color_interpretation", VALUEFUNC(_gdal_wrap_Band_get_color_interpretation), -1);
+  rb_define_method(SwigClassBand.klass, "get_raster_color_interpretation", VALUEFUNC(_gdal_wrap_Band_get_raster_color_interpretation), -1);
+  rb_define_method(SwigClassBand.klass, "set_color_interpretation", VALUEFUNC(_gdal_wrap_Band_set_color_interpretation), -1);
+  rb_define_method(SwigClassBand.klass, "set_raster_color_interpretation", VALUEFUNC(_gdal_wrap_Band_set_raster_color_interpretation), -1);
+  rb_define_method(SwigClassBand.klass, "get_no_data_value", VALUEFUNC(_gdal_wrap_Band_get_no_data_value), -1);
+  rb_define_method(SwigClassBand.klass, "set_no_data_value", VALUEFUNC(_gdal_wrap_Band_set_no_data_value), -1);
+  rb_define_method(SwigClassBand.klass, "get_unit_type", VALUEFUNC(_gdal_wrap_Band_get_unit_type), -1);
+  rb_define_method(SwigClassBand.klass, "set_unit_type", VALUEFUNC(_gdal_wrap_Band_set_unit_type), -1);
+  rb_define_method(SwigClassBand.klass, "get_raster_category_names", VALUEFUNC(_gdal_wrap_Band_get_raster_category_names), -1);
+  rb_define_method(SwigClassBand.klass, "set_raster_category_names", VALUEFUNC(_gdal_wrap_Band_set_raster_category_names), -1);
+  rb_define_method(SwigClassBand.klass, "get_minimum", VALUEFUNC(_gdal_wrap_Band_get_minimum), -1);
+  rb_define_method(SwigClassBand.klass, "get_maximum", VALUEFUNC(_gdal_wrap_Band_get_maximum), -1);
+  rb_define_method(SwigClassBand.klass, "get_offset", VALUEFUNC(_gdal_wrap_Band_get_offset), -1);
+  rb_define_method(SwigClassBand.klass, "get_scale", VALUEFUNC(_gdal_wrap_Band_get_scale), -1);
+  rb_define_method(SwigClassBand.klass, "set_offset", VALUEFUNC(_gdal_wrap_Band_set_offset), -1);
+  rb_define_method(SwigClassBand.klass, "set_scale", VALUEFUNC(_gdal_wrap_Band_set_scale), -1);
+  rb_define_method(SwigClassBand.klass, "get_statistics", VALUEFUNC(_gdal_wrap_Band_get_statistics), -1);
+  rb_define_method(SwigClassBand.klass, "compute_statistics", VALUEFUNC(_gdal_wrap_Band_compute_statistics), -1);
+  rb_define_method(SwigClassBand.klass, "set_statistics", VALUEFUNC(_gdal_wrap_Band_set_statistics), -1);
+  rb_define_method(SwigClassBand.klass, "get_overview_count", VALUEFUNC(_gdal_wrap_Band_get_overview_count), -1);
+  rb_define_method(SwigClassBand.klass, "get_overview", VALUEFUNC(_gdal_wrap_Band_get_overview), -1);
+  rb_define_method(SwigClassBand.klass, "checksum", VALUEFUNC(_gdal_wrap_Band_checksum), -1);
+  rb_define_method(SwigClassBand.klass, "compute_raster_min_max", VALUEFUNC(_gdal_wrap_Band_compute_raster_min_max), -1);
+  rb_define_method(SwigClassBand.klass, "compute_band_stats", VALUEFUNC(_gdal_wrap_Band_compute_band_stats), -1);
+  rb_define_method(SwigClassBand.klass, "fill", VALUEFUNC(_gdal_wrap_Band_fill), -1);
+  rb_define_method(SwigClassBand.klass, "read_raster", VALUEFUNC(_gdal_wrap_Band_read_raster), -1);
+  rb_define_method(SwigClassBand.klass, "write_raster", VALUEFUNC(_gdal_wrap_Band_write_raster), -1);
+  rb_define_method(SwigClassBand.klass, "flush_cache", VALUEFUNC(_gdal_wrap_Band_flush_cache), -1);
+  rb_define_method(SwigClassBand.klass, "get_raster_color_table", VALUEFUNC(_gdal_wrap_Band_get_raster_color_table), -1);
+  rb_define_method(SwigClassBand.klass, "get_color_table", VALUEFUNC(_gdal_wrap_Band_get_color_table), -1);
+  rb_define_method(SwigClassBand.klass, "set_raster_color_table", VALUEFUNC(_gdal_wrap_Band_set_raster_color_table), -1);
+  rb_define_method(SwigClassBand.klass, "set_color_table", VALUEFUNC(_gdal_wrap_Band_set_color_table), -1);
+  rb_define_method(SwigClassBand.klass, "get_default_rat", VALUEFUNC(_gdal_wrap_Band_get_default_rat), -1);
+  rb_define_method(SwigClassBand.klass, "set_default_rat", VALUEFUNC(_gdal_wrap_Band_set_default_rat), -1);
+  rb_define_method(SwigClassBand.klass, "get_mask_band", VALUEFUNC(_gdal_wrap_Band_get_mask_band), -1);
+  rb_define_method(SwigClassBand.klass, "get_mask_flags", VALUEFUNC(_gdal_wrap_Band_get_mask_flags), -1);
+  rb_define_method(SwigClassBand.klass, "create_mask_band", VALUEFUNC(_gdal_wrap_Band_create_mask_band), -1);
+  rb_define_method(SwigClassBand.klass, "get_histogram", VALUEFUNC(_gdal_wrap_Band_get_histogram), -1);
+  rb_define_method(SwigClassBand.klass, "get_default_histogram", VALUEFUNC(_gdal_wrap_Band_get_default_histogram), -1);
+  rb_define_method(SwigClassBand.klass, "set_default_histogram", VALUEFUNC(_gdal_wrap_Band_set_default_histogram), -1);
+  rb_define_method(SwigClassBand.klass, "has_arbitrary_overviews", VALUEFUNC(_gdal_wrap_Band_has_arbitrary_overviews), -1);
+  rb_define_method(SwigClassBand.klass, "get_category_names", VALUEFUNC(_gdal_wrap_Band_get_category_names), -1);
+  rb_define_method(SwigClassBand.klass, "set_category_names", VALUEFUNC(_gdal_wrap_Band_set_category_names), -1);
   SwigClassBand.mark = 0;
   SwigClassBand.trackObjects = 0;
   
   SwigClassColorTable.klass = rb_define_class_under(mGdal, "ColorTable", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_GDALColorTableShadow, (void *) &SwigClassColorTable);
-  rb_define_alloc_func(SwigClassColorTable.klass, _wrap_ColorTable_allocate);
-  rb_define_method(SwigClassColorTable.klass, "initialize", VALUEFUNC(_wrap_new_ColorTable), -1);
-  rb_define_method(SwigClassColorTable.klass, "clone", VALUEFUNC(_wrap_ColorTable_clone), -1);
-  rb_define_method(SwigClassColorTable.klass, "get_palette_interpretation", VALUEFUNC(_wrap_ColorTable_get_palette_interpretation), -1);
-  rb_define_method(SwigClassColorTable.klass, "get_count", VALUEFUNC(_wrap_ColorTable_get_count), -1);
-  rb_define_method(SwigClassColorTable.klass, "get_color_entry", VALUEFUNC(_wrap_ColorTable_get_color_entry), -1);
-  rb_define_method(SwigClassColorTable.klass, "get_color_entry_as_rgb", VALUEFUNC(_wrap_ColorTable_get_color_entry_as_rgb), -1);
-  rb_define_method(SwigClassColorTable.klass, "set_color_entry", VALUEFUNC(_wrap_ColorTable_set_color_entry), -1);
-  rb_define_method(SwigClassColorTable.klass, "create_color_ramp", VALUEFUNC(_wrap_ColorTable_create_color_ramp), -1);
+  rb_define_alloc_func(SwigClassColorTable.klass, _gdal_wrap_ColorTable_allocate);
+  rb_define_method(SwigClassColorTable.klass, "initialize", VALUEFUNC(_gdal_wrap_new_ColorTable), -1);
+  rb_define_method(SwigClassColorTable.klass, "clone", VALUEFUNC(_gdal_wrap_ColorTable_clone), -1);
+  rb_define_method(SwigClassColorTable.klass, "get_palette_interpretation", VALUEFUNC(_gdal_wrap_ColorTable_get_palette_interpretation), -1);
+  rb_define_method(SwigClassColorTable.klass, "get_count", VALUEFUNC(_gdal_wrap_ColorTable_get_count), -1);
+  rb_define_method(SwigClassColorTable.klass, "get_color_entry", VALUEFUNC(_gdal_wrap_ColorTable_get_color_entry), -1);
+  rb_define_method(SwigClassColorTable.klass, "get_color_entry_as_rgb", VALUEFUNC(_gdal_wrap_ColorTable_get_color_entry_as_rgb), -1);
+  rb_define_method(SwigClassColorTable.klass, "set_color_entry", VALUEFUNC(_gdal_wrap_ColorTable_set_color_entry), -1);
+  rb_define_method(SwigClassColorTable.klass, "create_color_ramp", VALUEFUNC(_gdal_wrap_ColorTable_create_color_ramp), -1);
   SwigClassColorTable.mark = 0;
   SwigClassColorTable.destroy = (void (*)(void *)) free_GDALColorTableShadow;
   SwigClassColorTable.trackObjects = 0;
   
   SwigClassRasterAttributeTable.klass = rb_define_class_under(mGdal, "RasterAttributeTable", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_GDALRasterAttributeTableShadow, (void *) &SwigClassRasterAttributeTable);
-  rb_define_alloc_func(SwigClassRasterAttributeTable.klass, _wrap_RasterAttributeTable_allocate);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "initialize", VALUEFUNC(_wrap_new_RasterAttributeTable), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "clone", VALUEFUNC(_wrap_RasterAttributeTable_clone), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_column_count", VALUEFUNC(_wrap_RasterAttributeTable_get_column_count), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_name_of_col", VALUEFUNC(_wrap_RasterAttributeTable_get_name_of_col), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_usage_of_col", VALUEFUNC(_wrap_RasterAttributeTable_get_usage_of_col), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_type_of_col", VALUEFUNC(_wrap_RasterAttributeTable_get_type_of_col), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_col_of_usage", VALUEFUNC(_wrap_RasterAttributeTable_get_col_of_usage), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_row_count", VALUEFUNC(_wrap_RasterAttributeTable_get_row_count), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_value_as_string", VALUEFUNC(_wrap_RasterAttributeTable_get_value_as_string), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_value_as_int", VALUEFUNC(_wrap_RasterAttributeTable_get_value_as_int), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_value_as_double", VALUEFUNC(_wrap_RasterAttributeTable_get_value_as_double), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "set_value_as_string", VALUEFUNC(_wrap_RasterAttributeTable_set_value_as_string), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "set_value_as_int", VALUEFUNC(_wrap_RasterAttributeTable_set_value_as_int), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "set_value_as_double", VALUEFUNC(_wrap_RasterAttributeTable_set_value_as_double), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "set_row_count", VALUEFUNC(_wrap_RasterAttributeTable_set_row_count), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "create_column", VALUEFUNC(_wrap_RasterAttributeTable_create_column), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_linear_binning", VALUEFUNC(_wrap_RasterAttributeTable_get_linear_binning), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "set_linear_binning", VALUEFUNC(_wrap_RasterAttributeTable_set_linear_binning), -1);
-  rb_define_method(SwigClassRasterAttributeTable.klass, "get_row_of_value", VALUEFUNC(_wrap_RasterAttributeTable_get_row_of_value), -1);
+  rb_define_alloc_func(SwigClassRasterAttributeTable.klass, _gdal_wrap_RasterAttributeTable_allocate);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "initialize", VALUEFUNC(_gdal_wrap_new_RasterAttributeTable), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "clone", VALUEFUNC(_gdal_wrap_RasterAttributeTable_clone), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_column_count", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_column_count), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_name_of_col", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_name_of_col), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_usage_of_col", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_usage_of_col), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_type_of_col", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_type_of_col), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_col_of_usage", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_col_of_usage), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_row_count", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_row_count), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_value_as_string", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_value_as_string), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_value_as_int", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_value_as_int), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_value_as_double", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_value_as_double), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "set_value_as_string", VALUEFUNC(_gdal_wrap_RasterAttributeTable_set_value_as_string), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "set_value_as_int", VALUEFUNC(_gdal_wrap_RasterAttributeTable_set_value_as_int), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "set_value_as_double", VALUEFUNC(_gdal_wrap_RasterAttributeTable_set_value_as_double), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "set_row_count", VALUEFUNC(_gdal_wrap_RasterAttributeTable_set_row_count), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "create_column", VALUEFUNC(_gdal_wrap_RasterAttributeTable_create_column), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_linear_binning", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_linear_binning), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "set_linear_binning", VALUEFUNC(_gdal_wrap_RasterAttributeTable_set_linear_binning), -1);
+  rb_define_method(SwigClassRasterAttributeTable.klass, "get_row_of_value", VALUEFUNC(_gdal_wrap_RasterAttributeTable_get_row_of_value), -1);
   SwigClassRasterAttributeTable.mark = 0;
   SwigClassRasterAttributeTable.destroy = (void (*)(void *)) free_GDALRasterAttributeTableShadow;
   SwigClassRasterAttributeTable.trackObjects = 0;
-  rb_define_module_function(mGdal, "TermProgress_nocb", VALUEFUNC(_wrap_TermProgress_nocb), -1);
+  rb_define_module_function(mGdal, "TermProgress_nocb", VALUEFUNC(_gdal_wrap_TermProgress_nocb), -1);
   rb_define_const(mGdal, "TermProgress", SWIG_NewFunctionPtrObj((void *)(int (*)(double,char const *,void *))(GDALTermProgress), SWIGTYPE_p_f_double_p_q_const__char_p_void__int));
-  rb_define_module_function(mGdal, "compute_median_cut_pct", VALUEFUNC(_wrap_compute_median_cut_pct), -1);
-  rb_define_module_function(mGdal, "dither_rgb_2pct", VALUEFUNC(_wrap_dither_rgb_2pct), -1);
-  rb_define_module_function(mGdal, "reproject_image", VALUEFUNC(_wrap_reproject_image), -1);
-  rb_define_module_function(mGdal, "compute_proximity", VALUEFUNC(_wrap_compute_proximity), -1);
-  rb_define_module_function(mGdal, "rasterize_layer", VALUEFUNC(_wrap_rasterize_layer), -1);
-  rb_define_module_function(mGdal, "polygonize", VALUEFUNC(_wrap_polygonize), -1);
-  rb_define_module_function(mGdal, "fill_nodata", VALUEFUNC(_wrap_fill_nodata), -1);
-  rb_define_module_function(mGdal, "sieve_filter", VALUEFUNC(_wrap_sieve_filter), -1);
-  rb_define_module_function(mGdal, "regenerate_overviews", VALUEFUNC(_wrap_regenerate_overviews), -1);
-  rb_define_module_function(mGdal, "regenerate_overview", VALUEFUNC(_wrap_regenerate_overview), -1);
-  rb_define_module_function(mGdal, "contour_generate", VALUEFUNC(_wrap_contour_generate), -1);
-  rb_define_module_function(mGdal, "auto_create_warped_vrt", VALUEFUNC(_wrap_auto_create_warped_vrt), -1);
+  rb_define_module_function(mGdal, "compute_median_cut_pct", VALUEFUNC(_gdal_wrap_compute_median_cut_pct), -1);
+  rb_define_module_function(mGdal, "dither_rgb_2pct", VALUEFUNC(_gdal_wrap_dither_rgb_2pct), -1);
+  rb_define_module_function(mGdal, "reproject_image", VALUEFUNC(_gdal_wrap_reproject_image), -1);
+  rb_define_module_function(mGdal, "compute_proximity", VALUEFUNC(_gdal_wrap_compute_proximity), -1);
+  rb_define_module_function(mGdal, "rasterize_layer", VALUEFUNC(_gdal_wrap_rasterize_layer), -1);
+  rb_define_module_function(mGdal, "polygonize", VALUEFUNC(_gdal_wrap_polygonize), -1);
+  rb_define_module_function(mGdal, "fill_nodata", VALUEFUNC(_gdal_wrap_fill_nodata), -1);
+  rb_define_module_function(mGdal, "sieve_filter", VALUEFUNC(_gdal_wrap_sieve_filter), -1);
+  rb_define_module_function(mGdal, "regenerate_overviews", VALUEFUNC(_gdal_wrap_regenerate_overviews), -1);
+  rb_define_module_function(mGdal, "regenerate_overview", VALUEFUNC(_gdal_wrap_regenerate_overview), -1);
+  rb_define_module_function(mGdal, "contour_generate", VALUEFUNC(_gdal_wrap_contour_generate), -1);
+  rb_define_module_function(mGdal, "auto_create_warped_vrt", VALUEFUNC(_gdal_wrap_auto_create_warped_vrt), -1);
   
   SwigClassTransformer.klass = rb_define_class_under(mGdal, "Transformer", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_GDALTransformerInfoShadow, (void *) &SwigClassTransformer);
-  rb_define_alloc_func(SwigClassTransformer.klass, _wrap_Transformer_allocate);
-  rb_define_method(SwigClassTransformer.klass, "initialize", VALUEFUNC(_wrap_new_Transformer), -1);
-  rb_define_method(SwigClassTransformer.klass, "transform_point", VALUEFUNC(_wrap_Transformer_transform_point), -1);
-  rb_define_method(SwigClassTransformer.klass, "transform_points", VALUEFUNC(_wrap_Transformer_transform_points), -1);
-  rb_define_method(SwigClassTransformer.klass, "transform_geolocations", VALUEFUNC(_wrap_Transformer_transform_geolocations), -1);
+  rb_define_alloc_func(SwigClassTransformer.klass, _gdal_wrap_Transformer_allocate);
+  rb_define_method(SwigClassTransformer.klass, "initialize", VALUEFUNC(_gdal_wrap_new_Transformer), -1);
+  rb_define_method(SwigClassTransformer.klass, "transform_point", VALUEFUNC(_gdal_wrap_Transformer_transform_point), -1);
+  rb_define_method(SwigClassTransformer.klass, "transform_points", VALUEFUNC(_gdal_wrap_Transformer_transform_points), -1);
+  rb_define_method(SwigClassTransformer.klass, "transform_geolocations", VALUEFUNC(_gdal_wrap_Transformer_transform_geolocations), -1);
   SwigClassTransformer.mark = 0;
   SwigClassTransformer.destroy = (void (*)(void *)) free_GDALTransformerInfoShadow;
   SwigClassTransformer.trackObjects = 0;
-  rb_define_module_function(mGdal, "gdalapply_geo_transform", VALUEFUNC(_wrap_gdalapply_geo_transform), -1);
-  rb_define_module_function(mGdal, "gdalinv_geo_transform", VALUEFUNC(_wrap_gdalinv_geo_transform), -1);
-  rb_define_module_function(mGdal, "gdalversion_info", VALUEFUNC(_wrap_gdalversion_info), -1);
-  rb_define_module_function(mGdal, "all_register", VALUEFUNC(_wrap_all_register), -1);
-  rb_define_module_function(mGdal, "gdaldestroy_driver_manager", VALUEFUNC(_wrap_gdaldestroy_driver_manager), -1);
-  rb_define_module_function(mGdal, "get_cache_max", VALUEFUNC(_wrap_get_cache_max), -1);
-  rb_define_module_function(mGdal, "get_cache_used", VALUEFUNC(_wrap_get_cache_used), -1);
-  rb_define_module_function(mGdal, "set_cache_max", VALUEFUNC(_wrap_set_cache_max), -1);
-  rb_define_module_function(mGdal, "get_data_type_size", VALUEFUNC(_wrap_get_data_type_size), -1);
-  rb_define_module_function(mGdal, "data_type_is_complex", VALUEFUNC(_wrap_data_type_is_complex), -1);
-  rb_define_module_function(mGdal, "get_data_type_name", VALUEFUNC(_wrap_get_data_type_name), -1);
-  rb_define_module_function(mGdal, "get_data_type_by_name", VALUEFUNC(_wrap_get_data_type_by_name), -1);
-  rb_define_module_function(mGdal, "get_color_interpretation_name", VALUEFUNC(_wrap_get_color_interpretation_name), -1);
-  rb_define_module_function(mGdal, "get_palette_interpretation_name", VALUEFUNC(_wrap_get_palette_interpretation_name), -1);
-  rb_define_module_function(mGdal, "dec_to_dms", VALUEFUNC(_wrap_dec_to_dms), -1);
-  rb_define_module_function(mGdal, "packed_dms_to_dec", VALUEFUNC(_wrap_packed_dms_to_dec), -1);
-  rb_define_module_function(mGdal, "dec_to_packed_dms", VALUEFUNC(_wrap_dec_to_packed_dms), -1);
-  rb_define_module_function(mGdal, "parse_xml_string", VALUEFUNC(_wrap_parse_xml_string), -1);
-  rb_define_module_function(mGdal, "serialize_xml_tree", VALUEFUNC(_wrap_serialize_xml_tree), -1);
-  rb_define_module_function(mGdal, "get_driver_count", VALUEFUNC(_wrap_get_driver_count), -1);
-  rb_define_module_function(mGdal, "get_driver_by_name", VALUEFUNC(_wrap_get_driver_by_name), -1);
-  rb_define_module_function(mGdal, "get_driver", VALUEFUNC(_wrap_get_driver), -1);
-  rb_define_module_function(mGdal, "open", VALUEFUNC(_wrap_open), -1);
-  rb_define_module_function(mGdal, "open_shared", VALUEFUNC(_wrap_open_shared), -1);
-  rb_define_module_function(mGdal, "identify_driver", VALUEFUNC(_wrap_identify_driver), -1);
-  rb_define_module_function(mGdal, "general_cmd_line_processor", VALUEFUNC(_wrap_general_cmd_line_processor), -1);
+  rb_define_module_function(mGdal, "gdalapply_geo_transform", VALUEFUNC(_gdal_wrap_gdalapply_geo_transform), -1);
+  rb_define_module_function(mGdal, "gdalinv_geo_transform", VALUEFUNC(_gdal_wrap_gdalinv_geo_transform), -1);
+  rb_define_module_function(mGdal, "gdalversion_info", VALUEFUNC(_gdal_wrap_gdalversion_info), -1);
+  rb_define_module_function(mGdal, "all_register", VALUEFUNC(_gdal_wrap_all_register), -1);
+  rb_define_module_function(mGdal, "gdaldestroy_driver_manager", VALUEFUNC(_gdal_wrap_gdaldestroy_driver_manager), -1);
+  rb_define_module_function(mGdal, "get_cache_max", VALUEFUNC(_gdal_wrap_get_cache_max), -1);
+  rb_define_module_function(mGdal, "get_cache_used", VALUEFUNC(_gdal_wrap_get_cache_used), -1);
+  rb_define_module_function(mGdal, "set_cache_max", VALUEFUNC(_gdal_wrap_set_cache_max), -1);
+  rb_define_module_function(mGdal, "get_data_type_size", VALUEFUNC(_gdal_wrap_get_data_type_size), -1);
+  rb_define_module_function(mGdal, "data_type_is_complex", VALUEFUNC(_gdal_wrap_data_type_is_complex), -1);
+  rb_define_module_function(mGdal, "get_data_type_name", VALUEFUNC(_gdal_wrap_get_data_type_name), -1);
+  rb_define_module_function(mGdal, "get_data_type_by_name", VALUEFUNC(_gdal_wrap_get_data_type_by_name), -1);
+  rb_define_module_function(mGdal, "get_color_interpretation_name", VALUEFUNC(_gdal_wrap_get_color_interpretation_name), -1);
+  rb_define_module_function(mGdal, "get_palette_interpretation_name", VALUEFUNC(_gdal_wrap_get_palette_interpretation_name), -1);
+  rb_define_module_function(mGdal, "dec_to_dms", VALUEFUNC(_gdal_wrap_dec_to_dms), -1);
+  rb_define_module_function(mGdal, "packed_dms_to_dec", VALUEFUNC(_gdal_wrap_packed_dms_to_dec), -1);
+  rb_define_module_function(mGdal, "dec_to_packed_dms", VALUEFUNC(_gdal_wrap_dec_to_packed_dms), -1);
+  rb_define_module_function(mGdal, "parse_xml_string", VALUEFUNC(_gdal_wrap_parse_xml_string), -1);
+  rb_define_module_function(mGdal, "serialize_xml_tree", VALUEFUNC(_gdal_wrap_serialize_xml_tree), -1);
+  rb_define_module_function(mGdal, "get_driver_count", VALUEFUNC(_gdal_wrap_get_driver_count), -1);
+  rb_define_module_function(mGdal, "get_driver_by_name", VALUEFUNC(_gdal_wrap_get_driver_by_name), -1);
+  rb_define_module_function(mGdal, "get_driver", VALUEFUNC(_gdal_wrap_get_driver), -1);
+  rb_define_module_function(mGdal, "open", VALUEFUNC(_gdal_wrap_open), -1);
+  rb_define_module_function(mGdal, "open_shared", VALUEFUNC(_gdal_wrap_open_shared), -1);
+  rb_define_module_function(mGdal, "identify_driver", VALUEFUNC(_gdal_wrap_identify_driver), -1);
+  rb_define_module_function(mGdal, "general_cmd_line_processor", VALUEFUNC(_gdal_wrap_general_cmd_line_processor), -1);
 }
 
