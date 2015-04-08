@@ -18634,7 +18634,7 @@ SWIGEXPORT void Init_ogr(void) {
   /* Setup exception handling */
   UseExceptions();
   
-  rb_require("gdal/osr");
+  rb_require("gdal-ruby/osr");
   
   SwigClassDriver.klass = rb_define_class_under(mOgr, "Driver", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_OGRDriverShadow, (void *) &SwigClassDriver);
