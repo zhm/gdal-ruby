@@ -38,7 +38,7 @@ if RUBY_VERSION >= '2.2.0'
         else
           cflags = get['cflags']
         end
-        libs = get['libs-only-l']
+        libs = get['libs-only-l'] || ''
         ldflags = (Shellwords.shellwords(ldflags) - Shellwords.shellwords(libs)).quote.join(" ")
         $CFLAGS += " " << cflags
         $CXXFLAGS += " " << cflags
