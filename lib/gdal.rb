@@ -1,1 +1,5 @@
 require 'gdal-ruby/version'
+require 'gdal-ruby/gdal'
+require 'gdal-ruby/ogr'
+require 'gdal-ruby/osr'
+require 'gdal-ruby/gdalconst'
