@@ -1,5 +1,8 @@
 require 'mkmf'
 
+# see https://github.com/zhm/gdal-ruby/issues/5
+require_relative '../ruby-2.2-patch'
+
 raise 'gdal-config not found.' if `which gdal-config`.empty?
 
 dir_config 'gdal',
