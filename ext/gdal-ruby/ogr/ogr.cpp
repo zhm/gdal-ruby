@@ -23263,7 +23263,7 @@ SWIGEXPORT void Init_ogr(void) {
   /* Setup exception handling */
   UseExceptions();
   
-  rb_require("gdal/osr");
+  rb_require("gdal-ruby/osr");
   
   SwigClassStyleTable.klass = rb_define_class_under(mOgr, "StyleTable", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_OGRStyleTableShadow, (void *) &SwigClassStyleTable);
