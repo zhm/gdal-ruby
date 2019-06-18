@@ -8,8 +8,9 @@
  * interface file instead.
  * ----------------------------------------------------------------------------- */
 
-#define SWIGRUBY
+#include "cpl_port.h"
 
+#define SWIGRUBY
 
 #ifdef __cplusplus
 /* SwigValueWrapper is described in swig.swg */
@@ -1863,7 +1864,7 @@ using namespace std;
 #include "cpl_http.h"
 
 #include "gdal.h"
-#include "gdal_priv.h"
+/* #include "gdal_priv.h" */
 #include "gdal_alg.h"
 #include "gdalwarper.h"
 
