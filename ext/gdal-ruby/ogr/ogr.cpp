@@ -8,8 +8,9 @@
  * interface file instead.
  * ----------------------------------------------------------------------------- */
 
-#define SWIGRUBY
+#include "cpl_port.h"
 
+#define SWIGRUBY
 
 #ifdef __cplusplus
 /* SwigValueWrapper is described in swig.swg */
@@ -1856,8 +1857,9 @@ typedef char retStringAndCPLFree;
 #include <iostream>
 using namespace std;
 
+#define CPL_SUPRESS_CPLUSPLUS
 #include "ogr_api.h"
-#include "ogr_p.h"
+/* #include "ogr_p.h" */
 #include "ogr_core.h"
 #include "cpl_port.h"
 #include "cpl_string.h"
@@ -3218,8 +3220,9 @@ OGRDriverShadow* GetDriver(int driver_number) {
   char **GeneralCmdLineProcessor( char **papszArgv, int nOptions = 0 ) {
     int nResArgCount;
 
-    nResArgCount = 
-      OGRGeneralCmdLineProcessor( CSLCount(papszArgv), &papszArgv, nOptions ); 
+    nResArgCount = 0;
+      /* TODO(zhm) REMOVED because this is not part of the C API in 2.x */
+      /* OGRGeneralCmdLineProcessor( CSLCount(papszArgv), &papszArgv, nOptions ); */ 
 
     if( nResArgCount <= 0 )
         return NULL;

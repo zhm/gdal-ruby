@@ -8,8 +8,9 @@
  * interface file instead.
  * ----------------------------------------------------------------------------- */
 
-#define SWIGRUBY
+#include "cpl_port.h"
 
+#define SWIGRUBY
 
 #ifdef __cplusplus
 /* SwigValueWrapper is described in swig.swg */
@@ -2473,7 +2474,8 @@ SWIGINTERN OGRErr OSRSpatialReferenceShadow_ImportFromMICoordSys(OSRSpatialRefer
     return OSRImportFromMICoordSys( self, pszCoordSys );
   }
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_ImportFromOzi(OSRSpatialReferenceShadow *self,char const *datum,char const *proj,char const *projParms){
-    return OSRImportFromOzi( self, datum, proj, projParms );
+    return 0; // TODO(zhm) Removed becaues this function's signature has changed between GDAL 1.x and 2.x. Not worth figuring it out since it's a very exotic function.
+    /* return OSRImportFromOzi( self, datum, proj, projParms ); */
   }
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_ExportToWkt(OSRSpatialReferenceShadow *self,char **argout){
     return OSRExportToWkt( self, argout );

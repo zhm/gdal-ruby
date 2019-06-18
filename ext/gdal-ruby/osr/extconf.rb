@@ -21,4 +21,9 @@ $CXXFLAGS = CONFIG["CXXFLAGS"] unless defined?($CXXFLAGS)
 $CFLAGS << ' -Wno-format-security'
 $CXXFLAGS << ' -Wno-format-security'
 
+if !(`gdal-config --version`.strip =~ /^1/)
+  $CFLAGS << ' -Wno-reserved-user-defined-literal -std=c++11'
+  $CXXFLAGS << ' -Wno-reserved-user-defined-literal -std=c++11'
+end
+
 create_makefile('gdal-ruby/osr')
