@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Zac McCormick"]
   gem.email         = ["zac.mccormick@gmail.com"]
   gem.description   = %q{GDAL/OGR bindings for ruby}
-  gem.summary       = %q{GDAL/OGR bindings for ruby. Currently contains native extensions for GDAL 1.9.1}
+  gem.summary       = %q{GDAL/OGR bindings for ruby. Currently contains native extensions for GDAL}
   gem.homepage      = "https://github.com/zhm/gdal-ruby"
 
   gem.files         = `git ls-files`.split($\)
