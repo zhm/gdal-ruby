@@ -2508,13 +2508,16 @@ SWIGINTERN OGRErr OSRSpatialReferenceShadow_Validate(OSRSpatialReferenceShadow *
     return OSRValidate(self);
   }
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_StripCTParms(OSRSpatialReferenceShadow *self){
-    return OSRStripCTParms(self);
+    return 0;
+    //return OSRStripCTParms(self);
   }
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_FixupOrdering(OSRSpatialReferenceShadow *self){
-    return OSRFixupOrdering(self);
+    return 0;
+    //return OSRFixupOrdering(self);
   }
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_Fixup(OSRSpatialReferenceShadow *self){
-    return OSRFixup(self);
+    return 0;
+    //return OSRFixup(self);
   }
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_MorphToESRI(OSRSpatialReferenceShadow *self){
     return OSRMorphToESRI(self);
@@ -2696,6 +2699,8 @@ fail:
 
 SWIGINTERN VALUE
 _wrap_GetProjectionMethods(int argc, VALUE *argv, VALUE self) {
+  return Qnil;
+  /*
   char **result = 0 ;
   VALUE vresult = Qnil;
   
@@ -2707,11 +2712,14 @@ _wrap_GetProjectionMethods(int argc, VALUE *argv, VALUE self) {
   return vresult;
 fail:
   return Qnil;
+  */
 }
 
 
 SWIGINTERN VALUE
 _wrap_GetProjectionMethodParameterList(int argc, VALUE *argv, VALUE self) {
+  return Qnil;
+  /*
   char *arg1 = (char *) 0 ;
   char **arg2 = (char **) 0 ;
   int res1 ;
@@ -2742,11 +2750,14 @@ _wrap_GetProjectionMethodParameterList(int argc, VALUE *argv, VALUE self) {
 fail:
   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
   return Qnil;
+  */
 }
 
 
 SWIGINTERN VALUE
 _wrap_GetProjectionMethodParamInfo(int argc, VALUE *argv, VALUE self) {
+  return Qnil;
+  /*
   char *arg1 = (char *) 0 ;
   char *arg2 = (char *) 0 ;
   char **arg3 = (char **) 0 ;
@@ -2801,6 +2812,7 @@ fail:
   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   return Qnil;
+  */
 }
 
 
