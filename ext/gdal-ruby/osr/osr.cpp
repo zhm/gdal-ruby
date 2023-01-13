@@ -2507,14 +2507,17 @@ SWIGINTERN OSRSpatialReferenceShadow *OSRSpatialReferenceShadow_Clone(OSRSpatial
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_Validate(OSRSpatialReferenceShadow *self){
     return OSRValidate(self);
   }
+// TODO(zhm) Removed because it's no longer available
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_StripCTParms(OSRSpatialReferenceShadow *self){
-    return OSRStripCTParms(self);
+    return 0;
   }
+// TODO(zhm) Removed because it's no longer available
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_FixupOrdering(OSRSpatialReferenceShadow *self){
-    return OSRFixupOrdering(self);
+    return 0;
   }
+// TODO(zhm) Removed because it's no longer available
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_Fixup(OSRSpatialReferenceShadow *self){
-    return OSRFixup(self);
+    return 0;
   }
 SWIGINTERN OGRErr OSRSpatialReferenceShadow_MorphToESRI(OSRSpatialReferenceShadow *self){
     return OSRMorphToESRI(self);
@@ -2693,115 +2696,115 @@ fail:
   return Qnil;
 }
 
-
-SWIGINTERN VALUE
-_wrap_GetProjectionMethods(int argc, VALUE *argv, VALUE self) {
-  char **result = 0 ;
-  VALUE vresult = Qnil;
+// TODO(zhm) Removed because it's no longer available
+// SWIGINTERN VALUE
+// _wrap_GetProjectionMethods(int argc, VALUE *argv, VALUE self) {
+//   char **result = 0 ;
+//   VALUE vresult = Qnil;
   
-  if ((argc < 0) || (argc > 0)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
-  }
-  result = (char **)OPTGetProjectionMethods();
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_p_char, 0 |  0 );
-  return vresult;
-fail:
-  return Qnil;
-}
+//   if ((argc < 0) || (argc > 0)) {
+//     rb_raise(rb_eArgError, "wrong # of arguments(%d for 0)",argc); SWIG_fail;
+//   }
+//   result = (char **)OPTGetProjectionMethods();
+//   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_p_char, 0 |  0 );
+//   return vresult;
+// fail:
+//   return Qnil;
+// }
 
-
-SWIGINTERN VALUE
-_wrap_GetProjectionMethodParameterList(int argc, VALUE *argv, VALUE self) {
-  char *arg1 = (char *) 0 ;
-  char **arg2 = (char **) 0 ;
-  int res1 ;
-  char *buf1 = 0 ;
-  int alloc1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  char **result = 0 ;
-  VALUE vresult = Qnil;
+// TODO(zhm) Removed because it's no longer available
+// SWIGINTERN VALUE
+// _wrap_GetProjectionMethodParameterList(int argc, VALUE *argv, VALUE self) {
+//   char *arg1 = (char *) 0 ;
+//   char **arg2 = (char **) 0 ;
+//   int res1 ;
+//   char *buf1 = 0 ;
+//   int alloc1 = 0 ;
+//   void *argp2 = 0 ;
+//   int res2 = 0 ;
+//   char **result = 0 ;
+//   VALUE vresult = Qnil;
   
-  if ((argc < 2) || (argc > 2)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
-  }
-  res1 = SWIG_AsCharPtrAndSize(argv[0], &buf1, NULL, &alloc1);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "char *","OPTGetParameterList", 1, argv[0] ));
-  }
-  arg1 = reinterpret_cast< char * >(buf1);
-  res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_p_char, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char **","OPTGetParameterList", 2, argv[1] )); 
-  }
-  arg2 = reinterpret_cast< char ** >(argp2);
-  result = (char **)OPTGetParameterList(arg1,arg2);
-  vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_p_char, 0 |  0 );
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-  return vresult;
-fail:
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-  return Qnil;
-}
+//   if ((argc < 2) || (argc > 2)) {
+//     rb_raise(rb_eArgError, "wrong # of arguments(%d for 2)",argc); SWIG_fail;
+//   }
+//   res1 = SWIG_AsCharPtrAndSize(argv[0], &buf1, NULL, &alloc1);
+//   if (!SWIG_IsOK(res1)) {
+//     SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "char *","OPTGetParameterList", 1, argv[0] ));
+//   }
+//   arg1 = reinterpret_cast< char * >(buf1);
+//   res2 = SWIG_ConvertPtr(argv[1], &argp2,SWIGTYPE_p_p_char, 0 |  0 );
+//   if (!SWIG_IsOK(res2)) {
+//     SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char **","OPTGetParameterList", 2, argv[1] )); 
+//   }
+//   arg2 = reinterpret_cast< char ** >(argp2);
+//   result = (char **)OPTGetParameterList(arg1,arg2);
+//   vresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_p_char, 0 |  0 );
+//   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+//   return vresult;
+// fail:
+//   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+//   return Qnil;
+// }
 
-
-SWIGINTERN VALUE
-_wrap_GetProjectionMethodParamInfo(int argc, VALUE *argv, VALUE self) {
-  char *arg1 = (char *) 0 ;
-  char *arg2 = (char *) 0 ;
-  char **arg3 = (char **) 0 ;
-  char **arg4 = (char **) 0 ;
-  double *arg5 = (double *) 0 ;
-  int res1 ;
-  char *buf1 = 0 ;
-  int alloc1 = 0 ;
-  int res2 ;
-  char *buf2 = 0 ;
-  int alloc2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  void *argp4 = 0 ;
-  int res4 = 0 ;
-  void *argp5 = 0 ;
-  int res5 = 0 ;
+// TODO(zhm) Removed because it's no longer available
+// SWIGINTERN VALUE
+// _wrap_GetProjectionMethodParamInfo(int argc, VALUE *argv, VALUE self) {
+//   char *arg1 = (char *) 0 ;
+//   char *arg2 = (char *) 0 ;
+//   char **arg3 = (char **) 0 ;
+//   char **arg4 = (char **) 0 ;
+//   double *arg5 = (double *) 0 ;
+//   int res1 ;
+//   char *buf1 = 0 ;
+//   int alloc1 = 0 ;
+//   int res2 ;
+//   char *buf2 = 0 ;
+//   int alloc2 = 0 ;
+//   void *argp3 = 0 ;
+//   int res3 = 0 ;
+//   void *argp4 = 0 ;
+//   int res4 = 0 ;
+//   void *argp5 = 0 ;
+//   int res5 = 0 ;
   
-  if ((argc < 5) || (argc > 5)) {
-    rb_raise(rb_eArgError, "wrong # of arguments(%d for 5)",argc); SWIG_fail;
-  }
-  res1 = SWIG_AsCharPtrAndSize(argv[0], &buf1, NULL, &alloc1);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "char *","OPTGetParameterInfo", 1, argv[0] ));
-  }
-  arg1 = reinterpret_cast< char * >(buf1);
-  res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","OPTGetParameterInfo", 2, argv[1] ));
-  }
-  arg2 = reinterpret_cast< char * >(buf2);
-  res3 = SWIG_ConvertPtr(argv[2], &argp3,SWIGTYPE_p_p_char, 0 |  0 );
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char **","OPTGetParameterInfo", 3, argv[2] )); 
-  }
-  arg3 = reinterpret_cast< char ** >(argp3);
-  res4 = SWIG_ConvertPtr(argv[3], &argp4,SWIGTYPE_p_p_char, 0 |  0 );
-  if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "char **","OPTGetParameterInfo", 4, argv[3] )); 
-  }
-  arg4 = reinterpret_cast< char ** >(argp4);
-  res5 = SWIG_ConvertPtr(argv[4], &argp5,SWIGTYPE_p_double, 0 |  0 );
-  if (!SWIG_IsOK(res5)) {
-    SWIG_exception_fail(SWIG_ArgError(res5), Ruby_Format_TypeError( "", "double *","OPTGetParameterInfo", 5, argv[4] )); 
-  }
-  arg5 = reinterpret_cast< double * >(argp5);
-  OPTGetParameterInfo(arg1,arg2,arg3,arg4,arg5);
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-fail:
-  if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
-  if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  return Qnil;
-}
+//   if ((argc < 5) || (argc > 5)) {
+//     rb_raise(rb_eArgError, "wrong # of arguments(%d for 5)",argc); SWIG_fail;
+//   }
+//   res1 = SWIG_AsCharPtrAndSize(argv[0], &buf1, NULL, &alloc1);
+//   if (!SWIG_IsOK(res1)) {
+//     SWIG_exception_fail(SWIG_ArgError(res1), Ruby_Format_TypeError( "", "char *","OPTGetParameterInfo", 1, argv[0] ));
+//   }
+//   arg1 = reinterpret_cast< char * >(buf1);
+//   res2 = SWIG_AsCharPtrAndSize(argv[1], &buf2, NULL, &alloc2);
+//   if (!SWIG_IsOK(res2)) {
+//     SWIG_exception_fail(SWIG_ArgError(res2), Ruby_Format_TypeError( "", "char *","OPTGetParameterInfo", 2, argv[1] ));
+//   }
+//   arg2 = reinterpret_cast< char * >(buf2);
+//   res3 = SWIG_ConvertPtr(argv[2], &argp3,SWIGTYPE_p_p_char, 0 |  0 );
+//   if (!SWIG_IsOK(res3)) {
+//     SWIG_exception_fail(SWIG_ArgError(res3), Ruby_Format_TypeError( "", "char **","OPTGetParameterInfo", 3, argv[2] )); 
+//   }
+//   arg3 = reinterpret_cast< char ** >(argp3);
+//   res4 = SWIG_ConvertPtr(argv[3], &argp4,SWIGTYPE_p_p_char, 0 |  0 );
+//   if (!SWIG_IsOK(res4)) {
+//     SWIG_exception_fail(SWIG_ArgError(res4), Ruby_Format_TypeError( "", "char **","OPTGetParameterInfo", 4, argv[3] )); 
+//   }
+//   arg4 = reinterpret_cast< char ** >(argp4);
+//   res5 = SWIG_ConvertPtr(argv[4], &argp5,SWIGTYPE_p_double, 0 |  0 );
+//   if (!SWIG_IsOK(res5)) {
+//     SWIG_exception_fail(SWIG_ArgError(res5), Ruby_Format_TypeError( "", "double *","OPTGetParameterInfo", 5, argv[4] )); 
+//   }
+//   arg5 = reinterpret_cast< double * >(argp5);
+//   OPTGetParameterInfo(arg1,arg2,arg3,arg4,arg5);
+//   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+//   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+//   return Qnil;
+// fail:
+//   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
+//   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
+//   return Qnil;
+// }
 
 
 static swig_class SwigClassSpatialReference;
@@ -10124,9 +10127,9 @@ SWIGEXPORT void Init_osr(void) {
   rb_define_const(mOsr, "SRS_WGS84_INVFLATTENING", SWIG_From_double(static_cast< double >(298.257223563)));
   rb_define_module_function(mOsr, "get_well_known_geog_csas_wkt", VALUEFUNC(_wrap_get_well_known_geog_csas_wkt), -1);
   rb_define_module_function(mOsr, "get_user_input_as_wkt", VALUEFUNC(_wrap_get_user_input_as_wkt), -1);
-  rb_define_module_function(mOsr, "GetProjectionMethods", VALUEFUNC(_wrap_GetProjectionMethods), -1);
-  rb_define_module_function(mOsr, "GetProjectionMethodParameterList", VALUEFUNC(_wrap_GetProjectionMethodParameterList), -1);
-  rb_define_module_function(mOsr, "GetProjectionMethodParamInfo", VALUEFUNC(_wrap_GetProjectionMethodParamInfo), -1);
+  // rb_define_module_function(mOsr, "GetProjectionMethods", VALUEFUNC(_wrap_GetProjectionMethods), -1);
+  // rb_define_module_function(mOsr, "GetProjectionMethodParameterList", VALUEFUNC(_wrap_GetProjectionMethodParameterList), -1);
+  // rb_define_module_function(mOsr, "GetProjectionMethodParamInfo", VALUEFUNC(_wrap_GetProjectionMethodParamInfo), -1);
   
   SwigClassSpatialReference.klass = rb_define_class_under(mOsr, "SpatialReference", rb_cObject);
   SWIG_TypeClientData(SWIGTYPE_p_OSRSpatialReferenceShadow, (void *) &SwigClassSpatialReference);
